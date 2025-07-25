@@ -1,0 +1,233 @@
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Mail, Phone, MapPin, Clock, MessageSquare, Building2, Users } from 'lucide-react';
+
+const Contact = () => {
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: 'Email Us',
+      content: 'info@airqualitynexus.org',
+      description: 'General inquiries and information'
+    },
+    {
+      icon: Phone,
+      title: 'Call Us',
+      content: '+1 (555) 123-4567',
+      description: 'Monday - Friday, 9 AM - 5 PM'
+    },
+    {
+      icon: MapPin,
+      title: 'Visit Us',
+      content: '123 Environmental Way, Green City, GC 12345',
+      description: 'Our main research facility'
+    },
+    {
+      icon: Clock,
+      title: 'Office Hours',
+      content: 'Mon - Fri: 9 AM - 5 PM',
+      description: 'Saturday: 10 AM - 2 PM (by appointment)'
+    }
+  ];
+
+  const officeLocations = [
+    {
+      name: 'Main Research Facility',
+      address: '123 Environmental Way, Green City, GC 12345',
+      phone: '+1 (555) 123-4567',
+      type: 'Headquarters'
+    },
+    {
+      name: 'Urban Monitoring Station',
+      address: '456 Downtown Plaza, Metro City, MC 67890',
+      phone: '+1 (555) 234-5678',
+      type: 'Field Office'
+    },
+    {
+      name: 'Community Outreach Center',
+      address: '789 Community Blvd, Riverside, RS 54321',
+      phone: '+1 (555) 345-6789',
+      type: 'Outreach'
+    }
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted');
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-air-light to-accent">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge variant="secondary" className="mb-4">Get In Touch</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Contact Us
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Have questions about our research, want to collaborate, or need information about air quality in your area? 
+              We'd love to hear from you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {contactInfo.map((info, index) => (
+              <Card key={index} className="text-center bg-gradient-to-br from-background to-accent/10">
+                <CardContent className="p-6">
+                  <info.icon className="mx-auto mb-4 text-primary" size={32} />
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{info.title}</h3>
+                  <p className="text-primary font-medium mb-1">{info.content}</p>
+                  <p className="text-sm text-muted-foreground">{info.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Contact Form and Map */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <Card className="bg-gradient-to-br from-background to-accent/5">
+              <CardHeader>
+                <h2 className="text-2xl font-bold text-foreground flex items-center">
+                  <MessageSquare className="mr-3 text-primary" size={24} />
+                  Send us a Message
+                </h2>
+                <p className="text-muted-foreground">
+                  Fill out the form below and we'll get back to you as soon as possible.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input id="firstName" placeholder="Your first name" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input id="lastName" placeholder="Your last name" required />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" placeholder="your.email@example.com" required />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone (Optional)</Label>
+                    <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="organization">Organization (Optional)</Label>
+                    <Input id="organization" placeholder="Your organization or company" />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Subject</Label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a subject" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="general">General Inquiry</SelectItem>
+                        <SelectItem value="research">Research Collaboration</SelectItem>
+                        <SelectItem value="media">Media Request</SelectItem>
+                        <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                        <SelectItem value="data">Data Request</SelectItem>
+                        <SelectItem value="volunteer">Volunteer Opportunity</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea 
+                      id="message" 
+                      placeholder="Tell us how we can help you..." 
+                      rows={5}
+                      required 
+                    />
+                  </div>
+                  
+                  <Button type="submit" size="lg" className="w-full">
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Office Locations */}
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-foreground flex items-center">
+                <Building2 className="mr-3 text-primary" size={24} />
+                Our Locations
+              </h2>
+              
+              {officeLocations.map((location, index) => (
+                <Card key={index} className="bg-gradient-to-br from-background to-accent/10">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-lg font-semibold text-foreground">{location.name}</h3>
+                      <Badge variant="secondary">{location.type}</Badge>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <MapPin size={16} className="text-muted-foreground mt-1 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{location.address}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Phone size={16} className="text-muted-foreground" />
+                        <span className="text-sm text-muted-foreground">{location.phone}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+
+              {/* Collaboration CTA */}
+              <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                    <Users className="mr-2 text-primary" size={20} />
+                    Research Collaborations
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Interested in collaborating on air quality research? We welcome partnerships with 
+                    universities, government agencies, and organizations.
+                  </p>
+                  <Button variant="outline" size="sm">
+                    Learn About Partnerships
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;
