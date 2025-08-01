@@ -3,116 +3,109 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Twitter } from 'lucide-react';
-import teamImage from '@/assets/team-placeholder.jpg';
+import { Mail } from 'lucide-react';
+import profNguyen from '@/assets/prof-nguyen.jpg';
+import drLai from '@/assets/dr-lai.jpg';
+import drTruong from '@/assets/dr-truong.jpg';
+import msKhing from '@/assets/ms-khing.jpg';
+import msChi from '@/assets/ms-chi.jpg';
+import msIngyin from '@/assets/ms-ingyin.jpg';
 
 const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'Dr. Sarah Johnson',
-      role: 'Director & Lead Researcher',
-      department: 'Atmospheric Sciences',
-      bio: 'Leading expert in air quality monitoring with 15+ years of experience in environmental research.',
-      education: 'PhD in Atmospheric Sciences, Stanford University',
-      specialties: ['Air Quality Monitoring', 'Sensor Technology', 'Data Analysis'],
-      image: teamImage,
-      email: 'sarah.johnson@airqualitynexus.org',
-      linkedin: '#',
-      twitter: '#'
+      name: 'Prof. Dr. Nguyen Thi Kim Oanh',
+      role: 'Director of Center',
+      department: 'Leadership',
+      bio: 'Leading expert in air pollution research with extensive experience in environmental science and climate studies.',
+      education: 'Ph.D. in Environmental Science',
+      specialties: ['Air pollution monitoring', 'Dispersion modeling', 'Emission inventory', 'Climate co-benefits assessment'],
+      image: profNguyen,
+      email: 'nguyen@ait.ac.th'
     },
     {
       id: 2,
-      name: 'Dr. Michael Chen',
-      role: 'Senior Research Scientist',
-      department: 'Environmental Health',
-      bio: 'Focused on community health impacts of air pollution and environmental justice.',
-      education: 'PhD in Environmental Health, Harvard University',
-      specialties: ['Public Health', 'Environmental Justice', 'Community Outreach'],
-      image: teamImage,
-      email: 'michael.chen@airqualitynexus.org',
-      linkedin: '#',
-      twitter: '#'
+      name: 'Dr. Lai Nguyen Huy',
+      role: 'Center Manager',
+      department: 'Management',
+      bio: 'Expert in air quality modeling and satellite monitoring with focus on climate co-benefits assessment.',
+      education: 'Ph.D. in Environmental Science',
+      specialties: ['Air quality modeling', 'Emission inventory', 'Satellite monitoring', 'Climate assessment'],
+      image: drLai,
+      email: 'lai.nguyen@ait.ac.th'
     },
     {
       id: 3,
-      name: 'Dr. Emily Rodriguez',
-      role: 'Policy Research Lead',
-      department: 'Environmental Policy',
-      bio: 'Expert in environmental policy development and regulatory framework analysis.',
-      education: 'PhD in Environmental Policy, UC Berkeley',
-      specialties: ['Policy Analysis', 'Regulatory Affairs', 'Government Relations'],
-      image: teamImage,
-      email: 'emily.rodriguez@airqualitynexus.org',
-      linkedin: '#',
-      twitter: '#'
+      name: 'Dr. Truong Thi Huyen',
+      role: 'Research Engineer',
+      department: 'Research',
+      bio: 'Specialist in air pollution monitoring and exposure assessment with expertise in receptor modeling.',
+      education: 'Ph.D. in Environmental Engineering',
+      specialties: ['Air pollution monitoring', 'Exposure assessment', 'Receptor modeling'],
+      image: drTruong,
+      email: 'truong.huyen@ait.ac.th'
     },
     {
       id: 4,
-      name: 'Dr. Robert Kim',
-      role: 'Technology Innovation Manager',
-      department: 'Engineering & Technology',
-      bio: 'Develops cutting-edge sensor technology and monitoring systems for air quality measurement.',
-      education: 'PhD in Environmental Engineering, MIT',
-      specialties: ['Sensor Development', 'IoT Systems', 'Data Engineering'],
-      image: teamImage,
-      email: 'robert.kim@airqualitynexus.org',
-      linkedin: '#',
-      twitter: '#'
+      name: 'Ms. Khing Thwe Oo',
+      role: 'Research Associate',
+      department: 'Administration',
+      bio: 'Research associate managing administrative operations and supporting air pollution monitoring activities.',
+      education: 'Master\'s in Environmental Science',
+      specialties: ['Administration', 'Air pollution monitoring'],
+      image: msKhing,
+      email: 'khing.oo@ait.ac.th'
     },
     {
       id: 5,
-      name: 'Dr. Lisa Wang',
-      role: 'Community Engagement Director',
-      department: 'Community Relations',
-      bio: 'Leads community education initiatives and citizen science programs.',
-      education: 'PhD in Environmental Communication, Northwestern University',
-      specialties: ['Community Education', 'Citizen Science', 'Science Communication'],
-      image: teamImage,
-      email: 'lisa.wang@airqualitynexus.org',
-      linkedin: '#',
-      twitter: '#'
+      name: 'Ms. Nguyen Nhat Ha Chi',
+      role: 'Ph.D. Candidate',
+      department: 'Research',
+      bio: 'Doctoral researcher focusing on air quality modeling and emission inventory development.',
+      education: 'Ph.D. Candidate in Environmental Science',
+      specialties: ['Air quality modeling', 'Meteorology modeling', 'Emission inventory'],
+      image: msChi,
+      email: 'chi.nguyen@ait.ac.th'
     },
     {
       id: 6,
-      name: 'Dr. James Martinez',
-      role: 'International Partnerships Coordinator',
-      department: 'Global Initiatives',
-      bio: 'Manages international collaborations and global research partnerships.',
-      education: 'PhD in International Environmental Studies, Columbia University',
-      specialties: ['International Relations', 'Global Partnerships', 'Cross-cultural Research'],
-      image: teamImage,
-      email: 'james.martinez@airqualitynexus.org',
-      linkedin: '#',
-      twitter: '#'
+      name: 'Ms. Ingyin Myint Swe',
+      role: 'Ph.D. Student',
+      department: 'Research',
+      bio: 'Doctoral student specializing in air quality modeling and emission inventory research.',
+      education: 'Ph.D. Student in Environmental Science',
+      specialties: ['Air quality modeling', 'Meteorology modeling', 'Emission inventory'],
+      image: msIngyin,
+      email: 'ingyin.swe@ait.ac.th'
     }
   ];
 
   const departments = [
     {
-      name: 'Atmospheric Sciences',
-      description: 'Core research on air quality measurement and atmospheric processes.',
-      members: 15
+      name: 'Leadership',
+      description: 'Strategic direction and overall management of the Air Quality Nexus Center\'s research initiatives.',
+      members: 1
     },
     {
-      name: 'Environmental Health',
-      description: 'Studying health impacts of air pollution on communities.',
-      members: 12
+      name: 'Management',
+      description: 'Center operations, coordination of research activities, and administrative oversight.',
+      members: 1
     },
     {
-      name: 'Environmental Policy',
-      description: 'Policy research and regulatory framework development.',
-      members: 8
+      name: 'Research',
+      description: 'Core research activities including air pollution monitoring, modeling, and assessment studies.',
+      members: 3
     },
     {
-      name: 'Engineering & Technology',
-      description: 'Developing innovative monitoring technologies and systems.',
-      members: 10
+      name: 'Administration',
+      description: 'Administrative support, coordination of monitoring activities, and operational management.',
+      members: 1
     },
     {
-      name: 'Community Relations',
-      description: 'Community engagement and education initiatives.',
-      members: 6
+      name: 'External Partners',
+      description: 'Collaboration with governments, universities, funding agencies, NGOs, and private sectors.',
+      members: 0
     }
   ];
 
@@ -129,7 +122,7 @@ const Team = () => {
               Our Expert Team
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Meet the dedicated researchers, scientists, and professionals working to improve air quality and protect community health.
+              Meet the dedicated researchers and professionals at the Air Quality Nexus Center, AIT, working to advance air quality research and protect environmental health.
             </p>
           </div>
         </div>
@@ -177,14 +170,13 @@ const Team = () => {
                   </div>
                   
                   <div className="flex justify-center space-x-3 mt-6">
-                    <Button size="sm" variant="outline" className="p-2">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="p-2"
+                      onClick={() => window.location.href = `mailto:${member.email}`}
+                    >
                       <Mail size={16} />
-                    </Button>
-                    <Button size="sm" variant="outline" className="p-2">
-                      <Linkedin size={16} />
-                    </Button>
-                    <Button size="sm" variant="outline" className="p-2">
-                      <Twitter size={16} />
                     </Button>
                   </div>
                 </CardContent>
