@@ -9,75 +9,115 @@ const Activities = () => {
   const activities = [
     {
       id: 1,
-      title: 'Urban Air Quality Monitoring Network Expansion',
-      description: 'Deploying 50 new air quality sensors across metropolitan areas to create comprehensive monitoring network.',
-      location: 'Multiple Cities',
+      title: 'Smart Digital Monitoring System for Improved Respiratory Health of Elderly and Pregnant People',
+      description: 'Developing and testing a smart health monitoring platform for vulnerable populations, integrating air quality data with health outcomes in collaboration with international partners.',
+      location: 'Thailand, Japan, Germany',
       startDate: '2024-01-01',
       endDate: '2024-12-31',
       status: 'ongoing',
-      participants: 25,
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
-      category: 'Research'
+      participants: 15,
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+      category: 'Research',
+      partner: 'Hokkaido University, Technical University of Munich',
+      aitRole: 'Lead Research Partner'
     },
     {
       id: 2,
-      title: 'Community Education Workshop Series',
-      description: 'Monthly workshops educating communities about air quality issues and personal protection strategies.',
-      location: 'Community Centers',
-      startDate: '2024-02-01',
-      endDate: '2024-11-30',
+      title: 'Multi-Sensor Platform for Indoor and Outdoor Air Quality Assessment',
+      description: 'Creating comprehensive sensor networks to monitor air quality parameters across different environments, supporting data-driven environmental health decisions.',
+      location: 'Thailand, Regional ASEAN',
+      startDate: '2024-01-01',
+      endDate: '2024-12-31',
       status: 'ongoing',
-      participants: 150,
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
-      category: 'Education'
+      participants: 12,
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+      category: 'Research',
+      partner: 'ASEAN University Network',
+      aitRole: 'Technology Development Lead'
     },
     {
       id: 3,
-      title: 'Industrial Emissions Reduction Partnership',
-      description: 'Collaborating with local industries to implement cleaner technologies and reduce harmful emissions.',
-      location: 'Industrial District',
-      startDate: '2023-09-01',
-      endDate: '2024-08-31',
+      title: 'Low-Cost Air Quality Sensor Development and Deployment',
+      description: 'Innovative sensor technology development focusing on affordability and accessibility for widespread air quality monitoring in developing regions.',
+      location: 'Southeast Asia',
+      startDate: '2023-01-01',
+      endDate: '2024-12-31',
       status: 'ongoing',
-      participants: 12,
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop',
-      category: 'Partnership'
+      participants: 20,
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
+      category: 'Technology',
+      partner: 'Multiple Regional Universities',
+      aitRole: 'Lead Institution'
     },
     {
       id: 4,
-      title: 'Clean Air Policy Advocacy Campaign',
-      description: 'Working with policymakers to develop and implement stronger air quality regulations.',
-      location: 'Government Buildings',
-      startDate: '2024-03-01',
-      endDate: '2024-09-30',
+      title: 'Community-Based Air Quality Monitoring Network',
+      description: 'Empowering local communities with tools and knowledge to monitor and respond to air quality issues in their neighborhoods.',
+      location: 'Bangkok Metropolitan Area',
+      startDate: '2023-06-01',
+      endDate: '2024-06-30',
       status: 'ongoing',
-      participants: 8,
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
-      category: 'Advocacy'
+      participants: 45,
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop',
+      category: 'Community',
+      partner: 'Local Government Agencies',
+      aitRole: 'Technical Support Provider'
     },
     {
       id: 5,
-      title: 'Green Transportation Initiative',
-      description: 'Promoting electric vehicles and public transportation to reduce vehicular emissions.',
-      location: 'City-wide',
-      startDate: '2023-06-01',
-      endDate: '2024-05-31',
+      title: 'Air Quality Data Analytics and Visualization Platform',
+      description: 'Advanced data analytics platform for processing and visualizing air quality data to support policy making and public awareness.',
+      location: 'Thailand',
+      startDate: '2023-01-01',
+      endDate: '2023-12-31',
       status: 'completed',
-      participants: 45,
+      participants: 8,
       image: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=400&fit=crop',
-      category: 'Initiative'
+      category: 'Data Science',
+      partner: 'Government Data Centers',
+      aitRole: 'Data Analytics Lead'
     },
     {
       id: 6,
-      title: 'International Air Quality Conference 2024',
-      description: 'Annual conference bringing together global experts to discuss latest research and solutions.',
-      location: 'Convention Center',
-      startDate: '2024-06-15',
-      endDate: '2024-06-17',
-      status: 'upcoming',
-      participants: 300,
+      title: 'Regional Air Quality Research Consortium',
+      description: 'Multi-country research initiative coordinating air quality studies across Southeast Asia to address transboundary pollution challenges.',
+      location: 'ASEAN Region',
+      startDate: '2022-01-01',
+      endDate: '2024-12-31',
+      status: 'ongoing',
+      participants: 35,
       image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&h=400&fit=crop',
-      category: 'Conference'
+      category: 'Research',
+      partner: 'ASEAN+3 Field of Study',
+      aitRole: 'Coordinating Institution'
+    },
+    {
+      id: 7,
+      title: 'Climate Change and Air Quality Nexus Study',
+      description: 'Comprehensive research examining the interconnections between climate change patterns and air quality variations in tropical regions.',
+      location: 'Southeast Asia',
+      startDate: '2022-06-01',
+      endDate: '2023-12-31',
+      status: 'completed',
+      participants: 25,
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
+      category: 'Climate Research',
+      partner: 'International Climate Organizations',
+      aitRole: 'Research Partner'
+    },
+    {
+      id: 8,
+      title: 'Urban Heat Island and Air Quality Interaction Study',
+      description: 'Investigating how urban heat islands affect air quality patterns and developing mitigation strategies for tropical cities.',
+      location: 'Bangkok, Chiang Mai',
+      startDate: '2022-01-01',
+      endDate: '2023-06-30',
+      status: 'completed',
+      participants: 18,
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+      category: 'Urban Studies',
+      partner: 'City Planning Departments',
+      aitRole: 'Environmental Assessment Lead'
     }
   ];
 
@@ -93,11 +133,11 @@ const Activities = () => {
   const getCategoryColor = (category: string) => {
     const colors = {
       Research: 'bg-purple-100 text-purple-800',
-      Education: 'bg-green-100 text-green-800',
-      Partnership: 'bg-orange-100 text-orange-800',
-      Advocacy: 'bg-red-100 text-red-800',
-      Initiative: 'bg-blue-100 text-blue-800',
-      Conference: 'bg-yellow-100 text-yellow-800'
+      Technology: 'bg-blue-100 text-blue-800',
+      Community: 'bg-green-100 text-green-800',
+      'Data Science': 'bg-cyan-100 text-cyan-800',
+      'Climate Research': 'bg-orange-100 text-orange-800',
+      'Urban Studies': 'bg-red-100 text-red-800'
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
   };
@@ -112,10 +152,10 @@ const Activities = () => {
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">Our Work</Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Activities & Projects
+              Research Projects
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover our ongoing research projects, community initiatives, and collaborative efforts to improve air quality worldwide.
+              Advancing air quality science through innovative research, international collaborations, and cutting-edge technology development at the Air Quality Nexus Center.
             </p>
           </div>
         </div>
@@ -154,22 +194,32 @@ const Activities = () => {
                     {activity.description}
                   </p>
                   
-                  <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
+                  <div className="space-y-3 text-sm text-muted-foreground">
                     <div className="flex items-center space-x-1">
                       <MapPin size={14} />
                       <span>{activity.location}</span>
                     </div>
                     <div className="flex items-center space-x-1">
                       <Users size={14} />
-                      <span>{activity.participants} participants</span>
+                      <span>{activity.participants} researchers</span>
                     </div>
-                    <div className="flex items-center space-x-1 col-span-2">
+                    <div className="flex items-center space-x-1">
                       <Calendar size={14} />
                       <span>
                         {new Date(activity.startDate).toLocaleDateString()} - {' '}
                         {new Date(activity.endDate).toLocaleDateString()}
                       </span>
                     </div>
+                    {(activity as any).partner && (
+                      <div className="text-xs">
+                        <span className="font-medium">Partner:</span> {(activity as any).partner}
+                      </div>
+                    )}
+                    {(activity as any).aitRole && (
+                      <div className="text-xs">
+                        <span className="font-medium">AIT Role:</span> {(activity as any).aitRole}
+                      </div>
+                    )}
                   </div>
                   
                   <Button variant="outline" className="w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -185,14 +235,13 @@ const Activities = () => {
           <div className="text-center mt-16">
             <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
               <CardContent className="p-12">
-                <h2 className="text-3xl font-bold text-foreground mb-4">Get Involved</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Collaborate With AIT</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Join our mission to improve air quality. Whether you're a researcher, community member, or organization, 
-                  there are many ways to contribute to our ongoing projects.
+                  Join the Air Quality Nexus Center's mission to advance air quality research. We welcome collaborations with international institutions, researchers, and organizations committed to environmental health innovation.
                 </p>
                 <div className="space-x-4">
-                  <Button size="lg">Volunteer</Button>
-                  <Button size="lg" variant="outline">Partner With Us</Button>
+                  <Button size="lg">Research Collaboration</Button>
+                  <Button size="lg" variant="outline">Visit Our Center</Button>
                 </div>
               </CardContent>
             </Card>
