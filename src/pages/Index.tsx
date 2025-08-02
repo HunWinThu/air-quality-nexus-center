@@ -66,7 +66,7 @@ const Index = () => {
       <section className="relative py-32 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(/lovable-uploads/895b1e5e-fcd1-426a-b7e5-ddc16ddeb6bc.png)` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-sky-blue/70"></div>
         </div>
