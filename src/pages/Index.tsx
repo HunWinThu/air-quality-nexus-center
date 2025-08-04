@@ -5,6 +5,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap, Microscope, Building2, GraduationCap } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
+import missionsHero from '@/assets/missions-hero.jpg';
+import researchImage from '@/assets/research-image.jpg';
+import cooperationImage from '@/assets/cooperation-image.png';
+import multidisciplinaryImage from '@/assets/multidisciplinary-image.jpg';
+import governmentImage from '@/assets/government-image.png';
+import climateImage from '@/assets/climate-image.jpg';
+import partnersImage1 from '@/assets/partners-1.png';
+import partnersImage2 from '@/assets/partners-2.jpeg';
 
 const Index = () => {
   const features = [
@@ -77,12 +85,13 @@ const Index = () => {
               Leading Air Quality Research
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Cleaner Air for
-              <span className="text-air-light"> Healthier Communities</span>
+              Welcome to
+              <span className="text-air-light"> Air Quality Nexus Center</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-              Advancing scientific research, innovative monitoring, and evidence-based advocacy 
-              to protect community health through improved air quality.
+              A leading Center in conducting and implementing application research with the aim to gain multiple 
+              benefits from reducing air pollution through improvement of health of human and ecosystem, and 
+              protection of the climate system.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
@@ -118,15 +127,30 @@ const Index = () => {
             <Badge variant="secondary" className="mb-4">Our Purpose</Badge>
             <h2 className="text-4xl font-bold text-foreground mb-6">Our Missions</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Leading Center of nexus of air quality, health, ecosystem and climate in Asia and beyond 
-              with a focus on integrated approach to air pollution reduction.
+              Air Quality Nexus Center will be a leading Center of nexus of air quality, health, ecosystem and climate in Asia and beyond 
+              with a focus on integrated approach to air pollution reduction, improvement in human health, ecosystem protection, and climate co-benefits.
             </p>
           </div>
           
+          {/* Hero Image for Missions */}
+          <div className="mb-16">
+            <img 
+              src={missionsHero} 
+              alt="Our Missions Hero" 
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={researchImage} 
+                  alt="High-quality Research" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6 text-center">
-                <Microscope className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">High-quality Research</h3>
                 <p className="text-muted-foreground">
                   Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond.
@@ -134,9 +158,15 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={cooperationImage} 
+                  alt="International Cooperation" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6 text-center">
-                <Globe className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">International Cooperation</h3>
                 <p className="text-muted-foreground">
                   Continue and expand international cooperation in conducting research projects, consultancies, training, etc.
@@ -144,9 +174,15 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={multidisciplinaryImage} 
+                  alt="Multidisciplinary Approach" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6 text-center">
-                <BarChart3 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">Multidisciplinary Approach</h3>
                 <p className="text-muted-foreground">
                   Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems.
@@ -154,20 +190,32 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={governmentImage} 
+                  alt="Government Assistance" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6 text-center">
-                <Building2 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Government Assistance</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Assistance to Governments</h3>
                 <p className="text-muted-foreground">
-                  Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans.
+                  Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={climateImage} 
+                  alt="Co-benefits to Air Quality and Climate" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6 text-center">
-                <Leaf className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Co-benefits Assessment</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Co-benefits to Air Quality and Climate</h3>
                 <p className="text-muted-foreground">
                   Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context.
                 </p>
@@ -265,36 +313,60 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-6 text-center">
                 <Globe className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Clean Air Asia</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Clean Air Asia</h3>
+                <p className="text-sm text-muted-foreground">
                   Leading regional network promoting clean air solutions and sustainable transport across Asia.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-6 text-center">
                 <Users className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Family Health International (FHI 360)</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Family Health International (FHI 360)</h3>
+                <p className="text-sm text-muted-foreground">
                   Global health and development organization improving lives through integrated approaches.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-6 text-center">
                 <Microscope className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Health Effects Institute</h3>
-                <p className="text-muted-foreground">
-                  Independent research organization studying the health effects of air pollution worldwide.
+                <h3 className="text-lg font-semibold text-foreground mb-3">Healthy Environments and Lives (HEAL)</h3>
+                <p className="text-sm text-muted-foreground">
+                  Global Research Centre focused on environmental health and sustainable development.
                 </p>
               </CardContent>
             </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-6 text-center">
+                <BarChart3 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-lg font-semibold text-foreground mb-3">Academia Sinica</h3>
+                <p className="text-sm text-muted-foreground">
+                  Taiwan's premier academic research institution advancing scientific knowledge and innovation.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Partner Images */}
+          <div className="mt-12 flex justify-center items-center gap-8 flex-wrap">
+            <img 
+              src={partnersImage1} 
+              alt="Strategic Partners" 
+              className="h-20 object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img 
+              src={partnersImage2} 
+              alt="Academic Partners" 
+              className="h-20 object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
           </div>
         </div>
       </section>
