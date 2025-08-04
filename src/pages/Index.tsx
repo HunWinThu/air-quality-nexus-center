@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap } from 'lucide-react';
+import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap, Microscope, Building2, GraduationCap } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 
 const Index = () => {
@@ -111,8 +111,84 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Our Missions Section */}
       <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4">Our Purpose</Badge>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Our Missions</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Leading Center of nexus of air quality, health, ecosystem and climate in Asia and beyond 
+              with a focus on integrated approach to air pollution reduction.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-6 text-center">
+                <Microscope className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">High-quality Research</h3>
+                <p className="text-muted-foreground">
+                  Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-6 text-center">
+                <Globe className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">International Cooperation</h3>
+                <p className="text-muted-foreground">
+                  Continue and expand international cooperation in conducting research projects, consultancies, training, etc.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-6 text-center">
+                <BarChart3 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Multidisciplinary Approach</h3>
+                <p className="text-muted-foreground">
+                  Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-6 text-center">
+                <Building2 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Government Assistance</h3>
+                <p className="text-muted-foreground">
+                  Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-6 text-center">
+                <Leaf className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Co-benefits Assessment</h3>
+                <p className="text-muted-foreground">
+                  Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-6 text-center">
+                <GraduationCap className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Capacity Building</h3>
+                <p className="text-muted-foreground">
+                  Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge variant="secondary" className="mb-4">What We Do</Badge>
@@ -174,6 +250,51 @@ const Index = () => {
             <Button size="lg" variant="outline">
               View All Posts
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Partners Section */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4">Partnerships</Badge>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Strategic Partners</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Collaborating with leading organizations to advance air quality research and policy worldwide.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <Globe className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Clean Air Asia</h3>
+                <p className="text-muted-foreground">
+                  Leading regional network promoting clean air solutions and sustainable transport across Asia.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <Users className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Family Health International (FHI 360)</h3>
+                <p className="text-muted-foreground">
+                  Global health and development organization improving lives through integrated approaches.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <Microscope className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Health Effects Institute</h3>
+                <p className="text-muted-foreground">
+                  Independent research organization studying the health effects of air pollution worldwide.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
