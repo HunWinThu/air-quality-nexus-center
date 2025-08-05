@@ -6,16 +6,16 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap, Microscope, Building2, GraduationCap } from 'lucide-react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import Home from '@/assets/HOME.jpg';
-import missionsHero from '@/assets/missions-hero.jpg';
-import cooperationImage from '@/assets/cooperationImage.jpg';
-import multidisciplinaryImage from '@/assets/multidisciplinaryImage.png';
-import governmentImage from '@/assets/governmentImage.jpg';
+import missionsHero from '@/assets/hig-quality.jpg';
+import cooperationImage from '@/assets/cooperation.jpg';
+import multidisciplinaryImage from '@/assets/multi.png';
+import governmentImage from '@/assets/government.jpg';
 import partner1 from '@/assets/partners-1.png';
-import partner2 from '@/assets/partner_2.png';
-import partner3 from '@/assets/partner_3.png';
+import partner2 from '@/assets/partner-2.png';
+import partner3 from '@/assets/partner-3.png';
 import partner4 from '@/assets/partners-4.jpeg';
-import climateImage from '@/assets/climateImage.png';
-import capacity from '@/assets/Capacity.jpg';
+import climateImage from '@/assets/co-benefits.png';
+import capacity from '@/assets/capacity.jpg';
 import logo from '@/assets/AQC_logo.jpg';
 
 const Index = () => {

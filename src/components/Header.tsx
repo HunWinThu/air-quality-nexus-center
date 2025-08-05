@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/AQC_logo.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,23 +10,23 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Blog', href: '/blog' },
     { name: 'Activities', href: '/activities' },
     { name: 'Team', href: '/team' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-white to-sky-100 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-1">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="Air Quality Nexus" className="h-10 w-10" />
-            <span className="text-xl font-bold text-foreground">Air Quality Nexus</span>
+            <img src={logo} alt="Air Quality Nexus" className="h-32 w-32" />
+            <span className="text-4xl font-bold text-foreground">Air Quality Nexus</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,7 +35,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-xl font-medium transition-colors hover:text-primary ${
                   isActive(item.href) 
                     ? 'text-primary border-b-2 border-primary pb-1' 
                     : 'text-muted-foreground'
