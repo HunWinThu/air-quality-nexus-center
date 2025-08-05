@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap, Microscope, Building2, GraduationCap } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
+import backgroundHero from '@/assets/background-hero.jpg';
+import riceStrawBurning from '@/assets/rice-straw-burning.jpg';
 import missionsHero from '@/assets/missions-hero.jpg';
 import researchImage from '@/assets/research-image.jpg';
 import cooperationImage from '@/assets/cooperation-image.png';
@@ -235,6 +237,84 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Background Section */}
+      <section className="py-20 bg-gradient-to-br from-background to-accent/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4">Understanding the Challenge</Badge>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Background</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Air pollution is one of the world's greatest environmental challenges facing humanity today.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <p className="text-muted-foreground leading-relaxed">
+                The Health Effects Institute and Institute for Health Metrics and Evaluation (HEI & IHME, 2020) reported that 
+                <span className="font-semibold text-foreground"> 6.67 million global deaths and 213 million years of healthy life lost in 2019</span> were 
+                attributable to air pollution. The majority of these deaths occurred in Asian developing countries, including the Southeast Asia (SEA) region, 
+                because of excessive exposure to high levels of toxic air pollutants both indoors and outdoors.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Many air pollutants are phytotoxic, such as surface ozone and acidic gases of sulfur dioxide (SO₂) and nitrogen dioxide (NO₂), 
+                hence high levels of these pollutants cause adverse effects on forestry and agricultural crops. The deposition of atmospheric 
+                pollutants to the earth's surface causes acidification and eutrophication that causes adverse effects on terrestrial and aquatic life.
+              </p>
+            </div>
+            <div className="relative">
+              <img 
+                src={backgroundHero} 
+                alt="Air Quality Research Background" 
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          
+          <Card className="bg-gradient-to-r from-primary/5 to-sky-blue/5 border-primary/10 mb-12">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Climate Impact of Air Pollution</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Several toxic air pollutants have climate forcing effects, they are also known as short-lived climate forcers. 
+                In particular, black carbon (BC) particles of submicron size, can strongly absorb solar radiation, hence causing 
+                significant warming, with the Global Warming Potential (GWP) at about <span className="font-semibold text-foreground">2000 times CO₂ on a 20-year horizon</span>.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The assessment conducted by UNEP-WMO (2011) highlighted that the emission reduction measures for BC and methane could 
+                simultaneously avoid the global temperature increase by almost <span className="font-semibold text-foreground">0.5°C by 2050</span>, 
+                prevent <span className="font-semibold text-foreground">2.5 million premature deaths</span>, and avoid 
+                <span className="font-semibold text-foreground">50 million tonnes of crop yield loss</span> in the world annually.
+              </p>
+            </CardContent>
+          </Card>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img 
+                src={riceStrawBurning} 
+                alt="Rice straw open burning at the rice field in Pathumthani, Thailand" 
+                className="w-full rounded-lg shadow-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-lg">
+                <p className="text-white text-sm">Rice straw open burning at the rice field in Pathumthani, Thailand</p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground">The Co-benefit Approach</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                The co-benefit approach can simultaneously tackle both environmental pollution and climate change cost-effectively, 
+                which particularly helps to gather resources to address the increasing air pollution problem in Asian developing countries.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The approach relies on strategies such as improving energy efficiency, renewable energy, sustainable urban transport, 
+                and cleaner production. A more recent assessment by UNEP (2019) pointed out that the implementation of selected 25 clean air measures 
+                would help <span className="font-semibold text-foreground">22% of the Asian population enjoy air quality within WHO guidelines by 2030</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -257,6 +337,55 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rationale Section */}
+      <section className="py-20 bg-gradient-to-r from-primary/5 to-sky-blue/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4">Our Foundation</Badge>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Rationale</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The Center will sustain and further develop the interdisciplinary atmospheric studies at AIT, 
+              from the atmospheric emissions to pollution concentration and deposition fluxes to the earth's surface.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <Building2 className="mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">International Recognition</h3>
+                <p className="text-muted-foreground">
+                  The Center's activities will make the atmospheric research at AIT to be better placed on the international agenda 
+                  and further recognized, attracting additional funding and strengthening research capacity.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <Users className="mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Enhanced Capacity</h3>
+                <p className="text-muted-foreground">
+                  Additional human resources will help cover more research topics in the vast field of air pollution research, 
+                  ensuring AIT maintains its leading position built over 35 years.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <Globe className="mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">Regional Leadership</h3>
+                <p className="text-muted-foreground">
+                  AIT, an international university in Asia, will play a leading role in coordinated atmospheric research efforts 
+                  with its strong research capacity and networking experience.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
