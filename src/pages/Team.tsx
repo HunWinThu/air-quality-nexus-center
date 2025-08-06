@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Twitter, User } from 'lucide-react';
+import { Mail, Linkedin, Twitter, User, AlignCenter } from 'lucide-react';
 
 // Replace these imports with actual images if available
 import kim from '@/assets/prof.kim.jpg';
@@ -11,6 +11,8 @@ import huy from '@/assets/dr.huy.jpg';
 import ktoo from '@/assets/ms-khing.jpg';
 import Huyen from '@/assets/Dr. Truong Thi Huyen.jpg';
 import Nguyen from '@/assets/ms-chi.jpg';
+import Dang from '@/assets/dang .jpeg'
+import Hun from '@/assets/Hun Win Thu.jpg'
                                          
 import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
 import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
@@ -58,7 +60,7 @@ const coreTeam = [
   },
 
   {
-    id: 4,
+    id: 3,
     name: 'Ms. Khing Thwe Oo',
     role: 'Research Associate',
     department: 'Environmental Engineering and Management',
@@ -72,7 +74,7 @@ const coreTeam = [
   },
 
   {
-    id: 5,
+    id: 4,
     name: 'Ms. Nguyen Nhat Ha Chi',
     role: 'Ph.D. Candidate',
     department: 'Environmental Engineering and Management',
@@ -84,23 +86,53 @@ const coreTeam = [
     linkedin: '',
     twitter: ''
   },
+
+    {
+    id: 5,
+    name: 'Mr. Ha Quang Dang',
+    role: 'Research Assistant',
+    department: 'Environmental Engineering and Management',
+    bio: 'Specializes in emission inventory and air quality management.',
+    Expertise: 'Research Assistant_Air pollution monitoring',
+    specialties: ['Emission Inventory', 'Air Quality Management'],
+    alignTop: true,
+    image: Dang,
+    email: '',
+    linkedin: '',
+    twitter: ''
+  },
+
+    {
+    id: 6,
+    name: 'Mr. Hun Win Thu',
+    role: 'ICT Support',
+    department: 'Environmental Engineering and Management',
+    bio: 'Specializes in emission inventory and air quality management.',
+    Expertise: 'Research Assistant_ICT Support and IoT Engineer',
+    specialties: ['Emission Inventory', 'Air Quality Management'],
+    alignTop: true,
+    image: Hun,
+    email: '',
+    linkedin: '',
+    twitter: ''
+  },
   // Add more core team members as needed
 ];
 
 
 
 const advisoryCommittee = [
-  {
-    id: 1,
-    name: "Prof. Bindu N. Lohani",
-    role: "Advisory Member",
-    department: "University of Nepal, Clean Air Asia, AIT",
-    bio: "Chancellor of University of Nepal, Chair of Clean Air Asia Board, Member of AIT Board of Trustee",
-    alignTop: true,
-    image: Lohani,
-    viewprofile: "https://ait.ac.th/people/bindu-n-lohani/",
-    linkedin: "https://www.linkedin.com/in/bindu-lohani-4a526a2/"
-  },
+  //{
+  //  id: 1,
+  //  name: "Prof. Bindu N. Lohani",
+  //  role: "Advisory Member",
+  //  department: "University of Nepal, Clean Air Asia, AIT",
+  //  bio: "Chancellor of University of Nepal, Chair of Clean Air Asia Board, Member of AIT Board of Trustee",
+  //  alignTop: true,
+  //  image: Lohani,
+  //  viewprofile: "https://ait.ac.th/people/bindu-n-lohani/",
+  //  linkedin: "https://www.linkedin.com/in/bindu-lohani-4a526a2/"
+  //},
   {
     id: 2,
     name: "Prof. Ram Shrestha",
@@ -156,17 +188,17 @@ const advisoryCommittee = [
     viewprofile: "https://researchprofiles.canberra.edu.au/en/persons/sotiris-vardoulakis",
     linkedin: "https://www.linkedin.com/in/sotiris-vardoulakis-b5759790/"
   },
-  {
-    id: 7,
-    name: "Prof. Tami C. Bond",
-    role: "Advisory Member",
-    department: "Colorado State University, USA",
-    bio: "Scott Presidential Chair in Energy, Environment and Health. Professor, Mechanical Engineering; Joint Professor, Civil & Environmental Engineering; Affiliate, Systems Colorado University, Fort Collins, CO, USA",
-    alignTop: true,
-    image: Bond,
-    viewprofile: "https://www.engr.colostate.edu/me/faculty/dr-tami-bond/",
-    linkedin: "https://www.linkedin.com/in/tami-bond-195a07251/"
-  },
+  //{
+  //  id: 7,
+  //  name: "Prof. Tami C. Bond",
+  //  role: "Advisory Member",
+  //  department: "Colorado State University, USA",
+  //  bio: "Scott Presidential Chair in Energy, Environment and Health. Professor, Mechanical Engineering; Joint Professor, Civil & Environmental Engineering; Affiliate, Systems Colorado University, Fort Collins, CO, USA",
+  //  alignTop: true,
+  //  image: Bond,
+  //  viewprofile: "https://www.engr.colostate.edu/me/faculty/dr-tami-bond/",
+  //  linkedin: "https://www.linkedin.com/in/tami-bond-195a07251/"
+  //},
   {
     id: 8,
     name: "Dr. Shih-Chun Candice Lung",
@@ -242,7 +274,7 @@ const Team = () => {
                     <img 
                       src={member.image || teamPlaceholder} 
                       alt={member.name}
-                      className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
+                      className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
                     />
                     <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
                     <p className="text-primary font-medium mb-2">{member.role}</p>
