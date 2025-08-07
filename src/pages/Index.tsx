@@ -123,7 +123,7 @@ const Index = () => {
             alt="PM2.5 air pollution monitoring" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/12 to-black/10"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
