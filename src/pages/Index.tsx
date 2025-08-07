@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation, useParallax } from '@/hooks/useScrollAnimation';
 import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap, Microscope, Building2, GraduationCap } from 'lucide-react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import Home from '@/assets/HOME.jpg';
@@ -19,6 +20,13 @@ import capacity from '@/assets/capacity.jpg';
 import logo from '@/assets/AQC_logo.jpg';
 
 const Index = () => {
+  const offsetY = useParallax();
+  const heroRef = useScrollAnimation(0.1);
+  const statsRef = useScrollAnimation(0.2);
+  const missionsRef = useScrollAnimation(0.2);
+  const featuresRef = useScrollAnimation(0.2);
+  const newsRef = useScrollAnimation(0.2);
+  const partnersRef = useScrollAnimation(0.2);
   const features = [
     {
       icon: Wind,
@@ -75,10 +83,16 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section 
+        ref={heroRef.ref}
+        className="relative py-32 overflow-hidden min-h-screen flex items-center"
+      >
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${Home})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700"
+          style={{ 
+            backgroundImage: `url(${Home})`,
+            transform: `translateY(${offsetY * 0.3}px)`
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-sky-blue/20"></div>
         </div>
@@ -86,22 +100,34 @@ const Index = () => {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center text-white">
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text ">
+          <h1 
+            className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text animate-float transition-all duration-1000 ${
+              heroRef.isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}
+          >
             {" "}Air Quality Nexus Center
           </h1>
-            <p className="text-left text-xl md:text-xl mb-8 text-white max-w-7xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
+            <p 
+              className={`text-left text-xl md:text-xl mb-8 text-white max-w-7xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow transition-all duration-700 delay-300 ${
+                heroRef.isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+              }`}
+            >
             A leading Center in conducting and implementing application research with the aim to gain multiple 
             benefits from reducing air pollution through improvement of health of human and ecosystem, and 
             protection of the climate system.
             </p>
 
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+            <div 
+              className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-500 ${
+                heroRef.isVisible ? 'animate-scale-in' : 'opacity-0 scale-90'
+              }`}
+            >
+              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-transform duration-200">
                 Explore Our Research
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary hover:scale-105 transition-all duration-200">
                 Get Involved
               </Button>
             </div>
@@ -110,12 +136,25 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-accent/50">
+      <section 
+        ref={statsRef.ref}
+        className="py-20 bg-accent/50 overflow-hidden"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
+              <div 
+                key={index} 
+                className={`text-center transition-all duration-700 ${
+                  statsRef.isVisible 
+                    ? 'animate-fade-in-up' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2 hover:scale-110 transition-transform duration-300">
+                  {stat.value}
+                </div>
                 <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
