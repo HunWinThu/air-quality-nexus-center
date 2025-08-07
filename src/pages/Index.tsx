@@ -182,6 +182,101 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Missions */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={pm25Image} 
+            alt="PM2.5 air pollution monitoring" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative">
+            <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl">
+              <div className="text-center">
+                <Badge variant="outline" className="mb-4 border-white/30 text-white bg-white/10 backdrop-blur-sm">Our Missions</Badge>
+                <h2 className="text-4xl font-bold text-white mb-4">Our Missions</h2>
+                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                  Our multi-faceted mission encompasses research excellence, international cooperation, 
+                  and practical solutions for complex air pollution challenges
+                </p>
+              </div>
+            </div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <Card className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <img 
+                  src={missionsHero} 
+                  alt="High-Quality Research"
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold mb-4">High-Quality Research</h3>
+                <p className="text-white/80 leading-relaxed flex-grow">Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond.</p>
+              </CardContent>
+            </Card>
+            <Card className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <img 
+                  src={multidisciplinaryImage} 
+                  alt="Multi-Pollutant Approach"
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold mb-4">Multi-Pollutant Approach</h3>
+                <p className="text-white/80 leading-relaxed flex-grow">Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems.</p>
+              </CardContent>
+            </Card>
+            <Card className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <img 
+                  src={climateImage} 
+                  alt="Co-Benefits Assessment"
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold mb-4">Co-Benefits Assessment</h3>
+                <p className="text-white/80 leading-relaxed flex-grow">Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context.</p>
+              </CardContent>
+            </Card>
+            <Card className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <img 
+                  src={cooperationImage} 
+                  alt="International Cooperation"
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold mb-4">International Cooperation</h3>
+                <p className="text-white/80 leading-relaxed flex-grow">Continue and expand international cooperation in conducting research projects, consultancies, training, etc.</p>
+              </CardContent>
+            </Card>
+            <Card className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <img 
+                  src={governmentImage} 
+                  alt="Government Assistance"
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold mb-4">Government Assistance</h3>
+                <p className="text-white/80 leading-relaxed flex-grow">Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.</p>
+              </CardContent>
+            </Card>
+            <Card className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <img 
+                  src={capacity} 
+                  alt="Capacity Building"
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold mb-4">Capacity Building</h3>
+                <p className="text-white/80 leading-relaxed flex-grow">Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Team Photo Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
