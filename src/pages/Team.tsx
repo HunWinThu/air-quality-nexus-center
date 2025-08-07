@@ -11,8 +11,10 @@ import huy from '@/assets/dr.huy.jpg';
 import ktoo from '@/assets/ms-khing.jpg';
 import Huyen from '@/assets/Dr. Truong Thi Huyen.jpg';
 import Nguyen from '@/assets/ms-chi.jpg';
-import Dang from '@/assets/dang .jpeg'
-import Hun from '@/assets/Hun Win Thu.jpg'
+import Dang from '@/assets/dang.png';
+import Hun from '@/assets/Hun Win Thu.jpg';
+import May from '@/assets/May.jpg';
+import Pant from '@/assets/Ms. Keishu Pant.jpg';
                                          
 import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
 import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
@@ -112,6 +114,35 @@ const coreTeam = [
     specialties: ['Emission Inventory', 'Air Quality Management'],
     alignTop: true,
     image: Hun,
+    email: '',
+    linkedin: '',
+    twitter: ''
+  },
+
+    {
+    id: 7,
+    name: 'Ms. May Hnin Aye',
+    role: 'Research Assistant',
+    department: 'Environmental Engineering and Management',
+    bio: 'Specializes in emission inventory and air quality management.',
+    Expertise: 'Remote Sensing and GIS Analyst',
+    specialties: ['Emission Inventory', 'Air Quality Management'],
+    image: May,
+    email: '',
+    linkedin: '',
+    twitter: ''
+  },
+
+    {
+    id: 8,
+    name: 'Ms. Keishu Pant',
+    role: 'PhD Student',
+    department: 'Environmental Engineering and Management',
+    bio: 'Specializes in emission inventory and air quality management.',
+    Expertise: 'Research Assistant_Air pollution monitoring',
+    specialties: ['Emission Inventory', 'Air Quality Management'],
+    alignTop: true,
+    image: Pant,
     email: '',
     linkedin: '',
     twitter: ''
@@ -287,16 +318,7 @@ const Team = () => {
                       <p className="text-l text-muted-foreground">{member.Expertise}</p>
                     </div>
                     
-                    <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-2">Specialties</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {member.specialties.map((specialty, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {specialty}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
+                    
                   </div>
                   
                   <div className="flex justify-center space-x-3 mt-6">

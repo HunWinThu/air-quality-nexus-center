@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Target, Eye, Award, Users, Microscope, Globe, Lightbulb, BookOpen, BarChart3, Network } from 'lucide-react';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
-import pm25Image from '@/assets/pm25-pollution.jpg';
+import pm25Image from '@/assets/pm2.5.png';
 import researchImage from '@/assets/air-pollution-research.png';
 import highQualityImage from '@/assets/hig-quality.jpg';
 import multiPollutantImage from '@/assets/multi.png';
@@ -117,7 +117,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* About & Vision Cards */}
+      {/* About Our Center Card */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -129,8 +129,7 @@ const About = () => {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* About Our Center Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-4xl mx-auto">
             <div className="relative">
               <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl hover-scale">
                 <Badge variant="outline" className="mb-6 border-white/30 text-white bg-white/10 backdrop-blur-sm">
@@ -151,8 +150,22 @@ const About = () => {
               </div>
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
             </div>
-            
-            {/* Our Vision Card */}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Vision Card */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={pm25Image} 
+            alt="PM2.5 air pollution monitoring" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-4xl mx-auto">
             <div className="relative">
               <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl hover-scale">
                 <h3 className="text-3xl font-bold text-white mb-6 flex items-center">
@@ -160,8 +173,8 @@ const About = () => {
                   Our Vision
                 </h3>
                 <p className="text-lg text-white/90 leading-relaxed font-medium">
-                  Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain 
-                  multiple benefits from reducing air pollution through improvement of health of human and ecosystem, 
+                  Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
+                  multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
                   and protection of the climate system.
                 </p>
               </div>
@@ -171,29 +184,41 @@ const About = () => {
         </div>
       </section>
 
-
       {/* Missions */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Our Missions</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Missions</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our multi-faceted mission encompasses research excellence, international cooperation, 
-              and practical solutions for complex air pollution challenges
-            </p>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={pm25Image} 
+            alt="PM2.5 air pollution monitoring" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative">
+            <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl">
+              <div className="text-center">
+                <Badge variant="outline" className="mb-4 border-white/30 text-white bg-white/10 backdrop-blur-sm">Our Missions</Badge>
+                <h2 className="text-4xl font-bold text-white mb-4">Our Missions</h2>
+                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                  Our multi-faceted mission encompasses research excellence, international cooperation, 
+                  and practical solutions for complex air pollution challenges
+                </p>
+              </div>
+            </div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {missions.map((mission, index) => (
-              <Card key={index} className="group hover-scale bg-gradient-to-br from-background to-accent/10 border-primary/10 h-full">
+              <Card key={index} className="group hover-scale bg-white/10 backdrop-blur-md border-white/20 text-white h-full">
                 <CardContent className="p-8 h-full flex flex-col">
                   <img 
                     src={mission.image} 
                     alt={mission.title}
                     className="w-full h-48 object-cover rounded-xl mb-6"
                   />
-                  <h3 className="text-xl font-bold text-foreground mb-4">{mission.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed flex-grow">{mission.description}</p>
+                  <h3 className="text-xl font-bold mb-4">{mission.title}</h3>
+                  <p className="text-white/80 leading-relaxed flex-grow">{mission.description}</p>
                 </CardContent>
               </Card>
             ))}
