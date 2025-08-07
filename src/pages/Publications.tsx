@@ -196,9 +196,9 @@ const Publications = () => {
                               </div>
                             </div>
                             
-                            <div className="ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href={pub.doi} target="_blank" rel="noopener noreferrer" className="ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
                               <ExternalLink className="text-primary" size={20} />
-                            </div>
+                            </a>
                           </div>
                         </CardContent>
                       </Card>
