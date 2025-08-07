@@ -112,147 +112,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-accent/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Our Missions Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Our Missions</h2>
-          </div>
-          
-          {/* Hero Image for Missions */}
-          <div className="mb-16">
-            <img 
-              src={missionsHero} 
-              alt="Our Missions Hero" 
-              className="w-full h-96 object-cover rounded-lg shadow-lg"
-            />
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={missionsHero} 
-                  alt="High-quality Research" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">High-quality Research</h3>
-                <p className="text-muted-foreground">
-                  Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={cooperationImage} 
-                  alt="International Cooperation" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">International Cooperation</h3>
-                <p className="text-muted-foreground">
-                  Continue and expand international cooperation in conducting research projects, consultancies, training, etc.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={multidisciplinaryImage} 
-                  alt="Multidisciplinary Approach" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">Multidisciplinary Approach</h3>
-                <p className="text-muted-foreground">
-                  Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={governmentImage} 
-                  alt="Government Assistance" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">Assistance to Governments</h3>
-                <p className="text-muted-foreground">
-                  Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={climateImage} 
-                  alt="Co-benefits to Air Quality and Climate" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">Co-benefits to Air Quality and Climate</h3>
-                <p className="text-muted-foreground">
-                  Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
-            <div className="h-48 overflow-hidden">
-                <img 
-                  src={capacity} 
-                  alt="Co-benefits to Air Quality and Climate" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-3">Capacity Building</h3>
-                <p className="text-muted-foreground">
-                  Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
-      {/* Team Photo Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={teamGroupPhoto} 
-            alt="Research team collaboration" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
-        </div>
-      </section>
 
       {/* About Our Center Card */}
       <section className="relative py-24 overflow-hidden">
@@ -318,6 +179,18 @@ const Index = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Team Photo Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={teamGroupPhoto} 
+            alt="Research team collaboration" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
         </div>
       </section>
 
