@@ -20,7 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/nexus-breeze-hub">
+      <BrowserRouter basename="/air-quality-nexus-center">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
