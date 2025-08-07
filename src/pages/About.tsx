@@ -5,6 +5,12 @@ import { Badge } from '@/components/ui/badge';
 import { Target, Eye, Award, Users, Microscope, Globe, Lightbulb, BookOpen, BarChart3, Network } from 'lucide-react';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 import researchImage from '@/assets/air-pollution-research.png';
+import highQualityImage from '@/assets/hig-quality.jpg';
+import multiPollutantImage from '@/assets/multi.png';
+import coBenefitsImage from '@/assets/co-benefits.png';
+import cooperationImage from '@/assets/cooperation.jpg';
+import governmentImage from '@/assets/government.jpg';
+import capacityImage from '@/assets/capacity.jpg';
 
 const About = () => {
   const stats = [
@@ -18,32 +24,38 @@ const About = () => {
     {
       icon: Target,
       title: 'High-Quality Research',
-      description: 'Conduct cutting-edge research demonstrated by real-life applications for improving air quality in Asia and beyond.'
+      description: 'Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond.',
+      image: highQualityImage
     },
     {
       icon: BarChart3,
       title: 'Multi-Pollutant Approach',
-      description: 'Focus on multi-pollutant and multi-effect approaches to provide cost-effective solutions to complex air pollution problems.'
+      description: 'Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems.',
+      image: multiPollutantImage
     },
     {
       icon: Lightbulb,
       title: 'Co-Benefits Assessment',
-      description: 'Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures.'
+      description: 'Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context.',
+      image: coBenefitsImage
     },
     {
       icon: Network,
       title: 'International Cooperation',
-      description: 'Continue and expand international cooperation in conducting research projects, consultancies, and training.'
+      description: 'Continue and expand international cooperation in conducting research projects, consultancies, training, etc.',
+      image: cooperationImage
     },
     {
       icon: Users,
       title: 'Government Assistance',
-      description: 'Provide assistance to governments in planning, designing, and implementing clean air action plans.'
+      description: 'Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.',
+      image: governmentImage
     },
     {
       icon: BookOpen,
       title: 'Capacity Building',
-      description: 'Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally.'
+      description: 'Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally.',
+      image: capacityImage
     }
   ];
 
@@ -75,17 +87,17 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-nature-green/10 via-sky-blue/5 to-primary/10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="animate-fade-in">
+            <div>
               <Badge variant="secondary" className="mb-6 bg-primary/10 text-primary border-primary/20">
                 Research Excellence
               </Badge>
               <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
                 Air Quality Nexus
-                <span className="block text-primary">Research Center</span>
+                <span className="block text-primary">Center</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                A leading center for cutting-edge atmospheric sciences research, building capacity and 
-                conducting innovative solutions for effective air quality improvement across Asia and beyond.
+                A focal point to build capacity and conduct cutting-edge research in atmospheric sciences 
+                for effective improvement of air quality in Asia and beyond.
               </p>
             </div>
           </div>
@@ -96,19 +108,19 @@ const About = () => {
       <section className="py-24 bg-gradient-to-b from-background to-accent/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-12 animate-fade-in">
+            <div className="space-y-12">
               <div>
                 <Badge variant="outline" className="mb-4 border-primary/30 text-primary">About Our Center</Badge>
                 <h2 className="text-4xl font-bold text-foreground mb-6 leading-tight">
-                  Focal Point for Atmospheric Sciences Excellence
+                  Air Quality Nexus Center
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The Air Quality Nexus Center serves as a focal point to build capacity and conduct cutting-edge 
+                  Air Quality Nexus Center has a goal to serve as a focal point to build capacity and conduct cutting-edge 
                   research in atmospheric sciences for effective improvement of air quality in Asia and beyond.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We operate as an institution-wide center, cooperating with multidisciplinary research areas 
-                  to foster collaboration and strengthen research and education capacity across diverse fields.
+                  The Center will be an institution-wide Center, cooperating with multidisciplinary and cutting-edge research 
+                  areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity.
                 </p>
               </div>
               
@@ -118,14 +130,14 @@ const About = () => {
                   Our Vision
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  To be a leading center in conducting and implementing application research with the aim to gain 
+                  Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain 
                   multiple benefits from reducing air pollution through improvement of health of human and ecosystem, 
                   and protection of the climate system.
                 </p>
               </div>
             </div>
             
-            <div className="relative animate-fade-in">
+            <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
                   src={teamGroupPhoto} 
@@ -147,7 +159,7 @@ const About = () => {
       {/* Stats */}
       <section className="py-24 bg-gradient-to-br from-primary/5 via-nature-green/5 to-sky-blue/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Research Impact</Badge>
             <h2 className="text-4xl font-bold text-foreground mb-4">Measurable Impact Across Asia</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -173,9 +185,9 @@ const About = () => {
       {/* Missions */}
       <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Our Missions</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-4">Comprehensive Research Approach</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Our Missions</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our multi-faceted mission encompasses research excellence, international cooperation, 
               and practical solutions for complex air pollution challenges
@@ -185,7 +197,11 @@ const About = () => {
             {missions.map((mission, index) => (
               <Card key={index} className="group hover-scale bg-gradient-to-br from-background to-accent/10 border-primary/10 h-full">
                 <CardContent className="p-8 h-full flex flex-col">
-                  <mission.icon className="mb-6 text-primary group-hover:scale-110 transition-transform duration-300" size={48} />
+                  <img 
+                    src={mission.image} 
+                    alt={mission.title}
+                    className="w-full h-48 object-cover rounded-xl mb-6"
+                  />
                   <h3 className="text-xl font-bold text-foreground mb-4">{mission.title}</h3>
                   <p className="text-muted-foreground leading-relaxed flex-grow">{mission.description}</p>
                 </CardContent>
@@ -198,7 +214,7 @@ const About = () => {
       {/* Research Areas */}
       <section className="py-24 bg-gradient-to-br from-accent/20 to-primary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Research Focus</Badge>
             <h2 className="text-4xl font-bold text-foreground mb-4">Key Research Areas</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
