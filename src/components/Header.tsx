@@ -11,8 +11,9 @@ const Header = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Projects', href: '/blog' },
     { name: 'Activities', href: '/activities' },
+    { name: 'Publications', href: '/publications' },
     { name: 'Team', href: '/team' },
     { name: 'Contact Us', href: '/contact' },
   ];
@@ -35,7 +36,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-xl font-medium transition-colors hover:text-primary ${
+                className={`text-base font-medium transition-colors hover:text-primary ${
                   isActive(item.href) 
                     ? 'text-primary border-b-2 border-primary pb-1' 
                     : 'text-muted-foreground'
