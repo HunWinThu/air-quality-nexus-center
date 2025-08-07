@@ -165,7 +165,7 @@ const Index = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl">
               <div className="text-center">
-                <Badge variant="outline" className="mb-4 border-white/30 text-white bg-white/10 backdrop-blur-sm">Our Missions</Badge>
+               
                 <h2 className="text-4xl font-bold text-white mb-4">Our Missions</h2>
                 <p className="text-xl text-white/80 max-w-3xl mx-auto">
                   Our multi-faceted mission encompasses research excellence, international cooperation, 
