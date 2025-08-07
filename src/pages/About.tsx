@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Target, Eye, Award, Users, Microscope, Globe, Lightbulb, BookOpen, BarChart3, Network } from 'lucide-react';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
+import pm25Image from '@/assets/pm25-pollution.jpg';
 import researchImage from '@/assets/air-pollution-research.png';
 import highQualityImage from '@/assets/hig-quality.jpg';
 import multiPollutantImage from '@/assets/multi.png';
@@ -104,53 +105,67 @@ const About = () => {
         </div>
       </section>
 
-      {/* About & Vision */}
+      {/* Team Photo Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Full-screen background image */}
         <div className="absolute inset-0 z-0">
           <img 
             src={teamGroupPhoto} 
             alt="Research team collaboration" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+        </div>
+      </section>
+
+      {/* About & Vision Cards */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={pm25Image} 
+            alt="PM2.5 air pollution monitoring" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen py-24">
-            <div className="space-y-12">
-              <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* About Our Center Card */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl hover-scale">
                 <Badge variant="outline" className="mb-6 border-white/30 text-white bg-white/10 backdrop-blur-sm">
                   About Our Center
                 </Badge>
-                <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                   Air Quality Nexus
                   <span className="block text-primary">Center</span>
                 </h2>
-                <p className="text-xl text-white/90 leading-relaxed mb-8 font-medium">
+                <p className="text-lg text-white/90 leading-relaxed mb-6 font-medium">
                   Air Quality Nexus Center has a goal to serve as a focal point to build capacity and conduct cutting-edge 
                   research in atmospheric sciences for effective improvement of air quality in Asia and beyond.
                 </p>
-                <p className="text-lg text-white/80 leading-relaxed">
+                <p className="text-base text-white/80 leading-relaxed">
                   The Center will be an institution-wide Center, cooperating with multidisciplinary and cutting-edge research 
                   areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity.
                 </p>
               </div>
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
             </div>
             
+            {/* Our Vision Card */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-12 rounded-3xl border border-white/20 shadow-2xl hover-scale">
+              <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/20 shadow-2xl hover-scale">
                 <h3 className="text-3xl font-bold text-white mb-6 flex items-center">
                   <Eye className="mr-4 text-primary" size={32} />
                   Our Vision
                 </h3>
-                <p className="text-xl text-white/90 leading-relaxed font-medium">
+                <p className="text-lg text-white/90 leading-relaxed font-medium">
                   Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain 
                   multiple benefits from reducing air pollution through improvement of health of human and ecosystem, 
                   and protection of the climate system.
                 </p>
               </div>
-              <div className="absolute -inset-6 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl -z-10 blur-xl"></div>
             </div>
           </div>
         </div>
