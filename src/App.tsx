@@ -10,7 +10,7 @@ import Activities from "./pages/Activities";
 import Publications from "./pages/Publications";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
-import Publications from "./pages/Publications";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
