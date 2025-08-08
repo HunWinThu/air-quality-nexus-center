@@ -370,18 +370,24 @@ const Index = () => {
                   }}
                 >
                   <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform">
-                    <CardContent className="p-6 flex flex-col items-center">
-                      <img
-                        src={quote.image}
-                        alt={quote.name}
-                        className="w-24 h-24 rounded-full mb-4 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <p className="text-base text-white/90 mb-4 text-center italic">{quote.quote}</p>
-                      <h3 className="text-lg font-semibold text-white mb-2">{quote.name}</h3>
-                      <p
-                        className="text-sm text-white/80 text-center"
-                        dangerouslySetInnerHTML={{ __html: quote.position }}
-                      />
+                    <CardContent className="p-6 md:p-8">
+                      <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}>
+                        <img
+                          src={quote.image}
+                          alt={quote.name}
+                          className="w-full md:w-64 lg:w-72 h-48 md:h-64 lg:h-72 object-cover rounded-xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                        <div className={index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}>
+                          <p className="text-lg md:text-xl text-white/90 mb-4 italic">{quote.quote}</p>
+                          <div className="mt-2">
+                            <h3 className="text-lg md:text-xl font-semibold text-white">{quote.name}</h3>
+                            <p
+                              className="text-sm text-white/80"
+                              dangerouslySetInnerHTML={{ __html: quote.position }}
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
