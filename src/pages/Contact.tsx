@@ -14,20 +14,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'info@airqualitynexus.org',
+      content: 'airqualitynexus@ait.ac.th',
       description: 'General inquiries and information'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      content: '+1 (555) 123-4567',
-      description: 'Monday - Friday, 9 AM - 5 PM'
+      content: '+66 9-9797-6360',
+      description: ''
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: '123 Environmental Way, Green City, GC 12345',
-      description: 'Our main research facility'
+      content: 'Asian Institute of Technology, 58 Moo 9, Km. 42, Paholyothin Highway, Klong Luang, Pathum Thani 12120, Thailand',
+      description: 'https://maps.app.goo.gl/UA82JeVX5uKR2Stg6'
     },
     {
       icon: Clock,
