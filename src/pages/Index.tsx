@@ -349,36 +349,36 @@ const Index = () => {
             </Button>
           </div>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="flex flex-col gap-12 md:gap-16"
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.25 }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
           >
             {quotes.map((quote, index) => {
-              const column = index % 3;
-              const offsetClass = column === 1 ? 'md:mt-8' : column === 2 ? 'md:mt-16' : '';
-              const xFrom = column === 0 ? -60 : column === 2 ? 60 : 0;
-              const yFrom = column === 1 ? 30 : 20;
+              const isEven = index % 2 === 0;
+              const xFrom = isEven ? -120 : 120;
+              const alignClass = isEven ? 'md:self-start' : 'md:self-end';
+              const floatOffset = isEven ? 'md:-translate-y-2' : 'md:translate-y-2';
               return (
                 <motion.div
                   key={index}
-                  className={offsetClass}
-                  variants={{
-                    hidden: { opacity: 0, x: xFrom, y: yFrom },
-                    show: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', stiffness: 60, damping: 14 } }
-                  }}
+                  className={`w-full md:w-11/12 lg:w-10/12 ${alignClass} ${floatOffset}`}
+                  initial={{ opacity: 0, x: xFrom, y: 20, scale: 0.98 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ type: 'spring', stiffness: 70, damping: 16 }}
                 >
                   <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform">
                     <CardContent className="p-6 md:p-8">
-                      <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}>
+                      <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
                         <img
                           src={quote.image}
-                          alt={quote.name}
-                          className="w-full md:w-64 lg:w-72 h-48 md:h-64 lg:h-72 object-cover rounded-xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
+                          alt={`${quote.name} - Launching Event testimonial`}
+                          className="w-full md:w-80 lg:w-96 h-56 md:h-64 lg:h-72 object-cover rounded-xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
                         />
-                        <div className={index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}>
-                          <p className="text-lg md:text-xl text-white/90 mb-4 italic">{quote.quote}</p>
+                        <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
+                          <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{quote.quote}”</p>
                           <div className="mt-2">
                             <h3 className="text-lg md:text-xl font-semibold text-white">{quote.name}</h3>
                             <p
