@@ -20,6 +20,7 @@ import logo from '@/assets/AQC_logo.jpg';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 import pm25Image from '@/assets/pm2.5.png';
 import { Target, Eye } from 'lucide-react';
+import { motion } from 'framer-motion';
  
 
 
@@ -347,38 +348,47 @@ const Index = () => {
               <ArrowRight className="ml-2" size={20} />
             </Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {quotes.map((quote, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105"
-              >
-                <CardContent className="p-6 flex flex-col items-center">
-                  <img
-                    src={quote.image}
-                    alt={quote.name}
-                    className="w-24 h-24 rounded-full mb-4 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <p className="text-base text-white/90 mb-4 text-center italic animate-fade-in">{quote.quote}</p>
-                  <h3 className="text-lg font-semibold text-white mb-2">{quote.name}</h3>
-                  <p
-                    className="text-sm text-white/80 text-center"
-                    dangerouslySetInnerHTML={{ __html: quote.position }}
-                  />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
+          >
+            {quotes.map((quote, index) => {
+              const column = index % 3;
+              const offsetClass = column === 1 ? 'md:mt-8' : column === 2 ? 'md:mt-16' : '';
+              const xFrom = column === 0 ? -60 : column === 2 ? 60 : 0;
+              const yFrom = column === 1 ? 30 : 20;
+              return (
+                <motion.div
+                  key={index}
+                  className={offsetClass}
+                  variants={{
+                    hidden: { opacity: 0, x: xFrom, y: yFrom },
+                    show: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', stiffness: 60, damping: 14 } }
+                  }}
+                >
+                  <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform">
+                    <CardContent className="p-6 flex flex-col items-center">
+                      <img
+                        src={quote.image}
+                        alt={quote.name}
+                        className="w-24 h-24 rounded-full mb-4 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <p className="text-base text-white/90 mb-4 text-center italic">{quote.quote}</p>
+                      <h3 className="text-lg font-semibold text-white mb-2">{quote.name}</h3>
+                      <p
+                        className="text-sm text-white/80 text-center"
+                        dangerouslySetInnerHTML={{ __html: quote.position }}
+                      />
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
-        <style jsx>{`
-          @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-          }
-        `}</style>
       </section>
 
       {/* Features Section */}
