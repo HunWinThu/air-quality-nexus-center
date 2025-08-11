@@ -8,7 +8,6 @@ import logo from '@/assets/AQC_logo.jpg';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -22,13 +21,13 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className={`${isHome ? 'absolute top-0 left-0 w-full bg-transparent z-30' : 'bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-30'}`}>
+    <header className="bg-transparent backdrop-blur-md border-b border-border sticky top-0 z-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="Air Quality Nexus" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
-            <span className={`text-lg md:text-4xl font-semibold leading-snug ${isHome ? 'text-primary-foreground' : 'text-foreground'}`}>
+            <span className="text-lg md:text-4xl font-semibold leading-snug text-black">
               Air Quality Nexus Center
             </span>
           </Link>
@@ -44,7 +43,7 @@ const Header = () => {
                         className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
                           isActive('/about')
                             ? 'text-primary border-b-2 border-primary pb-1'
-                            : (isHome ? 'text-primary-foreground' : 'text-foreground')
+                            : 'text-black'
                         }`}
                       >
                         {item.name}
@@ -75,7 +74,7 @@ const Header = () => {
                   className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
                     isActive(item.href)
                       ? 'text-primary border-b-2 border-primary pb-1'
-                      : (isHome ? 'text-primary-foreground' : 'text-foreground')
+                      : 'text-black'
                   }`}
                 >
                   {item.name}
