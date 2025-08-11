@@ -184,24 +184,26 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/30"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
-            <div className="mb-8 rounded-2xl bg-white/10 border border-white/20 p-6 text-center">
-              <h3 className="text-3xl font-bold text-white mb-3">Our Vision</h3>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+              <h2 className="text-4xl font-bold text-white mb-4">Our Vision</h2>
               <p className="text-lg text-white/90">
                 Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
                 multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
                 and protection of the climate system.
               </p>
             </div>
-            <h2 className="text-5xl font-bold text-white mb-6">Our Missions</h2>
-            <ul className="text-xl list-disc pl-6 space-y-3 text-white/90">
-              <li>Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond;</li>
-              <li>Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems;</li>
-              <li>Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context;</li>
-              <li>Continue and expand international cooperation in conducting research projects, consultancies, training, etc.;</li>
-              <li>Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.</li>
-              <li>Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally;</li>
-            </ul>
+            <div className="bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+              <h2 className="text-4xl font-bold text-white mb-4">Our Missions</h2>
+              <ul className="text-lg list-disc pl-6 space-y-3 text-white/90">
+                <li>Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond;</li>
+                <li>Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems;</li>
+                <li>Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context;</li>
+                <li>Continue and expand international cooperation in conducting research projects, consultancies, training, etc.;</li>
+                <li>Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.</li>
+                <li>Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally;</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
