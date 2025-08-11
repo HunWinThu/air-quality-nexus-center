@@ -52,9 +52,6 @@ const Header = () => {
                         <Link to="/launching-event">Launching Event</Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
-                        <Link to="/what-we-do">What We Do</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
                         <Link to="/team">Team</Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -75,9 +72,6 @@ const Header = () => {
                 </Link>
               );
             })}
-            <Button size="sm" className="ml-4">
-              Get Involved
-            </Button>
           </nav>
 
           {/* Mobile menu button */}
@@ -119,13 +113,6 @@ const Header = () => {
                           Launching Event
                         </Link>
                         <Link
-                          to="/what-we-do"
-                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          What We Do
-                        </Link>
-                        <Link
                           to="/team"
                           className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
                           onClick={() => setIsMenuOpen(false)}
@@ -149,11 +136,6 @@ const Header = () => {
                     </Link>
                   )
                 ))}
-                <div className="px-3 py-2">
-                  <Button size="sm" className="w-full">
-                    Get Involved
-                  </Button>
-                </div>
               </div>
             </div>
           )}

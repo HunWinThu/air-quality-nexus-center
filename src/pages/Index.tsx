@@ -107,9 +107,6 @@ const Index = () => {
                 Explore Our Research
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-                Get Involved
-              </Button>
             </div>
           </div>
         </div>
@@ -132,14 +129,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Vision Card */}
-      <section className="py-24 bg-gradient-to-br from-air-light to-accent">
+      {/* Our Vision (glass blur) */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-air-light to-accent" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6 flex items-center justify-center">
-              Our Vision
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed font-medium max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center bg-white/15 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl p-8 md:p-10">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Our Vision</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed font-medium">
               Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
               multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
               and protection of the climate system.
@@ -148,6 +144,27 @@ const Index = () => {
         </div>
       </section>
 
+
+      {/* Our Missions (glass blur) */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={pm25Image} alt="Air pollution background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/30"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-5xl mx-auto bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+            <h2 className="text-3xl font-bold text-white mb-6">Our Missions</h2>
+            <ul className="list-disc pl-6 space-y-3 text-white/90">
+              <li>Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond;</li>
+              <li>Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems;</li>
+              <li>Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context;</li>
+              <li>Continue and expand international cooperation in conducting research projects, consultancies, training, etc.;</li>
+              <li>Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.</li>
+              <li>Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally;</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* Team Photo Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -166,7 +183,7 @@ const Index = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4">What We Do</Badge>
+            
             <h2 className="text-4xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From cutting-edge research to community engagement, we tackle air quality challenges 
@@ -314,10 +331,6 @@ const Index = () => {
                 to contribute to cleaner air and healthier communities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
-                  <Zap className="mr-2" size={20} />
-                  Get Involved
-                </Button>
                 <Button size="lg" variant="outline">
                   Partner With Us
                 </Button>
