@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 
@@ -144,9 +145,11 @@ const LaunchingEvent = () => {
             <p className="text-xl text-muted-foreground max-w-6xl mx-auto">
               On July 10, 2024, the Center for Nexus of Air Quality, Health, Ecosystem, and Climate—or Air Quality Nexus Center—hosted its official launching ceremony. The Center, based at the Asian Institute of Technology (AIT), serves as a hub for capacity building and cutting-edge atmospheric research to improve air quality in Asia and beyond. Working with AIT’s schools, research centers, and international partners, it promotes multidisciplinary collaboration for cleaner air, healthier communities, and climate protection. Professor Nguyen Thi Kim Oanh, appointed as Director from June 1, 2024, leads the Center’s strategic direction and outreach efforts. Held in a hybrid format at the AIT Conference Center and via Zoom, the event brought together stakeholders to share knowledge and explore future collaborations in air quality research and policy.
             </p>
-            <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
-              Learn More
-              <ArrowRight className="ml-2" size={20} />
+            <Button asChild size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
+              <Link to="/launching-event/details" aria-label="Read Launching Event details">
+                Learn More
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
             </Button>
           </div>
 
