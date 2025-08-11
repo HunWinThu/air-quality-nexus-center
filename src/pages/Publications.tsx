@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
-import { Book, Users, Calendar, Copy, Check, Quote } from 'lucide-react';
+import { Book, BookOpen, Users, Calendar, Copy, Check, Quote } from 'lucide-react';
 import { toast } from 'sonner';
 import { useState } from 'react';
 
@@ -226,7 +226,7 @@ const Publications = () => {
                               </div>
 
                               <div className="flex items-center text-muted-foreground mb-3">
-                                <Book className="mr-2 flex-shrink-0" size={16} />
+                                <BookOpen className="mr-2 flex-shrink-0" size={16} />
                                 <span className="text-sm">
                                   {/symposium|conference|proceedings|igarss/i.test(pub.journal) ? 'Conference Paper' : 'Journal Article'}
                                 </span>
