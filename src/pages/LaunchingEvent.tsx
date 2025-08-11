@@ -9,6 +9,11 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
+import launching5 from '@/assets/Launching_5.jpg';
+import launching6 from '@/assets/Launching_6.jpg';
+import homeImg from '@/assets/HOME.jpg';
+import partners1 from '@/assets/partners-1.png';
+import partners4 from '@/assets/partners-4.jpeg';
 
 import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
 import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
@@ -122,6 +127,15 @@ const LaunchingEvent = () => {
     },
   ];
 
+  const gallery = [
+    { src: launching5, alt: 'Ribbon cutting at the Launching Ceremony' },
+    { src: launching6, alt: 'Panel discussion during the event' },
+    { src: teamGroupPhoto, alt: 'Air Quality Nexus team group photo' },
+    { src: homeImg, alt: 'Guests networking at the venue' },
+    { src: partners1, alt: 'Partners and collaborators at the event' },
+    { src: partners4, alt: 'Participants during keynote session' },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -145,12 +159,6 @@ const LaunchingEvent = () => {
             <p className="text-xl text-muted-foreground max-w-6xl mx-auto">
               On July 10, 2024, the Center for Nexus of Air Quality, Health, Ecosystem, and Climate—or Air Quality Nexus Center—hosted its official launching ceremony. The Center, based at the Asian Institute of Technology (AIT), serves as a hub for capacity building and cutting-edge atmospheric research to improve air quality in Asia and beyond. Working with AIT’s schools, research centers, and international partners, it promotes multidisciplinary collaboration for cleaner air, healthier communities, and climate protection. Professor Nguyen Thi Kim Oanh, appointed as Director from June 1, 2024, leads the Center’s strategic direction and outreach efforts. Held in a hybrid format at the AIT Conference Center and via Zoom, the event brought together stakeholders to share knowledge and explore future collaborations in air quality research and policy.
             </p>
-            <Button asChild size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
-              <Link to="/launching-event/details" aria-label="Read Launching Event details">
-                Learn More
-                <ArrowRight className="ml-2" size={20} />
-              </Link>
-            </Button>
           </div>
 
           <motion.div
@@ -199,6 +207,21 @@ const LaunchingEvent = () => {
               );
             })}
           </motion.div>
+
+          <section aria-labelledby="gallery-heading" className="mt-16">
+            <header className="text-center mb-6">
+              <h2 id="gallery-heading" className="text-3xl md:text-4xl font-bold text-foreground">Launching Ceremony Gallery</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto mt-2">A few highlights from our Launching Ceremony showcasing speakers, participants, and moments from the day.</p>
+            </header>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+              {gallery.map((item, idx) => (
+                <figure key={idx} className="rounded-xl overflow-hidden shadow">
+                  <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
+                  <figcaption className="p-3 text-sm text-muted-foreground">{item.alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
 
