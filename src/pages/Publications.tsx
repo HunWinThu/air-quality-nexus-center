@@ -206,7 +206,7 @@ const Publications = () => {
                         <CardContent className="p-6 flex-grow">
                           <div className="flex gap-4">
                             <div className="flex-shrink-0">
-                              <div className="w-20 md:w-24">
+                              <div className="w-24 md:w-28">
                                 <AspectRatio ratio={3/4} className="rounded-md bg-muted/30 border border-border overflow-hidden">
                                   <div className="w-full h-full flex items-center justify-center text-[10px] md:text-xs text-muted-foreground">Cover</div>
                                 </AspectRatio>
