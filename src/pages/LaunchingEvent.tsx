@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import pm25Image from '@/assets/pm2.5.png';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 
 import quoteImage2 from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
@@ -120,20 +119,12 @@ const LaunchingEvent = () => {
         </div>
       </section>
 
-      <section className="relative py-20 bg-gradient-to-br from-air-light to-accent overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={pm25Image}
-            alt="Launching Event Background"
-            className="w-full h-full object-cover opacity-50"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/40"></div>
-        </div>
+      <section className="py-20 bg-gradient-to-br from-air-light to-sky-blue/20">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-16">
             <Badge variant="secondary" className="mb-4">Celebrating Our Launch</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Launching Event</h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Launching Event</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Join us in celebrating the launch of the Air Quality Nexus Center, a pivotal step towards cleaner air and sustainable solutions in Asia and beyond.
             </p>
             <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
