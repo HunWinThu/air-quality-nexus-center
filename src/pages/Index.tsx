@@ -162,7 +162,7 @@ const Index = () => {
       <section className="py-24 bg-accent/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Air Quality Nexus
               <span className="block text-primary">Center</span>
             </h2>
@@ -180,7 +180,7 @@ const Index = () => {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-air-light to-accent" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center bg-white/15 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl p-8 md:p-10">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Our Vision</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Our Vision</h2>
             <p className="text-xl text-muted-foreground leading-relaxed font-medium">
               Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
               multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
@@ -199,8 +199,8 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
-            <h2 className="text-3xl font-bold text-white mb-6">Our Missions</h2>
-            <ul className="list-disc pl-6 space-y-3 text-white/90">
+            <h2 className="text-5xl font-bold text-white mb-6">Our Missions</h2>
+            <ul className="text-xl list-disc pl-6 space-y-3 text-white/90">
               <li>Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond;</li>
               <li>Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems;</li>
               <li>Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context;</li>
@@ -230,7 +230,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             
-            <h2 className="text-4xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From cutting-edge research to community engagement, we tackle air quality challenges 
               through multiple integrated approaches.
@@ -255,7 +255,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Recent Research & News</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Recent Research & News</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Stay informed about our latest findings, projects, and developments in air quality science.
             </p>
@@ -295,7 +295,7 @@ const Index = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Strategic Partners</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Strategic Partners</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Collaborating with leading organizations to advance air quality research and policy worldwide.
             </p>
@@ -401,8 +401,8 @@ const Index = () => {
        <section className="py-20 bg-background">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-12">
-             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">International partners and collaborators</h2>
-             <p className="text-muted-foreground max-w-2xl mx-auto">
+             <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-4">International Partners and Collaborators</h2>
+             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                Key international organizations and universities we collaborate with.
              </p>
            </div>
