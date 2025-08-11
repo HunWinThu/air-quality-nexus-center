@@ -27,7 +27,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src={logo} alt="Air Quality Nexus" className="h-32 w-32" />
-            <span className="text-4xl font-bold text-foreground">Air Quality Nexus</span>
+            <span className="text-xl font-bold text-foreground"> Center for Nexus of Air Quality,<br/> Health, Ecosystem, and Climate</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -9,15 +9,20 @@ import { motion } from 'framer-motion';
 
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 
-import quoteImage2 from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
-import quoteImage3 from '@/assets/Advisory/Prof. Ram Shrestha.jpeg';
-import quoteImage4 from '@/assets/Advisory/Prof. Philip Hopke.jpeg';
-import quoteImage5 from '@/assets/Advisory/Dr. Maheswar Rupakheti.jpg';
-import quoteImage6 from '@/assets/Advisory/Prof. Lisa Emberson.jpg';
-import quoteImage7 from '@/assets/Advisory/Prof. Sotiris Vardoulakis.jpeg';
-import quoteImage8 from '@/assets/Advisory/Prof. Tami C. Bond.jpg';
-import quoteImage9 from '@/assets/Advisory/Dr. Shih-Chun Candice Lung.jpg';
-import quoteImage10 from '@/assets/Advisory/Dr. Eric Zusman.jpg';
+import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
+import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
+import Shrestha from '@/assets/Advisory/Prof. Ram Shrestha.jpeg';
+import Hopke from '@/assets/Advisory/Prof. Philip Hopke.jpeg';
+import Rupakheti from '@/assets/Advisory/Dr. Maheswar Rupakheti.jpg';
+import Emberson from '@/assets/Advisory/Prof. Lisa Emberson.jpg';
+import Vardoulakis from '@/assets/Advisory/Prof. Sotiris Vardoulakis.jpeg';
+import Bond from '@/assets/Advisory/Prof. Tami C. Bond.jpg';
+import Lung from '@/assets/Advisory/Dr. Shih-Chun Candice Lung.jpg';
+import Zusman from '@/assets/Advisory/Dr. Eric Zusman.jpg';
+import Saikawa from '@/assets/Advisory/Dr. Eri Saikawa.jpg';
+import Broomfield from '@/assets/Advisory/Dr. Mark Broomfield.jpg';
+import Mari from '@/assets/Advisory/Dr. Xavier Mari.jpeg';
+import Casanova from '@/assets/Advisory/Ms. Dang Espita Casanova.jpeg';
 
 const LaunchingEvent = () => {
   useEffect(() => {
@@ -35,11 +40,11 @@ const LaunchingEvent = () => {
   const quotes = [
     {
       quote:
-        'At the nexus of air pollution, climate science, ecosystems, and public health, …This Center is a catalyst for interdisciplinary collaboration—driving evidence-based solutions that protect both planetary and human well-being',
+        'This Center is a catalyst for interdisciplinary collaboration—driving evidence-based solutions that protect both planetary and human well-being',
       name: 'Prof. Bindu N. Lohani',
       position:
         'Chancellor of University of Nepal<br/>Chair of Clean Air Asia Board<br/>Member of AIT Board of Trustee',
-      image: quoteImage2,
+      image: Lohani,
     },
     {
       quote:
@@ -47,7 +52,7 @@ const LaunchingEvent = () => {
       name: 'Dr. Maheswar Rupakheti',
       position:
         'Research Group Leader, Research Institute for Sustainability Helmholtz Centre Potsdam (RIFS), Germany<br/>Vice Chair, WG-I, Intergovernmental Panel on Climate Change (IPCC)',
-      image: quoteImage3,
+      image: Rupakheti,
     },
     {
       quote:
@@ -55,7 +60,7 @@ const LaunchingEvent = () => {
       name: 'Prof. Lisa Emberson',
       position:
         'Centre Director of the York office at the Stockholm Environment Institute (SEI)<br/>Professor of Environmental Science in the Environment & Geography Dept., University of York',
-      image: quoteImage4,
+      image: Emberson,
     },
     {
       quote:
@@ -63,7 +68,7 @@ const LaunchingEvent = () => {
       name: 'Prof. Sotiris Vardoulakis',
       position:
         'Director, NHMRC Healthy Environments and Lives (HEAL) National Research Network<br/>Professor of Environmental Public Health, University of Canberra, Australia',
-      image: quoteImage5,
+      image: Vardoulakis,
     },
     {
       quote:
@@ -71,35 +76,48 @@ const LaunchingEvent = () => {
       name: 'Prof. Tami C. Bond',
       position:
         'Scott Presidential Chair in Energy, Environment and Health<br/>Professor, Mechanical Engineering; Joint Professor, Civil & Environmental Engineering; Affiliate; Systems Colorado University, Fort Collins, CO USA',
-      image: quoteImage6,
+      image: Bond,
     },
     {
       quote:
         'Thank you for reaching out and Congratulations to the Center for your achievements!',
       name: 'Ms. Dang Espita Casanova',
       position: 'Associate Program Director<br/>Clean Air Asia',
-      image: quoteImage7,
+      image: Casanova,
     },
     {
       quote:
         'Emory Climate Hub is excited to partner with the Center for Nexus of Air Quality, Health, Ecosystem and Climate, as we are interested in finding evidence-based solutions through an interdisciplinary framework. The center emphasizes an integrated approach necessary for a complicated problem that involves climate change, air quality, and human/ecosystem health.',
       name: 'Dr. Eri Saikawa',
       position: 'Professor<br/>Emory University, USA',
-      image: quoteImage8,
+      image: Saikawa,
     },
     {
       quote:
         'The Air Quality Nexus Center at AIT plays a pivotal role in Southeast Asia as an essential structure for addressing the region’s air pollution challenges. By adopting a holistic, multi-stakeholder approach, it fosters the dismantling of scientific and institutional silos — a necessary step to understand and mitigate the deeply intertwined and interdependent health, climate, economic, and social impacts of this critical issue.',
       name: 'Dr. Xavier Mari',
       position: 'IRD Representative, Thailand (Bangladesh-India-Myanmar-Nepal)',
-      image: quoteImage9,
+      image: Mari,
     },
     {
       quote:
-        'We at Ricardo have really appreciated the informed input from the Air Quality Nexus team in support of our work developing clean air solutions for Thailand and the Greater Mekong region. Your expertise across air quality, health, ecosystems and climate resilience has never been more important. We hope to continue working with the team in the future',
+        'We at Ricardo have really appreciated the informed input from the Air Quality Nexus team in support of our work developing clean air solutions for Thailand and the Greater Mekong region. Your expertise across air quality, health, ecosystems and climate resilience has never been more important. We hope to continue working with the Center team in the future',
       name: 'Dr. Mark Broomfield',
       position: 'Technical Director<br/>Air quality specialist, Ricardo',
-      image: quoteImage10,
+      image: Broomfield,
+    },
+
+    {
+      quote:'',
+      name: 'Dr. Shih-Chun Candice Lung',
+      position: 'Deputy Director, Research Center for Environmental Changes (RCEC)<br/>Academia Sinica, Taiwan',
+      image: Lung,
+    },
+    {
+      quote:'The newly established Center for Nexus of Air Quality, Health, Ecosystem and Climate at AIT will play a pivotal role in advancing integrated research and policy solutions that address the interconnected challenges of climate change, air quality, and public health in Southeast Asia and beyond. By fostering cross-sectoral collaboration and data-driven innovation, the Center is uniquely positioned to make changes in the air and on the ground.',
+      name: 'Dr. Eric Zusman',
+      position: 'Research Director Center for Sustainability Governance <br/>Institute for Global Environmental Strategies (IGES), Japan',
+      image: Zusman,
     },
   ];
 
@@ -122,10 +140,9 @@ const LaunchingEvent = () => {
       <section className="py-20 bg-gradient-to-br from-air-light to-sky-blue/20">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4">Celebrating Our Launch</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Launching Event</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Join us in celebrating the launch of the Air Quality Nexus Center, a pivotal step towards cleaner air and sustainable solutions in Asia and beyond.
+            <p className="text-xl text-muted-foreground max-w-6xl mx-auto">
+              On July 10, 2024, the Center for Nexus of Air Quality, Health, Ecosystem, and Climate—or Air Quality Nexus Center—hosted its official launching ceremony. The Center, based at the Asian Institute of Technology (AIT), serves as a hub for capacity building and cutting-edge atmospheric research to improve air quality in Asia and beyond. Working with AIT’s schools, research centers, and international partners, it promotes multidisciplinary collaboration for cleaner air, healthier communities, and climate protection. Professor Nguyen Thi Kim Oanh, appointed as Director from June 1, 2024, leads the Center’s strategic direction and outreach efforts. Held in a hybrid format at the AIT Conference Center and via Zoom, the event brought together stakeholders to share knowledge and explore future collaborations in air quality research and policy.
             </p>
             <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
               Learn More
@@ -163,11 +180,11 @@ const LaunchingEvent = () => {
                           className="w-full md:w-80 lg:w-96 h-56 md:h-64 lg:h-72 object-cover rounded-xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
                         />
                         <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
-                          <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{quote.quote}”</p>
+                          <p className="text-xl md:text-2xl text-black/70 mb-4 italic">“{quote.quote}”</p>
                           <div className="mt-2">
-                            <h3 className="text-lg md:text-xl font-semibold text-white">{quote.name}</h3>
+                            <h3 className="text-lg md:text-xl font-semibold text-black/70">{quote.name}</h3>
                             <p
-                              className="text-sm text-white/80"
+                              className="text-sm text-black/50"
                               dangerouslySetInnerHTML={{ __html: quote.position }}
                             />
                           </div>
