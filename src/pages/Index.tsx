@@ -84,7 +84,7 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${Home})` }}
@@ -92,7 +92,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-sky-blue/20"></div>
         </div>
         
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
               Air Quality Nexus Center
