@@ -182,7 +182,7 @@ const LaunchingEvent = () => {
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ type: 'spring', stiffness: 70, damping: 16 }}
                 >
-                  <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform" aria-label={`Quote from ${quote.name}`}>
+                  <Card className="group border border-border/50 bg-background/90 dark:bg-background/60 text-foreground backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 will-change-transform" aria-label={`Quote from ${quote.name}`}>
                     <CardContent className="p-6 md:p-8">
                       <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
                         <img
@@ -191,11 +191,11 @@ const LaunchingEvent = () => {
                           className="w-full md:w-80 lg:w-96 h-56 md:h-64 lg:h-72 object-cover rounded-xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
                         />
                         <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
-                          <p className="text-xl md:text-2xl text-black/70 mb-4 italic">“{quote.quote}”</p>
+                          <p className="text-xl md:text-2xl text-foreground mb-4 italic opacity-90 animate-fade-in">“{quote.quote}”</p>
                           <div className="mt-2">
-                            <h3 className="text-lg md:text-xl font-semibold text-black/70">{quote.name}</h3>
+                            <h3 className="text-lg md:text-xl font-semibold text-foreground">{quote.name}</h3>
                             <p
-                              className="text-sm text-black/50"
+                              className="text-sm text-muted-foreground"
                               dangerouslySetInnerHTML={{ __html: quote.position }}
                             />
                           </div>
@@ -215,8 +215,8 @@ const LaunchingEvent = () => {
             </header>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
               {gallery.map((item, idx) => (
-                <figure key={idx} className="rounded-xl overflow-hidden shadow">
-                  <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
+                <figure key={idx} className="group rounded-xl overflow-hidden shadow bg-background/80 backdrop-blur-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover-scale animate-enter">
+                  <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-56 md:h-64 object-cover transform transition-transform duration-300 group-hover:scale-[1.03]" />
                   <figcaption className="p-3 text-sm text-muted-foreground">{item.alt}</figcaption>
                 </figure>
               ))}
