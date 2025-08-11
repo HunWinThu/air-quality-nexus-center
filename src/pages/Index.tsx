@@ -239,57 +239,65 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <a href="https://cleanairasia.org/" target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl">
-                <CardContent className="p-6 text-center h-72 flex flex-col justify-between">
-                  <img 
-                    src={partner1}
-                    alt='Strategic Partners'
-                    className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
-                  />
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Clean Air Asia</h3>
-                </CardContent>
-              </Card>
-            </a>
+            <div className="flex flex-col items-center text-center">
+              <a href="https://cleanairasia.org/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                    <img 
+                      src={partner1}
+                      alt="Clean Air Asia logo"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </CardContent>
+                </Card>
+              </a>
+              <h3 className="mt-3 text-base font-medium text-foreground">Clean Air Asia</h3>
+            </div>
             
-            <a href="https://www.fhi360.org/" target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl">
-                <CardContent className="p-6 text-center h-72 flex flex-col justify-between">
-                  <img 
-                    src={partner2}
-                    alt='Strategic Partners'
-                    className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
-                  />
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Family Health International (FHI 360)</h3>
-                </CardContent>
-              </Card>
-            </a>
+            <div className="flex flex-col items-center text-center">
+              <a href="https://www.fhi360.org/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                    <img 
+                      src={partner2}
+                      alt="FHI 360 logo"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </CardContent>
+                </Card>
+              </a>
+              <h3 className="mt-3 text-base font-medium text-foreground">Family Health International (FHI 360)</h3>
+            </div>
 
-            <a href="https://www.canberra.edu.au/faculties/health/heal" target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl">
-                <CardContent className="p-6 text-center h-72 flex flex-col justify-between">
-                  <img 
-                    src={partner3}
-                    alt='Strategic Partners'
-                    className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
-                  />
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Healthy Environments and Lives (HEAL) Global Research Centre</h3>
-                </CardContent>
-              </Card>
-            </a>
+            <div className="flex flex-col items-center text-center">
+              <a href="https://www.canberra.edu.au/faculties/health/heal" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                    <img 
+                      src={partner3}
+                      alt="HEAL Global Research Centre logo"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </CardContent>
+                </Card>
+              </a>
+              <h3 className="mt-3 text-base font-medium text-foreground">Healthy Environments and Lives (HEAL) Global Research Centre</h3>
+            </div>
             
-            <a href="https://www.sinica.edu.tw/en" target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl">
-                <CardContent className="p-6 text-center h-72 flex flex-col justify-between">
-                  <img 
-                    src={partner4}
-                    alt='Strategic Partners'
-                    className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
-                  />
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Academia Sinica</h3>
-                </CardContent>
-              </Card>
-            </a>
+            <div className="flex flex-col items-center text-center">
+              <a href="https://www.sinica.edu.tw/en" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                    <img 
+                      src={partner4}
+                      alt="Academia Sinica logo"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </CardContent>
+                </Card>
+              </a>
+              <h3 className="mt-3 text-base font-medium text-foreground">Academia Sinica</h3>
+            </div>
           </div>
         </div>
       </section>
