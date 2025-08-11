@@ -22,11 +22,23 @@ import logo from '@/assets/AQC_logo.jpg';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 import pm25Image from '@/assets/pm2.5.png';
 import { Target, Eye } from 'lucide-react';
-
- 
-
-
-
+import Airparif from '@/assets/collaborators/Airparif.png';
+import bktp from '@/assets/collaborators/bktp.png';
+import citepa from '@/assets/collaborators/citepa-logo.jpg';
+import hanoiUniversity from '@/assets/collaborators/Đại_học_Bách_khoa_Hà_Nội_(logo).png';
+import eanet from '@/assets/collaborators/EANET-avatar.png';
+import pcd from '@/assets/collaborators/Emblem_of_the_Pollution_Control_Department.svg.png';
+import emory from '@/assets/collaborators/EmoryUniversity.png';
+import fmi from '@/assets/collaborators/fmi.png';
+import iges from '@/assets/collaborators/IGES_1.png';
+import iiasa from '@/assets/collaborators/IIASA.png';
+import ird from '@/assets/collaborators/IRD.png';
+import liveLearn from '@/assets/collaborators/Live&Learn.png';
+import rifs from '@/assets/collaborators/Logo_RIFS_2023.jpg';
+import particlesPlus from '@/assets/collaborators/Particles-Plus-Logo-Opaque.jpg';
+import unep from '@/assets/collaborators/United_Nations_Environment_Programme_Logo.svg.png';
+import vanlang from '@/assets/collaborators/vanlang.png';
+import vnu from '@/assets/collaborators/VNU-USSH (1).jpg';
 
 const Index = () => {
   const features = [
@@ -88,8 +100,32 @@ const Index = () => {
     { name: 'Pollution Control Department, Thailand', href: 'https://www.pcd.go.th/', logo: pcdLogo },
   ];
 
+  const collaborators = [
+    { name: 'Airparif', href: 'https://www.airparif.fr/', logo: Airparif },
+    { name: 'BKTP', href: '#', logo: bktp },
+    { name: 'Citepa', href: '#', logo: citepa },
+    { name: 'Clean Air Asia', href: 'https://cleanairasia.org/', logo: partner1 },
+    { name: 'FHI 360', href: 'https://www.fhi360.org/', logo: partner2 },
+    { name: 'HEAL', href: 'https://www.canberra.edu.au/faculties/health/heal', logo: partner3 },
+    { name: 'Academia Sinica', href: 'https://www.sinica.edu.tw/en', logo: partner4 },
+    { name: 'Hanoi University of Science and Technology', href: 'https://hust.edu.vn/en/', logo: hanoiUniversity },
+    { name: 'EANET', href: 'https://www.eanet.asia/', logo: eanet },
+    { name: 'Pollution Control Department', href: 'https://www.pcd.go.th/', logo: pcd },
+    { name: 'Emory University', href: 'https://www.emory.edu/home/index.html', logo: emory },
+    { name: 'FMI', href: 'https://en.ilmatieteenlaitos.fi/', logo: fmi },
+    { name: 'IGES', href: 'https://www.iges.or.jp/en', logo: iges },
+    { name: 'IIASA', href: 'https://iiasa.ac.at/', logo: iiasa },
+    { name: 'IRD', href: 'https://en.ird.fr/', logo: ird },
+    { name: 'Live & Learn', href: 'https://livelearn.org/', logo: liveLearn },
+    { name: 'RIFS', href: 'https://www.rifs-potsdam.de/en', logo: rifs },
+    { name: 'Particles Plus', href: 'https://particlesplus.com/', logo: particlesPlus },
+    { name: 'UNEP', href: 'https://www.unep.org/', logo: unep },
+    { name: 'VANLANG', href: 'https://www.vlu.edu.vn/en', logo: vanlang },    
+    { name: 'VNU', href: 'https://english.hus.vnu.edu.vn/', logo: vnu },
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       {/* Hero Section */}
@@ -103,8 +139,8 @@ const Index = () => {
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
-              Air Quality Nexus Center
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
+              Center for Nexus of Air Quality, Health, Ecosystem, and Climate
             </h1>
             <p className="text-left text-xl md:text-xl mb-8 text-white max-w-7xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
               A leading Center in conducting and implementing application research with the aim to gain multiple 
@@ -338,7 +374,7 @@ const Index = () => {
              </p>
            </div>
            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-             {internationalPartners.map((p, idx) => (
+             {collaborators.map((p, idx) => (
                <div key={idx} className="flex flex-col items-center text-center">
                  <a href={p.href} target="_blank" rel="noopener noreferrer" className="w-full">
                    <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-36 w-full flex items-center justify-center">

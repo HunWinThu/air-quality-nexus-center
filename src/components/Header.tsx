@@ -21,40 +21,46 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="bg-gradient-to-r from-white to-sky-100 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <header className="bg-transparent backdrop-blur-md border-b border-border sticky top-0 z-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-1">
+        <div className="flex justify-between items-center py-3">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="Air Quality Nexus" className="h-12 w-12 md:h-14 md:w-14" />
-            <span className="text-sm md:text-base font-semibold leading-snug text-foreground"> Center for Nexus of Air Quality,<br/> Health, Ecosystem, and Climate</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src={logo} alt="Air Quality Nexus" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            <span className="text-lg md:text-4xl font-semibold leading-snug text-black">
+              Air Quality Nexus Center
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-10">
             {navigation.map((item) => {
               if (item.name === 'About Us') {
                 return (
                   <DropdownMenu key={item.name}>
                     <DropdownMenuTrigger asChild>
                       <button
-                        className={`text-base font-medium transition-colors hover:text-primary ${
+                        className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
                           isActive('/about')
                             ? 'text-primary border-b-2 border-primary pb-1'
-                            : 'text-muted-foreground'
+                            : 'text-black'
                         }`}
                       >
                         {item.name}
                       </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="z-50 bg-background border border-border">
-                      <DropdownMenuItem asChild>
+                    <DropdownMenuContent
+                      align="start"
+                      sideOffset={8}
+                      className="z-50 min-w-[200px] rounded-xl border border-border bg-background/80 backdrop-blur-lg shadow-lg p-2 animate-in fade-in-0 zoom-in-95"
+                    >
+                      <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
                         <Link to="/launching-event">Launching Event</Link>
                       </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
+                      <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
                         <Link to="/what-we-do">What We Do</Link>
                       </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
+                      <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
                         <Link to="/team">Team</Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -65,10 +71,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-base font-medium transition-colors hover:text-primary ${
-                    isActive(item.href) 
-                      ? 'text-primary border-b-2 border-primary pb-1' 
-                      : 'text-muted-foreground'
+                  className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
+                    isActive(item.href)
+                      ? 'text-primary border-b-2 border-primary pb-1'
+                      : 'text-black'
                   }`}
                 >
                   {item.name}
@@ -79,76 +85,72 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
           </div>
         </div>
 
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-                {navigation.map((item) => (
-                  item.name === 'About Us' ? (
-                    <div key={item.name}>
-                      <Link
-                        to={item.href}
-                        className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                          isActive(item.href)
-                            ? 'text-primary bg-accent'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                      <div className="ml-4">
-                        <Link
-                          to="/launching-event"
-                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Launching Event
-                        </Link>
-                        <Link
-                          to="/what-we-do"
-                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          What We Do
-                        </Link>
-                        <Link
-                          to="/team"
-                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Team
-                        </Link>
-                      </div>
-                    </div>
-                  ) : (
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-background/80 backdrop-blur-md border-t border-border rounded-lg mt-2">
+              {navigation.map((item) =>
+                item.name === 'About Us' ? (
+                  <div key={item.name}>
                     <Link
-                      key={item.name}
                       to={item.href}
-                      className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                      className={`block px-3 py-2 text-lg font-medium rounded-md transition-colors ${
                         isActive(item.href)
                           ? 'text-primary bg-accent'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                          : 'text-black hover:text-primary hover:bg-accent'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
-                  )
-                ))}
-              </div>
+                    <div className="ml-4">
+                      <Link
+                        to="/launching-event"
+                        className="block px-3 py-2 text-base rounded-md text-black hover:text-primary hover:bg-accent"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Launching Event
+                      </Link>
+                      <Link
+                        to="/what-we-do"
+                        className="block px-3 py-2 text-base rounded-md text-black hover:text-primary hover:bg-accent"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        What We Do
+                      </Link>
+                      <Link
+                        to="/team"
+                        className="block px-3 py-2 text-base rounded-md text-black hover:text-primary hover:bg-accent"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Team
+                      </Link>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`block px-3 py-2 text-lg font-medium rounded-md transition-colors ${
+                      isActive(item.href)
+                        ? 'text-primary bg-accent'
+                        : 'text-black hover:text-primary hover:bg-accent'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
-          )}
+          </div>
+        )}
       </div>
     </header>
   );
