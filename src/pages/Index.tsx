@@ -337,9 +337,10 @@ const Index = () => {
       {/* Launching Event Section */}
       <section className="relative overflow-hidden p-0">
         
-        {/* Fullscreen slides using five background images */}
-        {[Launching4, Launching1, Launching2, Launching3, Launching].map((bg, i) => {
-          const item = quotes[i % quotes.length];
+        {/* Fullscreen slides cycling all quotes with 5 background images */}
+        {quotes.map((item, i) => {
+          const backgrounds = [Launching4, Launching1, Launching2, Launching3, Launching];
+          const bg = backgrounds[i % backgrounds.length];
           const isEven = i % 2 === 0;
           return (
             <div key={i} className="relative h-[100svh] w-full">
@@ -371,7 +372,9 @@ const Index = () => {
                           <h2 className="text-4xl md:text-5xl font-bold text-white">Launching Event</h2>
                         </div>
                       )}
-                      <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{item.quote}”</p>
+                      {item.quote && (
+                        <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{item.quote}”</p>
+                      )}
                       <div>
                         <h3 className="text-lg md:text-xl font-semibold text-white">{item.name}</h3>
                         <p className="text-sm text-white/80" dangerouslySetInnerHTML={{ __html: item.position }} />
