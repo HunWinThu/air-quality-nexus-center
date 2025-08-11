@@ -159,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* About Our Center Card */}
-      <section className="py-24 bg-accent/30">
+      <section className="py-24 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
@@ -175,20 +175,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Vision (glass blur) */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-air-light to-accent" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center bg-white/15 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl p-8 md:p-10">
-            <h2 className="text-5xl font-bold text-foreground mb-6">Our Vision</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed font-medium">
-              Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
-              multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
-              and protection of the climate system.
-            </p>
-          </div>
-        </div>
-      </section>
 
 
       {/* Our Missions (glass blur) */}
@@ -199,6 +185,14 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+            <div className="mb-8 rounded-2xl bg-white/10 border border-white/20 p-6 text-center">
+              <h3 className="text-3xl font-bold text-white mb-3">Our Vision</h3>
+              <p className="text-lg text-white/90">
+                Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
+                multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
+                and protection of the climate system.
+              </p>
+            </div>
             <h2 className="text-5xl font-bold text-white mb-6">Our Missions</h2>
             <ul className="text-xl list-disc pl-6 space-y-3 text-white/90">
               <li>Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond;</li>
