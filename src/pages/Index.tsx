@@ -39,6 +39,7 @@ import particlesPlus from '@/assets/collaborators/Particles-Plus-Logo-Opaque.jpg
 import unep from '@/assets/collaborators/United_Nations_Environment_Programme_Logo.svg.png';
 import vanlang from '@/assets/collaborators/vanlang.png';
 import vnu from '@/assets/collaborators/VNU-USSH (1).jpg';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   const features = [
@@ -302,63 +303,95 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center">
-              <a href="https://cleanairasia.org/" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
-                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
-                    <img 
-                      src={partner1}
-                      alt="Clean Air Asia logo"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </CardContent>
-                </Card>
-              </a>
-              <h3 className="mt-3 text-base font-medium text-foreground">Clean Air Asia</h3>
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 14, delay: 0 }}
+                className="w-full flex flex-col items-center"
+              >
+                <a href="https://cleanairasia.org/" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                    <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                      <img 
+                        src={partner1}
+                        alt="Clean Air Asia logo"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </CardContent>
+                  </Card>
+                </a>
+                <h3 className="mt-3 text-base font-medium text-foreground">Clean Air Asia</h3>
+              </motion.div>
             </div>
             
             <div className="flex flex-col items-center text-center">
-              <a href="https://www.fhi360.org/" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
-                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
-                    <img 
-                      src={partner2}
-                      alt="FHI 360 logo"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </CardContent>
-                </Card>
-              </a>
-              <h3 className="mt-3 text-base font-medium text-foreground">Family Health International (FHI 360)</h3>
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 14, delay: 0.05 }}
+                className="w-full flex flex-col items-center"
+              >
+                <a href="https://www.fhi360.org/" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                    <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                      <img 
+                        src={partner2}
+                        alt="FHI 360 logo"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </CardContent>
+                  </Card>
+                </a>
+                <h3 className="mt-3 text-base font-medium text-foreground">Family Health International (FHI 360)</h3>
+              </motion.div>
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <a href="https://www.canberra.edu.au/faculties/health/heal" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
-                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
-                    <img 
-                      src={partner3}
-                      alt="HEAL Global Research Centre logo"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </CardContent>
-                </Card>
-              </a>
-              <h3 className="mt-3 text-base font-medium text-foreground">Healthy Environments and Lives (HEAL) Global Research Centre</h3>
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 14, delay: 0.1 }}
+                className="w-full flex flex-col items-center"
+              >
+                <a href="https://www.canberra.edu.au/faculties/health/heal" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                    <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                      <img 
+                        src={partner3}
+                        alt="HEAL Global Research Centre logo"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </CardContent>
+                  </Card>
+                </a>
+                <h3 className="mt-3 text-base font-medium text-foreground">Healthy Environments and Lives (HEAL) Global Research Centre</h3>
+              </motion.div>
             </div>
             
             <div className="flex flex-col items-center text-center">
-              <a href="https://www.sinica.edu.tw/en" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
-                  <CardContent className="p-6 h-full w-full flex items-center justify-center">
-                    <img 
-                      src={partner4}
-                      alt="Academia Sinica logo"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </CardContent>
-                </Card>
-              </a>
-              <h3 className="mt-3 text-base font-medium text-foreground">Academia Sinica</h3>
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 14, delay: 0.15 }}
+                className="w-full flex flex-col items-center"
+              >
+                <a href="https://www.sinica.edu.tw/en" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-44 w-full flex items-center justify-center">
+                    <CardContent className="p-6 h-full w-full flex items-center justify-center">
+                      <img 
+                        src={partner4}
+                        alt="Academia Sinica logo"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </CardContent>
+                  </Card>
+                </a>
+                <h3 className="mt-3 text-base font-medium text-foreground">Academia Sinica</h3>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -373,20 +406,28 @@ const Index = () => {
                Key international organizations and universities we collaborate with.
              </p>
            </div>
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-             {collaborators.map((p, idx) => (
-               <div key={idx} className="flex flex-col items-center text-center">
-                 <a href={p.href} target="_blank" rel="noopener noreferrer" className="w-full">
-                   <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-36 w-full flex items-center justify-center">
-                     <CardContent className="p-4 h-full w-full flex items-center justify-center">
-                       <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
-                     </CardContent>
-                   </Card>
-                 </a>
-                 <h3 className="mt-3 text-sm font-medium text-foreground">{p.name}</h3>
-               </div>
-             ))}
-           </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {collaborators.map((p, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ type: 'spring', stiffness: 80, damping: 14, delay: idx * 0.06 }}
+                    className="w-full flex flex-col items-center"
+                  >
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="w-full">
+                      <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-36 w-full flex items-center justify-center">
+                        <CardContent className="p-4 h-full w-full flex items-center justify-center">
+                          <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                        </CardContent>
+                      </Card>
+                    </a>
+                    <h3 className="mt-3 text-sm font-medium text-foreground">{p.name}</h3>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
          </div>
        </section>
 
