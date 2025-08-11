@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { Book, Users, Calendar, Copy, Check, Quote } from 'lucide-react';
@@ -203,20 +204,31 @@ const Publications = () => {
                     >
                       <Card className="hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 border-2 border-transparent hover:border-primary/20 flex flex-col">
                         <CardContent className="p-6 flex-grow">
-                          <Link to={pub.doi} target="_blank" rel="noopener noreferrer" className="block mb-4">
-                            <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
-                              {pub.title}
-                            </h3>
-                          </Link>
-                          
-                          <div className="flex items-center text-muted-foreground mb-3">
-                            <Users className="mr-2 flex-shrink-0" size={16} />
-                            <span className="text-sm">{pub.authors}</span>
-                          </div>
-                          
-                          <div className="flex items-center text-muted-foreground">
-                            <Book className="mr-2 flex-shrink-0" size={16} />
-                            <span className="text-sm italic">{pub.journal}</span>
+                          <div className="flex gap-4">
+                            <div className="flex-shrink-0">
+                              <div className="w-20 md:w-24">
+                                <AspectRatio ratio={3/4} className="rounded-md bg-muted/30 border border-border overflow-hidden">
+                                  <div className="w-full h-full flex items-center justify-center text-[10px] md:text-xs text-muted-foreground">Cover</div>
+                                </AspectRatio>
+                              </div>
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <Link to={pub.doi} target="_blank" rel="noopener noreferrer" className="block mb-4">
+                                <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
+                                  {pub.title}
+                                </h3>
+                              </Link>
+                              
+                              <div className="flex items-center text-muted-foreground mb-3">
+                                <Users className="mr-2 flex-shrink-0" size={16} />
+                                <span className="text-sm">{pub.authors}</span>
+                              </div>
+                              
+                              <div className="flex items-center text-muted-foreground">
+                                <Book className="mr-2 flex-shrink-0" size={16} />
+                                <span className="text-sm italic">{pub.journal}</span>
+                              </div>
+                            </div>
                           </div>
                         </CardContent>
                         <div className="bg-accent/20 p-4 rounded-b-lg border-t border-accent/50">
