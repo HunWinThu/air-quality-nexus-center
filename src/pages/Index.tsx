@@ -184,7 +184,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/30"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
             <div className="bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
               <h2 className="text-4xl font-bold text-white mb-4">Our Vision</h2>
               <p className="text-lg text-white/90">
