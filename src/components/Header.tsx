@@ -52,6 +52,9 @@ const Header = () => {
                         <Link to="/launching-event">Launching Event</Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
+                        <Link to="/what-we-do">What We Do</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
                         <Link to="/team">Team</Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -114,6 +117,13 @@ const Header = () => {
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Launching Event
+                        </Link>
+                        <Link
+                          to="/what-we-do"
+                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          What We Do
                         </Link>
                         <Link
                           to="/team"
