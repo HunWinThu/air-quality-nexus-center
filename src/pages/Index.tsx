@@ -261,19 +261,16 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
         </div>
         {/* Overlay CTA Button */}
-        <div className="relative z-10 w-full">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="w-full flex justify-center">
-              <Link to="/launching-event" aria-label="Go to Launching Ceremony details">
-                <Button
-                  size="lg"
-                  className="bg-background/80 text-foreground backdrop-blur-md border border-white/30 shadow-lg transition-all hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-2xl"
-                >
-                  Launching Ceremony
-                </Button>
-              </Link>
-            </div>
-          </div>
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <Link to="/launching-event" aria-label="Go to Launching Event">
+            <Button
+              size="lg"
+              className="px-8 py-4 text-lg bg-background/80 text-foreground backdrop-blur-md border border-white/30 shadow-lg transition-all hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-2xl"
+            >
+              Launching Ceremony
+              <ArrowRight className="ml-2" size={20} />
+            </Button>
+          </Link>
         </div>
       </section>
 
