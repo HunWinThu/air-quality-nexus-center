@@ -224,6 +224,13 @@ const Publications = () => {
                                 <Users className="mr-2 flex-shrink-0" size={16} />
                                 <span className="text-sm">{pub.authors}</span>
                               </div>
+
+                              <div className="flex items-center text-muted-foreground mb-3">
+                                <Book className="mr-2 flex-shrink-0" size={16} />
+                                <span className="text-sm">
+                                  {/symposium|conference|proceedings|igarss/i.test(pub.journal) ? 'Conference Paper' : 'Journal Article'}
+                                </span>
+                              </div>
                               
                               <div className="flex items-center text-muted-foreground">
                                 <Book className="mr-2 flex-shrink-0" size={16} />
