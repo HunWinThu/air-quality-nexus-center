@@ -174,7 +174,7 @@ const LaunchingEvent = () => {
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ type: 'spring', stiffness: 70, damping: 16 }}
                 >
-                  <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform">
+                  <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform" aria-label={`Quote from ${quote.name}`}>
                     <CardContent className="p-6 md:p-8">
                       <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
                         <img
