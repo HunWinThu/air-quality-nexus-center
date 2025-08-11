@@ -335,89 +335,61 @@ const Index = () => {
       </section>
 
       {/* Launching Event Section */}
-      <section 
-        className="relative py-20 bg-cover bg-no-repeat overflow-hidden" 
-        style={{ backgroundImage: `url(${Launching})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40"></div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="relative mb-16 overflow-hidden rounded-3xl">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${Launching4})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
-            <div className="relative px-6 py-12 md:px-10 md:py-16 text-center">
-              <Badge variant="secondary" className="mb-4">Celebrating Our Launch</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Launching Event</h2>
-              <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
-                Join us in celebrating the launch of the Air Quality Nexus Center, a pivotal step towards cleaner air and sustainable solutions in Asia and beyond.
-              </p>
-              <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
-                Learn More
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </div>
-          </div>
-          <motion.div
-            className="flex flex-col gap-12 md:gap-16"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
-          >
-            {quotes.map((quote, index) => {
-              const isEven = index % 2 === 0;
-              const xFrom = isEven ? -120 : 120;
-              const alignClass = isEven ? 'md:self-start' : 'md:self-end';
-              const floatOffset = isEven ? 'md:-translate-y-2' : 'md:translate-y-2';
-              const rowBackgrounds = [Launching1, Launching2, Launching3];
-              const rowBg = rowBackgrounds[index % rowBackgrounds.length];
-              return (
-                <motion.div
-                  key={index}
-                  className={`w-full md:w-11/12 lg:w-10/12 ${alignClass} ${floatOffset}`}
-                  initial={{ opacity: 0, x: xFrom, y: 20, scale: 0.98 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{ type: 'spring', stiffness: 70, damping: 16 }}
-                >
-                  <div className="relative rounded-3xl overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${rowBg})` }}
+      <section className="relative overflow-hidden p-0">
+        
+        {/* Fullscreen slides using five background images */}
+        {[Launching4, Launching1, Launching2, Launching3, Launching].map((bg, i) => {
+          const item = quotes[i % quotes.length];
+          const isEven = i % 2 === 0;
+          return (
+            <div key={i} className="relative h-[100svh] w-full">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }} />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/60" />
+              <div className="relative z-10 h-full">
+                <div className="container mx-auto h-full px-4 sm:px-6 lg:px-8">
+                  <div className={`h-full flex flex-col md:flex-row items-center justify-center gap-8 ${isEven ? '' : 'md:flex-row-reverse'}`}>
+                    <motion.img
+                      src={item.image}
+                      alt={`${item.name} - Launching Event`}
+                      className="w-full md:w-[30rem] lg:w-[34rem] h-64 md:h-80 lg:h-96 object-cover rounded-none shadow-lg"
+                      loading="lazy"
+                      initial={{ opacity: 0, x: isEven ? -120 : 120, scale: 0.98 }}
+                      whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ type: 'spring', stiffness: 70, damping: 16 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60" />
-                    <div className="relative p-4 md:p-6">
-                      <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-[1.01] will-change-transform">
-                        <CardContent className="p-6 md:p-8">
-                          <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
-                            <img
-                              src={quote.image}
-                              alt={`${quote.name} - Launching Event testimonial`}
-                              className="w-full md:w-[28rem] lg:w-[32rem] h-64 md:h-80 lg:h-96 object-cover rounded-none shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
-                              loading="lazy"
-                            />
-                            <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
-                              <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{quote.quote}”</p>
-                              <div className="mt-2">
-                                <h3 className="text-lg md:text-xl font-semibold text-white">{quote.name}</h3>
-                                <p
-                                  className="text-sm text-white/80"
-                                  dangerouslySetInnerHTML={{ __html: quote.position }}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
+                    <motion.div
+                      className={isEven ? 'text-left max-w-2xl' : 'text-left md:text-right max-w-2xl'}
+                      initial={{ opacity: 0, x: isEven ? 120 : -120, y: 10 }}
+                      whileInView={{ opacity: 1, x: 0, y: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ type: 'spring', stiffness: 70, damping: 16, delay: 0.08 }}
+                    >
+                      {i === 0 && (
+                        <div className="mb-4 text-center md:text-left">
+                          <Badge variant="secondary" className="mb-3">Celebrating Our Launch</Badge>
+                          <h2 className="text-4xl md:text-5xl font-bold text-white">Launching Event</h2>
+                        </div>
+                      )}
+                      <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{item.quote}”</p>
+                      <div>
+                        <h3 className="text-lg md:text-xl font-semibold text-white">{item.name}</h3>
+                        <p className="text-sm text-white/80" dangerouslySetInnerHTML={{ __html: item.position }} />
+                      </div>
+                      {i === 0 && (
+                        <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
+                          Learn More
+                          <ArrowRight className="ml-2" size={20} />
+                        </Button>
+                      )}
+                    </motion.div>
                   </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
       </section>
 
       {/* Features Section */}
