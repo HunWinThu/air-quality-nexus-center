@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,6 +14,8 @@ import launching6 from '@/assets/Launching_6.jpg';
 import homeImg from '@/assets/HOME.jpg';
 import partners1 from '@/assets/partners-1.png';
 import partners4 from '@/assets/partners-4.jpeg';
+import Autoplay from 'embla-carousel-autoplay';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 
 import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
 import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
