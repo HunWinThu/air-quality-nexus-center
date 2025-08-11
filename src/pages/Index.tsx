@@ -336,23 +336,28 @@ const Index = () => {
 
       {/* Launching Event Section */}
       <section 
-        className="relative py-20 bg-cover bg-contain bg-no-repeat overflow-hidden" 
+        className="relative py-20 bg-cover bg-no-repeat overflow-hidden" 
         style={{ backgroundImage: `url(${Launching})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40"></div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4">Celebrating Our Launch</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Launching Event
-            </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Join us in celebrating the launch of the Air Quality Nexus Center, a pivotal step towards cleaner air and sustainable solutions in Asia and beyond.
-            </p>
-            <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
-              Learn More
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
+          <div className="relative mb-16 overflow-hidden rounded-3xl">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${Launching4})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
+            <div className="relative px-6 py-12 md:px-10 md:py-16 text-center">
+              <Badge variant="secondary" className="mb-4">Celebrating Our Launch</Badge>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Launching Event</h2>
+              <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
+                Join us in celebrating the launch of the Air Quality Nexus Center, a pivotal step towards cleaner air and sustainable solutions in Asia and beyond.
+              </p>
+              <Button size="lg" variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
+                Learn More
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </div>
           </div>
           <motion.div
             className="flex flex-col gap-12 md:gap-16"
@@ -366,6 +371,8 @@ const Index = () => {
               const xFrom = isEven ? -120 : 120;
               const alignClass = isEven ? 'md:self-start' : 'md:self-end';
               const floatOffset = isEven ? 'md:-translate-y-2' : 'md:translate-y-2';
+              const rowBackgrounds = [Launching1, Launching2, Launching3];
+              const rowBg = rowBackgrounds[index % rowBackgrounds.length];
               return (
                 <motion.div
                   key={index}
@@ -375,27 +382,37 @@ const Index = () => {
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ type: 'spring', stiffness: 70, damping: 16 }}
                 >
-                  <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-105 will-change-transform">
-                    <CardContent className="p-6 md:p-8">
-                      <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
-                        <img
-                          src={quote.image}
-                          alt={`${quote.name} - Launching Event testimonial`}
-                          className="w-full md:w-80 lg:w-96 h-56 md:h-64 lg:h-72 object-cover rounded-xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
-                        />
-                        <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
-                          <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{quote.quote}”</p>
-                          <div className="mt-2">
-                            <h3 className="text-lg md:text-xl font-semibold text-white">{quote.name}</h3>
-                            <p
-                              className="text-sm text-white/80"
-                              dangerouslySetInnerHTML={{ __html: quote.position }}
+                  <div className="relative rounded-3xl overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${rowBg})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60" />
+                    <div className="relative p-4 md:p-6">
+                      <Card className="group hover:shadow-lg transition-all duration-500 bg-white/10 backdrop-blur-md border-white/20 text-white transform hover:scale-[1.01] will-change-transform">
+                        <CardContent className="p-6 md:p-8">
+                          <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
+                            <img
+                              src={quote.image}
+                              alt={`${quote.name} - Launching Event testimonial`}
+                              className="w-full md:w-[28rem] lg:w-[32rem] h-64 md:h-80 lg:h-96 object-cover rounded-none shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
+                              loading="lazy"
                             />
+                            <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
+                              <p className="text-xl md:text-2xl text-white/90 mb-4 italic">“{quote.quote}”</p>
+                              <div className="mt-2">
+                                <h3 className="text-lg md:text-xl font-semibold text-white">{quote.name}</h3>
+                                <p
+                                  className="text-sm text-white/80"
+                                  dangerouslySetInnerHTML={{ __html: quote.position }}
+                                />
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}
