@@ -39,6 +39,7 @@ import particlesPlus from '@/assets/collaborators/Particles-Plus-Logo-Opaque.jpg
 import unep from '@/assets/collaborators/United_Nations_Environment_Programme_Logo.svg.png';
 import vanlang from '@/assets/collaborators/vanlang.png';
 import vnu from '@/assets/collaborators/VNU-USSH (1).jpg';
+import bg_3 from '@/assets/bg_3.jpg';
 import { motion } from 'framer-motion';
 
 const Index = () => {
@@ -138,12 +139,12 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-sky-blue/20"></div>
         </div>
         
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
               Center for Nexus of Air Quality, Health, Ecosystem, and Climate
             </h1>
-            <p className="text-left text-xl md:text-xl mb-8 text-white max-w-7xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
+            <p className="text-center text-xl md:text-2xl mb-8 text-white max-w-10xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
               A leading Center in conducting and implementing application research with the aim to gain multiple 
               benefits from reducing air pollution through improvement of health of human and ecosystem, and 
               protection of the climate system.
@@ -166,7 +167,7 @@ const Index = () => {
               Air Quality Nexus
               <span className="block text-primary">Center</span>
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6 font-medium max-w-4xl mx-auto">
+            <p className="text-xl text-grey/90 leading-relaxed mb-6 font-medium max-w-6xl mx-auto text-center">
               Air Quality Nexus Center has a goal to serve as a focal point to build capacity and conduct cutting-edge 
               research in atmospheric sciences for effective improvement of air quality in Asia and beyond. The Center will be an institution-wide Center, cooperating with multidisciplinary and cutting-edge research 
               areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity.
@@ -180,22 +181,22 @@ const Index = () => {
       {/* Our Missions (glass blur) */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={pm25Image} alt="Air pollution background" className="w-full h-full object-cover" />
+          <img src={bg_3} alt="Air pollution background" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/30"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
             <div className="bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
-              <h2 className="text-4xl font-bold text-white mb-4">Our Vision</h2>
-              <p className="text-lg text-white/90">
+              <h2 className="text-5xl font-bold text-white mb-4">Our Vision</h2>
+              <p className="text-xl text-white/90">
                 Air Quality Nexus will be a leading Center in conducting and implementing application research with the aim to gain
                 multiple benefits from reducing air pollution through improvement of health of human and ecosystem,
                 and protection of the climate system.
               </p>
             </div>
             <div className="bg-white/15 backdrop-blur-lg p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
-              <h2 className="text-4xl font-bold text-white mb-4">Our Missions</h2>
-              <ul className="text-lg list-disc pl-6 space-y-3 text-white/90">
+              <h2 className="text-5xl font-bold text-white mb-4">Our Missions</h2>
+              <ul className="text-xl list-disc pl-6 space-y-3 text-white/90">
                 <li>Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond;</li>
                 <li>Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems;</li>
                 <li>Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context;</li>
@@ -204,45 +205,6 @@ const Index = () => {
                 <li>Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally;</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Photo Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={teamGroupPhoto} 
-            alt="Research team collaboration" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
-        </div>
-      </section>
-
-
-      {/* Features Section */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            
-            <h2 className="text-5xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From cutting-edge research to community engagement, we tackle air quality challenges 
-              through multiple integrated approaches.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
-                <CardContent className="p-6 text-center">
-                  <feature.icon className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -286,6 +248,47 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Team Photo Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={teamGroupPhoto} 
+            alt="Research team collaboration" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+        </div>
+      </section>
+
+
+      {/* Features Section */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            
+            <h2 className="text-5xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From cutting-edge research to community engagement, we tackle air quality challenges 
+              through multiple integrated approaches.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
+                <CardContent className="p-6 text-center">
+                  <feature.icon className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Strategic Partners Section */}
       <section className="py-20 bg-accent/30">
