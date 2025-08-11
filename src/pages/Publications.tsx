@@ -205,6 +205,13 @@ const Publications = () => {
                       <Card className="hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 border-2 border-transparent hover:border-primary/20 flex flex-col">
                         <CardContent className="p-6 flex-grow">
                           <div className="flex gap-4">
+                            <div className="flex-shrink-0">
+                              <div className="w-28 md:w-40">
+                                <AspectRatio ratio={3/4} className="rounded-md bg-muted/30 border border-border overflow-hidden">
+                                  <div className="w-full h-full flex items-center justify-center text-[10px] md:text-xs text-muted-foreground">Cover</div>
+                                </AspectRatio>
+                              </div>
+                            </div>
                             <div className="min-w-0 flex-1">
                               <Link to={pub.doi} target="_blank" rel="noopener noreferrer" className="block mb-4">
                                 <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
@@ -212,6 +219,7 @@ const Publications = () => {
                                 </h3>
                               </Link>
                               
+                              <div className="text-sm text-muted-foreground mb-3">Published Year: {year}</div>
                               <div className="flex items-center text-muted-foreground mb-3">
                                 <Users className="mr-2 flex-shrink-0" size={16} />
                                 <span className="text-sm">{pub.authors}</span>
@@ -222,27 +230,20 @@ const Publications = () => {
                                 <span className="text-sm italic">{pub.journal}</span>
                               </div>
 
-                              <div className="mt-4 bg-accent/20 rounded-md border border-accent/50 overflow-hidden">
-                                <div className="flex items-stretch">
-                                  <div className="flex-shrink-0 w-32 md:w-44 bg-muted/30 border-r border-accent/50">
-                                    <div className="h-full w-full flex items-center justify-center text-[10px] md:text-xs text-muted-foreground">Cover</div>
-                                  </div>
-                                  <div className="flex-1 p-4">
-                                    <div className="flex items-center text-muted-foreground mb-2">
-                                      <Quote className="mr-2 flex-shrink-0" size={16} />
-                                    </div>
-                                    <div className="flex items-start justify-between gap-2">
-                                      <p className="text-sm text-foreground flex-1 pr-2">{pub.cite}</p>
-                                      <Button 
-                                        variant="ghost" 
-                                        size="icon" 
-                                        className="flex-shrink-0"
-                                        onClick={() => handleCopy(pub.cite, index)}
-                                      >
-                                        {copiedIndex === index ? <Check className="text-green-500" size={20} /> : <Copy className="text-primary" size={20} />}
-                                      </Button>
-                                    </div>
-                                  </div>
+                              <div className="mt-4 bg-accent/20 p-4 rounded-md border border-accent/50">
+                                <div className="flex items-center text-muted-foreground mb-2">
+                                  <Quote className="mr-2 flex-shrink-0" size={16} />
+                                </div>
+                                <div className="flex items-start justify-between gap-2">
+                                  <p className="text-sm text-foreground flex-1 pr-2">{pub.cite}</p>
+                                  <Button 
+                                    variant="ghost" 
+                                    size="icon" 
+                                    className="flex-shrink-0"
+                                    onClick={() => handleCopy(pub.cite, index)}
+                                  >
+                                    {copiedIndex === index ? <Check className="text-green-500" size={20} /> : <Copy className="text-primary" size={20} />}
+                                  </Button>
                                 </div>
                               </div>
                             </div>
