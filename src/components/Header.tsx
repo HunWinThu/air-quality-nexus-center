@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/AQC_logo.jpg';
 
@@ -14,7 +15,6 @@ const Header = () => {
     { name: 'Projects', href: '/blog' },
     { name: 'News', href: '/activities' },
     { name: 'Publications', href: '/publications' },
-    { name: 'Team', href: '/team' },
     { name: 'Contact Us', href: '/contact' },
   ];
 
@@ -32,19 +32,46 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`text-base font-medium transition-colors hover:text-primary ${
-                  isActive(item.href) 
-                    ? 'text-primary border-b-2 border-primary pb-1' 
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              if (item.name === 'About Us') {
+                return (
+                  <DropdownMenu key={item.name}>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        className={`text-base font-medium transition-colors hover:text-primary ${
+                          isActive('/about')
+                            ? 'text-primary border-b-2 border-primary pb-1'
+                            : 'text-muted-foreground'
+                        }`}
+                      >
+                        {item.name}
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="z-50 bg-background border border-border">
+                      <DropdownMenuItem asChild>
+                        <Link to="/launching-event">Launching Event</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link to="/team">Team</Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`text-base font-medium transition-colors hover:text-primary ${
+                    isActive(item.href) 
+                      ? 'text-primary border-b-2 border-primary pb-1' 
+                      : 'text-muted-foreground'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <Button size="sm" className="ml-4">
               Get Involved
             </Button>
@@ -62,32 +89,64 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                    isActive(item.href)
-                      ? 'text-primary bg-accent'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="px-3 py-2">
-                <Button size="sm" className="w-full">
-                  Get Involved
-                </Button>
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
+                {navigation.map((item) => (
+                  item.name === 'About Us' ? (
+                    <div key={item.name}>
+                      <Link
+                        to={item.href}
+                        className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                          isActive(item.href)
+                            ? 'text-primary bg-accent'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                      <div className="ml-4">
+                        <Link
+                          to="/launching-event"
+                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Launching Event
+                        </Link>
+                        <Link
+                          to="/team"
+                          className="block px-3 py-2 text-base rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Team
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                        isActive(item.href)
+                          ? 'text-primary bg-accent'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                ))}
+                <div className="px-3 py-2">
+                  <Button size="sm" className="w-full">
+                    Get Involved
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     </header>
   );
