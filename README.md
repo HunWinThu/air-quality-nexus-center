@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# Air Quality Nexus Center
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/bf7db7af-c930-462e-b398-8e176804854c
+The Air Quality Nexus Center is a leading initiative dedicated to conducting and implementing application research focused on improving air quality. Our primary goal is to achieve multiple benefits by reducing air pollution, thereby enhancing human and ecosystem health, and protecting the global climate system. This project serves as the official website for the center, showcasing our missions, research, partnerships, and news.
 
-## How can I edit this code?
+## Key Features
 
-There are several ways of editing your application.
+*   **Comprehensive Information:** Detailed sections on the center's vision, missions, and core areas of focus.
+*   **Dynamic Content:** Displays recent research, news, and expert quotes.
+*   **Strategic Partnerships:** Highlights collaborations with leading organizations in air quality research.
+*   **Responsive Design:** Built with modern web technologies for a seamless experience across devices.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/bf7db7af-c930-462e-b398-8e176804854c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+*   **Frontend:**
+    *   **React:** A JavaScript library for building user interfaces.
+    *   **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+    *   **Vite:** A fast build tool that provides a lightning-fast development experience.
+    *   **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+    *   **shadcn/ui:** A collection of reusable components built with Radix UI and Tailwind CSS.
+*   **Backend (Potential/Future):**
+    *   **Supabase:** (Mentioned in `package.json` dependencies, indicating potential future or current use for data management).
 
-## How can I deploy this project?
+## Setup and Local Development
 
-Simply open [Lovable](https://lovable.dev/projects/bf7db7af-c930-462e-b398-8e176804854c) and click on Share -> Publish.
+To set up and run this project locally, follow these steps:
 
-## Can I connect a custom domain to my Lovable project?
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/HunWinThu/air-quality-nexus-center.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd air-quality-nexus-center
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    The application will typically be available at `http://localhost:8080`.
 
-Yes, you can!
+## Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project is configured for deployment to GitHub Pages. The `deploy` script in `package.json` handles the build process and pushes the static assets to the `gh-pages` branch.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+To deploy the latest changes:
+
+```bash
+npm run deploy
+```
+
+The deployed site will be available at `https://hunwinthu.github.io/air-quality-nexus-center/`.
