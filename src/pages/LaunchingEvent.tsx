@@ -8,6 +8,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import pm25Image from '@/assets/pm2.5.png';
+import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 
 import quoteImage2 from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
 import quoteImage3 from '@/assets/Advisory/Prof. Ram Shrestha.jpeg';
@@ -106,6 +107,18 @@ const LaunchingEvent = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {/* Team Photo Hero */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={teamGroupPhoto}
+            alt="Air Quality Nexus team group photo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+        </div>
+      </section>
 
       <section className="relative py-20 bg-gradient-to-br from-air-light to-accent overflow-hidden">
         <div className="absolute inset-0 z-0">
