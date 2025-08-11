@@ -26,12 +26,12 @@ const Header = () => {
         <div className="flex justify-between items-center py-1">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="Air Quality Nexus" className="h-32 w-32" />
-            <span className="text-xl font-bold text-foreground"> Center for Nexus of Air Quality,<br/> Health, Ecosystem, and Climate</span>
+            <img src={logo} alt="Air Quality Nexus" className="h-12 w-12 md:h-14 md:w-14" />
+            <span className="text-sm md:text-base font-semibold leading-snug text-foreground"> Center for Nexus of Air Quality,<br/> Health, Ecosystem, and Climate</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => {
               if (item.name === 'About Us') {
                 return (
