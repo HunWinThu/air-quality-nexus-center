@@ -14,6 +14,8 @@ import partner1 from '@/assets/partners-1.png';
 import partner2 from '@/assets/partner-2.png';
 import partner3 from '@/assets/partner-3.png';
 import partner4 from '@/assets/partners-4.jpeg';
+import igesLogo from '@/assets/partners/international/iges.svg';
+import pcdLogo from '@/assets/partners/international/pcd-thailand.png';
 import climateImage from '@/assets/co-benefits.png';
 import capacity from '@/assets/capacity.jpg';
 import logo from '@/assets/AQC_logo.jpg';
@@ -77,7 +79,14 @@ const Index = () => {
       category: 'Policy'
     }
   ];
-
+  const internationalPartners = [
+    { name: 'Clean Air Asia', href: 'https://cleanairasia.org/', logo: partner1 },
+    { name: 'FHI 360', href: 'https://www.fhi360.org/', logo: partner2 },
+    { name: 'HEAL Global Research Centre', href: 'https://www.canberra.edu.au/faculties/health/heal', logo: partner3 },
+    { name: 'Academia Sinica', href: 'https://www.sinica.edu.tw/en', logo: partner4 },
+    { name: 'IGES', href: 'https://www.iges.or.jp/', logo: igesLogo },
+    { name: 'Pollution Control Department, Thailand', href: 'https://www.pcd.go.th/', logo: pcdLogo },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -318,6 +327,32 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+       {/* International partners and collaborators */}
+       <section className="py-20 bg-background">
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="text-center mb-12">
+             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">International partners and collaborators</h2>
+             <p className="text-muted-foreground max-w-2xl mx-auto">
+               Key international organizations and universities we collaborate with.
+             </p>
+           </div>
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+             {internationalPartners.map((p, idx) => (
+               <div key={idx} className="flex flex-col items-center text-center">
+                 <a href={p.href} target="_blank" rel="noopener noreferrer" className="w-full">
+                   <Card className="group hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-3xl h-36 w-full flex items-center justify-center">
+                     <CardContent className="p-4 h-full w-full flex items-center justify-center">
+                       <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                     </CardContent>
+                   </Card>
+                 </a>
+                 <h3 className="mt-3 text-sm font-medium text-foreground">{p.name}</h3>
+               </div>
+             ))}
+           </div>
+         </div>
+       </section>
 
       {/* Call to Action */}
       <section className="py-20">
