@@ -11,7 +11,7 @@ import Publications from "./pages/Publications";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import LaunchingEvent from "./pages/LaunchingEvent";
-import LaunchingEventDetails from "./pages/LaunchingEventDetails";
+
 import WhatWeDo from "./pages/WhatWeDo";
  
 import NotFound from "./pages/NotFound";
@@ -35,7 +35,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/launching-event" element={<LaunchingEvent />} />
-          <Route path="/launching-event/details" element={<LaunchingEventDetails />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

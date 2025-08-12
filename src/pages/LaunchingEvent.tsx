@@ -1,23 +1,18 @@
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 //import homeImg from '@/assets/Laung.jpg';
 //import partners1 from '@/assets/partners-1.png';
 //import partners4 from '@/assets/partners-4.jpeg';
 //import Autoplay from 'embla-carousel-autoplay';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 
-import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
+
 import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
-import Shrestha from '@/assets/Advisory/Prof. Ram Shrestha.jpeg';
-import Hopke from '@/assets/Advisory/Prof. Philip Hopke.jpeg';
+
+
 import Rupakheti from '@/assets/Advisory/Dr. Maheswar Rupakheti.jpg';
 import Emberson from '@/assets/Advisory/Prof. Lisa Emberson.jpg';
 import Vardoulakis from '@/assets/Advisory/Prof. Sotiris Vardoulakis.jpeg';
@@ -35,7 +30,7 @@ import launching3 from '@/assets/Launching_Event/Launching-3.jpg';
 import launching4 from '@/assets/Launching_Event/Launching-4.jpg';
 import launching5 from '@/assets/Launching_Event/Launching-5.jpg';
 import launching6 from '@/assets/Launching_Event/Launching-6.jpg';
-import launching7 from '@/assets/Launching_Event/Launching_7.jpg';
+
 import launching8 from '@/assets/Launching_Event/Launching_8.jpg';
 
 const LaunchingEvent = () => {
