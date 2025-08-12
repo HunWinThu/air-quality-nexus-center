@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, Twitter, User, AlignCenter } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { useEffect } from 'react';
 
 // Replace these imports with actual images if available
 import kim from '@/assets/prof.kim.jpg';
@@ -267,6 +269,26 @@ const departments = [
 ];
 
 const Team = () => {
+  useEffect(() => {
+    const title = 'AQC Team | Air Quality Nexus Center (AIT)';
+    document.title = title;
+    const desc = 'Meet the AQC core team and advisory committee at AIT—experts in air quality, emissions, modeling and environmental health.';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'description');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', desc);
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', window.location.href);
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -286,100 +308,131 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Core Team */}
+      {/* Team Directory (Tabs) */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Core Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreTeam.map((member) => (
-              <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background to-accent/10">
-                <CardContent className="p-6">
-                  <div className="text-center mb-4">
-                    <img 
-                      src={member.image || teamPlaceholder} 
-                      alt={member.name}
-                      className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
-                    />
-                    <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
-                    <p className="text-primary font-medium mb-2">{member.role}</p>
-                    <Badge variant="secondary" className="text-base">{member.department}</Badge>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div>
-                      <h4 className="text-l font-semibold text-foreground mb-1">Expertise</h4>
-                      <p className="text-l text-muted-foreground">{member.Expertise}</p>
-                    </div>
-                    
-                    
-                  </div>
-                  
-                  <div className="flex justify-center space-x-4 mt-1">
-                  {member.viewprofile && member.viewprofile !== '' && (
-                    <a href={member.viewprofile} target="_blank" rel="noopener noreferrer">
-                      <Button size="lg" variant="outline" className="p-4">
-                        <User size={32} /> {/* Changed from size={16} to size={24} */}
-                      </Button>
-                    </a>
-                  )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Tabs defaultValue="core" className="w-full">
+            <div className="text-center mb-8">
+              <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
+                <TabsTrigger value="core">Core Team</TabsTrigger>
+                <TabsTrigger value="advisory">Advisory Committee</TabsTrigger>
+              </TabsList>
+            </div>
+
+            <TabsContent value="core" className="mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {coreTeam.map((member) => (
+                  <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background">
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <img
+                          src={member.image || teamPlaceholder}
+                          alt={`${member.name} - ${member.role}`}
+                          loading="lazy"
+                          className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                        />
+                        <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
+                        <p className="text-primary font-medium mb-2">{member.role}</p>
+                        {member.department && (
+                          <Badge variant="secondary" className="text-base">{member.department}</Badge>
+                        )}
+                      </div>
+
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="text-l font-semibold text-foreground mb-1">Expertise</h4>
+                          <p className="text-l text-muted-foreground">{member.Expertise}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-center space-x-4 mt-4">
+                        {member.viewprofile && member.viewprofile !== '' && (
+                          <a
+                            href={member.viewprofile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View profile of ${member.name}`}
+                          >
+                            <Button size="lg" variant="outline" className="p-4">
+                              <User size={32} />
+                            </Button>
+                          </a>
+                        )}
+                        {member.linkedin && member.linkedin !== '' && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${member.name} on LinkedIn`}
+                          >
+                            <Button size="lg" variant="outline" className="p-4">
+                              <Linkedin size={32} />
+                            </Button>
+                          </a>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="advisory" className="mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {advisoryCommittee.map((member) => (
+                  <Card
+                    key={member.id}
+                    className="group hover:shadow-lg transition-shadow duration-300 bg-background"
+                  >
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <img
+                          src={member.image || teamPlaceholder}
+                          alt={`${member.name} - ${member.role}`}
+                          loading="lazy"
+                          className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                        />
+                        <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
+                        <p className="text-primary font-medium mb-2">{member.role}</p>
+                        {member.department && (
+                          <Badge variant="secondary" className="text-base">{member.department}</Badge>
+                        )}
+                      </div>
+                      <div className="flex justify-center space-x-4 mt-2">
+                        {member.viewprofile && member.viewprofile !== '' && (
+                          <a
+                            href={member.viewprofile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View profile of ${member.name}`}
+                          >
+                            <Button size="lg" variant="outline" className="p-3">
+                              <User size={32} />
+                            </Button>
+                          </a>
+                        )}
+                        {member.linkedin && member.linkedin !== '' && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${member.name} on LinkedIn`}
+                          >
+                            <Button size="lg" variant="outline" className="p-3">
+                              <Linkedin size={32} />
+                            </Button>
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-base text-muted-foreground mb-0 pt-3 text-center">{member.bio}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
-    
-    <section className="py-20 bg-accent/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">Our Advisors</Badge>
-          <h2 className="text-4xl font-bold text-foreground mb-6">Advisory Committee</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Meet our distinguished advisory committee, guiding our mission to improve air quality and sustainability.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {advisoryCommittee.map((member) => (
-            <Card
-              key={member.id}
-              className="group hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background to-accent/10"
-            >
-              <CardContent className="p-6">
-                <div className="text-center mb-4">
-                  <img
-                    src={member.image || teamPlaceholder}
-                    alt={member.name}
-                    className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
-                  />
-                  <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-2">{member.role}</p>
-                  <Badge variant="secondary" className="text-base">{member.department}</Badge>
-                </div>
-                <div className="flex justify-center space-x-4 mt-2">
-                  {member.viewprofile && member.viewprofile !== '' && (
-                    <a href={member.viewprofile} target="_blank" rel="noopener noreferrer">
-                      <Button size="lg" variant="outline" className="p-3">
-                        <User size={32} /> {/* Changed from size={16} to size={24} */}
-                      </Button>
-                    </a>
-                  )}
-                  {member.linkedin && member.linkedin !== '' && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                      <Button size="lg" variant="outline" className="p-3"> {/* Changed from p-2 to p-3 */}
-                        <Linkedin size={32} /> {/* Changed from size={16} to size={24} */}
-                      </Button>
-                    </a>
-                  )}
-                </div>
-                <p className="text-base text-muted-foreground mb-4 pt-3 text-center">{member.bio}</p>
-                
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
 
         
 
