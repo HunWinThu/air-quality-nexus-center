@@ -300,8 +300,8 @@ const Publications = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="group">
-                  <Link to="https://www.researchgate.net/profile/Huyen-Truong-5" target="_blank" rel="noopener noreferrer">
-                    Huyen Truong
+                  <Link to="https://www.researchgate.net/profile/Ha-Chi-Nguyen-Nhat" target="_blank" rel="noopener noreferrer">
+                    Ha-Chi-Nguyen-Nhat
                   </Link>
                 </Button>
               </div>

@@ -38,114 +38,107 @@ const coreTeam = [
     id: 1,
     name: 'Prof. Dr. Nguyen Thi Kim Oanh',
     role: 'Director of Center',
-    department: 'Environmental Engineering and Management',
+    department: 'Doctor of Engineering in Environmental Technology and Management, AIT',
     bio: 'Professor at AIT, expert in air quality, emission inventory, and environmental health.',
     Expertise: 'Air pollution monitoring; Dispersion modeling and receptor modeling; Emission inventory and projection; Emission control; Exposure assessment; Effects of air pollution on ecosystem; Meteorology and climate science; Climate co-benefits assessment; Industrial environmental management',
     specialties: ['Air Quality', 'Emission Inventory', 'Environmental Health'],
     image: kim,
-    email: 'kim.oanh@ait.ac.th',
+    viewprofile: 'kim.oanh@ait.ac.th',
     linkedin: 'https://www.linkedin.com/in/kim-oanh/',
-    twitter: ''
   },
   {
     id: 2,
     name: 'Dr. Lai Nguyen Huy',
     role: 'Center Manager',
-    department: 'Environmental Engineering and Management',
+    department: 'Doctor of Engineering in Environmental Technology and Management, AIT',
     bio: 'Researcher focusing on air pollution modeling and monitoring.',
     Expertise: 'Air quality and meteorology modeling; Emission inventory; Satellite air pollution monitoring; Climate co-benefits assessment',
     specialties: ['Air Pollution Modeling', 'Monitoring', 'Data Analysis'],
     image: huy,
-    email: 'lainguyenhuy@ait.asia',
-    linkedin: '',
-    twitter: ''
+    viewprofile: 'lainguyenhuy@ait.asia',
+
   },
 
-  {
-    id: 3,
-    name: 'Ms. Khing Thwe Oo',
-    role: 'Research Associate',
-    department: 'Environmental Engineering and Management',
-    bio: 'Specializes in emission inventory and air quality management.',
-    Expertise: ' 	Administration; Air pollution monitoring',
-    specialties: ['Emission Inventory', 'Air Quality Management'],
-    image: ktoo,
-    email: '',
-    linkedin: '',
-    twitter: ''
-  },
 
   {
     id: 4,
     name: 'Ms. Nguyen Nhat Ha Chi',
-    role: 'Ph.D. Candidate',
-    department: 'Environmental Engineering and Management',
+    role: 'Research Specialist',
+    department: 'Doctor of Philosophy in Environmental Technology and Management, AIT',
     bio: 'Specializes in emission inventory and air quality management.',
     Expertise: 'Air quality and meteorology modeling; Emission inventory',
     specialties: ['Emission Inventory', 'Air Quality Management'],
     image: Nguyen,
-    email: '',
-    linkedin: '',
-    twitter: ''
+    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+
+  },
+
+    {
+    id: 3,
+    name: 'Ms. Khing Thwe Oo',
+    role: 'Research Associate',
+    department: 'Master of Engineering in Environmental Engineering and Management, AIT',
+    bio: 'Specializes in emission inventory and air quality management.',
+    Expertise: ' 	Administration; Air pollution monitoring',
+    specialties: ['Emission Inventory', 'Air Quality Management'],
+    image: ktoo,
+    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+
   },
 
     {
     id: 5,
     name: 'Mr. Ha Quang Dang',
     role: 'Research Assistant',
-    department: 'Environmental Engineering and Management',
+    department: 'Bachelor of Engineering in Environmental Engineering, Hanoi University of Science and Technology (HUST),',
     bio: 'Specializes in emission inventory and air quality management.',
     Expertise: 'Research Assistant_Air pollution monitoring',
     specialties: ['Emission Inventory', 'Air Quality Management'],
     alignTop: true,
     image: Dang,
-    email: '',
-    linkedin: '',
-    twitter: ''
+    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+
   },
 
     {
     id: 6,
     name: 'Mr. Hun Win Thu',
-    role: 'ICT Support',
-    department: 'Environmental Engineering and Management',
+    role: 'Research Assistant & IoT Engineer',
+    department: 'Master of Engineering in Telecommunications, AIT',
     bio: 'Specializes in emission inventory and air quality management.',
     Expertise: 'Research Assistant_ICT Support and IoT Engineer',
     specialties: ['Emission Inventory', 'Air Quality Management'],
     alignTop: true,
     image: Hun,
-    email: '',
-    linkedin: '',
-    twitter: ''
+    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+
   },
 
     {
     id: 7,
     name: 'Ms. May Hnin Aye',
-    role: 'Research Assistant',
-    department: 'Environmental Engineering and Management',
+    role: 'Research Assistant & RS-GIS',
+    department: 'Master of Science in Remote Sensing & GIS',
     bio: 'Specializes in emission inventory and air quality management.',
     Expertise: 'Remote Sensing and GIS Analyst',
     specialties: ['Emission Inventory', 'Air Quality Management'],
     image: May,
-    email: '',
-    linkedin: '',
-    twitter: ''
+    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+
   },
 
     {
     id: 8,
     name: 'Ms. Keishu Pant',
-    role: 'PhD Student',
-    department: 'Environmental Engineering and Management',
+    role: 'PhD Candidate',
+    department: 'Student',
     bio: 'Specializes in emission inventory and air quality management.',
     Expertise: 'Research Assistant_Air pollution monitoring',
     specialties: ['Emission Inventory', 'Air Quality Management'],
     alignTop: true,
     image: Pant,
-    email: '',
-    linkedin: '',
-    twitter: ''
+    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+
   },
   // Add more core team members as needed
 ];
@@ -321,26 +314,14 @@ const Team = () => {
                     
                   </div>
                   
-                  <div className="flex justify-center space-x-3 mt-6">
-                    <a href={`mailto:${member.email}`}>
-                      <Button size="sm" variant="outline" className="p-2">
-                        <Mail size={16} />
+                  <div className="flex justify-center space-x-4 mt-1">
+                  {member.viewprofile && member.viewprofile !== '' && (
+                    <a href={member.viewprofile} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant="outline" className="p-4">
+                        <User size={32} /> {/* Changed from size={16} to size={24} */}
                       </Button>
                     </a>
-                    {member.linkedin && member.linkedin !== '' && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" variant="outline" className="p-2">
-                          <Linkedin size={16} />
-                        </Button>
-                      </a>
-                    )}
-                    {member.twitter && member.twitter !== '' && (
-                      <a href={member.twitter} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" variant="outline" className="p-2">
-                          <Twitter size={16} />
-                        </Button>
-                      </a>
-                    )}
+                  )}
                   </div>
                 </CardContent>
               </Card>
