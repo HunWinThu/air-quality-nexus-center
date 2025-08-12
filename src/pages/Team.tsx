@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Replace these imports with actual images if available
 import kim from '@/assets/prof.kim.jpg';
@@ -35,7 +36,9 @@ import Casanova from '@/assets/Advisory/Ms. Dang Espita Casanova.jpeg';
 
 import teamPlaceholder from '@/assets/team-placeholder.jpg';
 
-const coreTeam = [
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+export const coreTeam = [
   {
     id: 1,
     name: 'Prof. Dr. Nguyen Thi Kim Oanh',
@@ -147,7 +150,7 @@ const coreTeam = [
 
 
 
-const advisoryCommittee = [
+export const advisoryCommittee = [
   //{
   //  id: 1,
   //  name: "Prof. Bindu N. Lohani",
@@ -331,18 +334,9 @@ const Team = () => {
                           loading="lazy"
                           className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
                         />
-                        {member.viewprofile && member.viewprofile !== '' ? (
-                          <a
-                            href={member.viewprofile}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline"
-                          >
-                            <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
-                          </a>
-                        ) : (
+                        <Link to={`/team/${slugify(member.name)}`} state={{ member }} className="hover:underline">
                           <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
-                        )}
+                        </Link>
                         <p className="text-sm text-muted-foreground">{member.role}</p>
                         {member.department && (
                           <p className="text-sm text-muted-foreground">{member.department}</p>
