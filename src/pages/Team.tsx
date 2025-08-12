@@ -9,9 +9,9 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Replace these imports with actual images if available
-import kim from '@/assets/prof.kim.jpg';
+import kim from '@/assets/prof.Kim.jpeg';
 import huy from '@/assets/dr.huy.jpg';
-import ktoo from '@/assets/ms-khing.jpg';
+import ktoo from '@/assets/Ms. Ktoo.jpg';
 import Huyen from '@/assets/Dr. Truong Thi Huyen.jpg';
 import Nguyen from '@/assets/ms-chi.jpg';
 import Dang from '@/assets/dang.png';
@@ -300,7 +300,6 @@ const Team = () => {
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4">Meet Our Team</Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Our Expert Team
             </h1>
@@ -317,8 +316,8 @@ const Team = () => {
           <Tabs defaultValue="core" className="w-full">
             <div className="text-center mb-8">
               <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
-                <TabsTrigger value="core">Core Team</TabsTrigger>
-                <TabsTrigger value="advisory">Advisory Committee</TabsTrigger>
+                <TabsTrigger value="core" className="text-lg">Core Team</TabsTrigger>
+                <TabsTrigger value="advisory" className="text-lg">Advisory Committee</TabsTrigger>
               </TabsList>
             </div>
 
@@ -391,47 +390,6 @@ const Team = () => {
         </div>
       </section>
 
-        
-
-
-      {/* Departments */}
-      <section className="py-20 bg-accent/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Our Departments</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {departments.map((dept, index) => (
-              <Card key={index} className="bg-background/80 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{dept.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{dept.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">{dept.members} members</span>
-                    <Badge variant="secondary">{dept.name.split(' ')[0]}</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>  
-      </section>
-
-      {/* Join Our Team */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
-            <CardContent className="p-12 text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Team</h2>
-              <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                We welcome passionate researchers and professionals to join our mission of improving air quality and environmental health.
-              </p>
-              <div className="space-x-4">
-                <Button size="lg">View Open Positions</Button>
-                <Button size="lg" variant="outline">Submit Resume</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       <Footer />
     </div>

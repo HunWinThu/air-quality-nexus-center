@@ -18,7 +18,7 @@ import igesLogo from '@/assets/partners/international/iges.svg';
 import pcdLogo from '@/assets/partners/international/pcd-thailand.png';
 import climateImage from '@/assets/co-benefits.png';
 import capacity from '@/assets/capacity.jpg';
-import logo from '@/assets/AQC_logo.jpg';
+import logo from '@/assets/aqc.png';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 import pm25Image from '@/assets/pm2.5.png';
 import { Target, Eye } from 'lucide-react';
@@ -161,7 +161,7 @@ const Index = () => {
       </section>
 
       {/* About Our Center Card */}
-      <section className="py-24 bg-gradient-to-br from-air-light to-accent">
+      <section className="py-24 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
@@ -211,7 +211,7 @@ const Index = () => {
       </section>
 
       {/* Recent Blog Posts */}
-      <section className="py-20 bg-gradient-to-br from-air-light to-accent">
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-foreground mb-6">Recent Research & News</h2>
@@ -276,7 +276,7 @@ const Index = () => {
 
 
       {/* Features Section */}
-      <section className="py-20 bg-accent/30">
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             
@@ -304,7 +304,7 @@ const Index = () => {
 
 
       {/* Strategic Partners Section */}
-      <section className="py-20 bg-accent/30">
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-foreground mb-6">Strategic Partners</h2>
@@ -319,7 +319,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 24, scale: 0.98 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
-                transition={{ type: 'spring', stiffness: 80, damping: 14, delay: 0 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 14, delay: 0.2 }}
                 className="w-full flex flex-col items-center"
               >
                 <a href="https://cleanairasia.org/" target="_blank" rel="noopener noreferrer" className="w-full">
@@ -410,7 +410,7 @@ const Index = () => {
       </section>
 
        {/* International partners and collaborators */}
-       <section className="py-20 bg-background">
+       <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-12">
              <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-4">International Partners and Collaborators</h2>
@@ -444,9 +444,9 @@ const Index = () => {
        </section>
 
       {/* Call to Action */}
-      <section className="py-20">
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
+          <Card className="bg-gradient-to-r from-white/10 to-sky-blue/10 border-primary/10">
             <CardContent className="p-12 text-center">
               <Leaf className="mx-auto mb-6 text-primary" size={64} />
               <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Mission</h2>
@@ -464,11 +464,11 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-air-light to-accent">
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 text-center">
             <div className="flex justify-center items-center space-x-2">
-              <img src={logo} alt="Air Quality Nexus" className="h-10 w-10 bg-transparent" />
+              <img src={logo} alt="Air Quality Nexus" className="h-10 w-16 bg-transparent" />
               <span className="text-4xl font-bold text-foreground">Air Quality Nexus</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-2xl mx-auto">

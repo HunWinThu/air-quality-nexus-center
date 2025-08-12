@@ -38,15 +38,22 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Mail size={16} className="opacity-70" />
-                <span className="text-base opacity-90">info@airqualitynexus.org</span>
+                <span className="text-base opacity-90">airqualitynexus@ait.ac.th</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone size={16} className="opacity-70" />
-                <span className="text-base opacity-90">+1 (555) 123-4567</span>
+                <span className="text-base opacity-90">+66 9-9797-6360</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin size={16} className="opacity-70" />
-                <span className="text-base opacity-90">123 Environmental Way, Green City, GC 12345</span>
+                <MapPin size={40} className="opacity-70" />
+                  <a 
+                    href="https://maps.app.goo.gl/UA82JeVX5uKR2Stg6" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    Asian Institute of Technology, 58 Moo 9, Km. 42, Paholyothin Highway, Klong Luang, Pathum Thani 12120, Thailand
+                  </a>              
               </div>
             </div>
           </div>

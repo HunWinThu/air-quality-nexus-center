@@ -155,7 +155,7 @@ const LaunchingEvent = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-air-light to-sky-blue/20">
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-200 via-blue-500 to-red-500 bg-clip-text text-transparent">
