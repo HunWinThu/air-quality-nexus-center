@@ -329,7 +329,7 @@ const Team = () => {
                           src={member.image || teamPlaceholder}
                           alt={`${member.name} - ${member.role}`}
                           loading="lazy"
-                          className={`w-full h-72 rounded-md border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          className={`w-full h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
                         />
                         {member.viewprofile && member.viewprofile !== '' ? (
                           <a
@@ -391,11 +391,11 @@ const Team = () => {
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         <img
-                          src={member.image || teamPlaceholder}
-                          alt={`${member.name} - ${member.role}`}
-                          loading="lazy"
-                          className={`w-full h-72 rounded-md border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
-                        />
+                           src={member.image || teamPlaceholder}
+                           alt={`${member.name} - ${member.role}`}
+                           loading="lazy"
+                           className={`w-full h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                         />
                         {member.viewprofile && member.viewprofile !== '' ? (
                           <a
                             href={member.viewprofile}
