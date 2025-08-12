@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 import { useState } from 'react';
 
 const publications = {
+  2025: [],
   2024: [
     {
       title: 'In-depth analysis of ambient air pollution changes due to the COVID-19 pandemic in the Asian Monsoon region.',
@@ -174,7 +175,7 @@ const Publications = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="2024" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-accent/50 p-2 rounded-lg mb-8">
+            <TabsList className="grid w-full grid-cols-4 bg-accent/50 p-2 rounded-lg mb-8">
               {Object.keys(publications).map((year) => (
                 <TabsTrigger 
                   key={year} 
@@ -189,6 +190,15 @@ const Publications = () => {
 
             {Object.entries(publications).map(([year, pubs]) => (
               <TabsContent key={year} value={year} className="mt-8">
+                {pubs.length === 0 && (
+                  <Card className="bg-gradient-to-br from-background to-accent/10 border-dashed border-primary/30">
+                    <CardContent className="p-8 text-center">
+                      <Badge variant="secondary" className="mb-2">Coming soon</Badge>
+                      <h3 className="text-2xl font-semibold mb-2">Publications {year}</h3>
+                      <p className="text-muted-foreground">We will add the {year} publications shortly.</p>
+                    </CardContent>
+                  </Card>
+                )}
                 <motion.div 
                   variants={staggerContainer}
                   initial="hidden"
