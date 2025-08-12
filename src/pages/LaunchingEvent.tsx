@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,14 +8,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-import teamGroupPhoto from '@/assets/team-group-photo.jpg';
-import launching5 from '@/assets/Launching_5.jpg';
-import launching6 from '@/assets/Launching_6.jpg';
-import homeImg from '@/assets/HOME.jpg';
-import partners1 from '@/assets/partners-1.png';
-import partners4 from '@/assets/partners-4.jpeg';
-import Autoplay from 'embla-carousel-autoplay';
+//import homeImg from '@/assets/Laung.jpg';
+//import partners1 from '@/assets/partners-1.png';
+//import partners4 from '@/assets/partners-4.jpeg';
+//import Autoplay from 'embla-carousel-autoplay';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 
 import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
@@ -31,6 +28,15 @@ import Saikawa from '@/assets/Advisory/Dr. Eri Saikawa.jpg';
 import Broomfield from '@/assets/Advisory/Dr. Mark Broomfield.jpg';
 import Mari from '@/assets/Advisory/Dr. Xavier Mari.jpeg';
 import Casanova from '@/assets/Advisory/Ms. Dang Espita Casanova.jpeg';
+
+import teamGroupPhoto from '@/assets/team-group-photo.jpg';
+import launching1 from '@/assets/Launching_Event/Launching_1.jpg';
+import launching3 from '@/assets/Launching_Event/Launching-3.jpg';
+import launching4 from '@/assets/Launching_Event/Launching-4.jpg';
+import launching5 from '@/assets/Launching_Event/Launching-5.jpg';
+import launching6 from '@/assets/Launching_Event/Launching-6.jpg';
+import launching7 from '@/assets/Launching_Event/Launching_7.jpg';
+import launching8 from '@/assets/Launching_Event/Launching_8.jpg';
 
 const LaunchingEvent = () => {
   useEffect(() => {
@@ -130,12 +136,12 @@ const LaunchingEvent = () => {
   ];
 
   const gallery = [
-    { src: launching5, alt: 'Ribbon cutting at the Launching Ceremony' },
-    { src: launching6, alt: 'Panel discussion during the event' },
-    { src: teamGroupPhoto, alt: 'Air Quality Nexus team group photo' },
-    { src: homeImg, alt: 'Guests networking at the venue' },
-    { src: partners1, alt: 'Partners and collaborators at the event' },
-    { src: partners4, alt: 'Participants during keynote session' },
+    { src: launching3, alt: 'Ribbon cutting at the Launching Ceremony' },
+    { src: launching4, alt: 'Panel discussion during the event' },
+    { src: launching5, alt: 'Air Quality Nexus team group photo' },
+    { src: launching8, alt: 'Guests networking at the venue' },
+    { src: launching6, alt: 'Partners and collaborators at the event' },
+    { src: launching1, alt: 'Participants during keynote session' },
   ];
 
   return (
@@ -157,9 +163,16 @@ const LaunchingEvent = () => {
       <section className="py-20 bg-gradient-to-br from-air-light to-sky-blue/20">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Launching Event</h1>
-            <p className="text-xl text-muted-foreground max-w-6xl mx-auto">
-              On July 10, 2024, the Center for Nexus of Air Quality, Health, Ecosystem, and Climate—or Air Quality Nexus Center—hosted its official launching ceremony. The Center, based at the Asian Institute of Technology (AIT), serves as a hub for capacity building and cutting-edge atmospheric research to improve air quality in Asia and beyond. Working with AIT’s schools, research centers, and international partners, it promotes multidisciplinary collaboration for cleaner air, healthier communities, and climate protection. Professor Nguyen Thi Kim Oanh, appointed as Director from June 1, 2024, leads the Center’s strategic direction and outreach efforts. Held in a hybrid format at the AIT Conference Center and via Zoom, the event brought together stakeholders to share knowledge and explore future collaborations in air quality research and policy.
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-200 via-blue-500 to-red-500 bg-clip-text text-transparent">
+              Launching Event
+            </h1>
+
+              <p className="text-2xl md:text-2xl font-bold mb-6 bg-gradient-to-r from-red-700 via-pink-400 to-red-800 bg-clip-text text-transparent">
+              Venue: Room B108, AIT Conference Center <br/>July 10, 2024
+            </p>
+            <p className="text-justify md:text-balance text-xl max-w-8xl mx-auto">
+              On July 10, 2024, the Center for Nexus of Air Quality, Health, Ecosystem, and Climate known as the Air Quality Nexus Center hosted its official launching ceremony. Led by Distinguished Professor Nguyen Thi Kim Oanh as a Director, the Center aims to advance capacity building and cutting-edge research in atmospheric sciences, fostering multidisciplinary collaboration within the Center and with global partners. The Center focuses on tackling the urgent challenge of air pollution, particularly fine particulate matter (PM2.5), which poses serious health risks across Asia. It emphasizes integrated, multi-pollutant and multi-effect approaches to develop cost-effective solutions and support governments in implementing clean air policies.
+The launch event featured insights from prominent experts and stakeholders, highlighting the Center’s commitment to driving impactful research and policy engagement to improve air quality, public health, ecosystems, and climate resilience in the region.
             </p>
           </div>
 
@@ -184,8 +197,7 @@ const LaunchingEvent = () => {
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ type: 'spring', stiffness: 70, damping: 16 }}
                 >
-                  <Card className="group border border-border/50 bg-background/90 dark:bg-background/60 text-foreground backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 will-change-transform" aria-label={`Quote from ${quote.name}`}>
-                    <CardContent className="p-6 md:p-8">
+                  <Card className="group hover:shadow-lg transition-all duration-500 bg-grey/80 backdrop-blur-md border-/20 text-white transform hover:scale-105 will-change-transform" aria-label={`Quote from ${quote.name}`}>                    <CardContent className="p-6 md:p-8">
                       <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-10`}>
                         <img
                           src={quote.image}
@@ -212,8 +224,7 @@ const LaunchingEvent = () => {
 
           <section aria-labelledby="gallery-heading" className="mt-16">
             <header className="text-center mb-6">
-              <h2 id="gallery-heading" className="text-3xl md:text-4xl font-bold text-foreground">Launching Ceremony Gallery</h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto mt-2">A few highlights from our Launching Ceremony showcasing speakers, participants, and moments from the day.</p>
+              <h2 id="gallery-heading" className="text-5xl md:text-5xl font-bold text-foreground">Launching Event Gallery</h2>
             </header>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
               {gallery.map((item, idx) => (

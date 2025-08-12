@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/AQC_logo.jpg';
+import logo from '@/assets/aqc.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="Air Quality Nexus" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            <img src={logo} alt="Air Quality Nexus" className="h-16 w-28 md:h-20 md:w-34 rounded-full" />
             <span className="text-lg md:text-4xl font-semibold leading-snug text-black">
               Air Quality Nexus Center
             </span>

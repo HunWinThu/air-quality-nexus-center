@@ -3,8 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 
-import launching5 from '@/assets/Launching_5.jpg';
-import launching6 from '@/assets/Launching_6.jpg';
+import launching5 from '@/assets/Launching-5.jpg';
+import launching6 from '@/assets/Launching-6.jpg';
 
 const LaunchingEventDetails = () => {
   useEffect(() => {

@@ -267,7 +267,7 @@ const Index = () => {
               size="lg"
               className="px-8 py-4 text-lg bg-background/80 text-foreground backdrop-blur-md border border-white/30 shadow-lg transition-all hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-2xl"
             >
-              Launching Ceremony
+              Launching Event
               <ArrowRight className="ml-2" size={20} />
             </Button>
           </Link>
