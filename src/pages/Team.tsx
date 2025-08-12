@@ -329,7 +329,7 @@ const Team = () => {
                           src={member.image || teamPlaceholder}
                           alt={`${member.name} - ${member.role}`}
                           loading="lazy"
-                          className={`w-full h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
                         />
                         {member.viewprofile && member.viewprofile !== '' ? (
                           <a
@@ -349,32 +349,6 @@ const Team = () => {
                         )}
                       </div>
 
-                      <div className="flex justify-center space-x-4 mt-4">
-                        {member.viewprofile && member.viewprofile !== '' && (
-                          <a
-                            href={member.viewprofile}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`View profile of ${member.name}`}
-                          >
-                            <Button size="lg" variant="outline" className="p-4">
-                              <User size={32} />
-                            </Button>
-                          </a>
-                        )}
-                        {member.linkedin && member.linkedin !== '' && (
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${member.name} on LinkedIn`}
-                          >
-                            <Button size="lg" variant="outline" className="p-4">
-                              <Linkedin size={32} />
-                            </Button>
-                          </a>
-                        )}
-                      </div>
                     </CardContent>
                   </Card>
                 ))}
@@ -390,12 +364,12 @@ const Team = () => {
                   >
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
-                        <img
-                           src={member.image || teamPlaceholder}
-                           alt={`${member.name} - ${member.role}`}
-                           loading="lazy"
-                           className={`w-full h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
-                         />
+                         <img
+                            src={member.image || teamPlaceholder}
+                            alt={`${member.name} - ${member.role}`}
+                            loading="lazy"
+                            className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          />
                         {member.viewprofile && member.viewprofile !== '' ? (
                           <a
                             href={member.viewprofile}
