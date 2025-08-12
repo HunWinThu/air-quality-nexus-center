@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Twitter, User, AlignCenter } from 'lucide-react';
+
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useEffect } from 'react';
 
@@ -385,32 +385,6 @@ const Team = () => {
                         <p className="text-sm text-muted-foreground">{member.role}</p>
                         {member.department && (
                           <p className="text-sm text-muted-foreground">{member.department}</p>
-                        )}
-                      </div>
-                      <div className="flex justify-center space-x-4 mt-2">
-                        {member.viewprofile && member.viewprofile !== '' && (
-                          <a
-                            href={member.viewprofile}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`View profile of ${member.name}`}
-                          >
-                            <Button size="lg" variant="outline" className="p-3">
-                              <User size={32} />
-                            </Button>
-                          </a>
-                        )}
-                        {member.linkedin && member.linkedin !== '' && (
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${member.name} on LinkedIn`}
-                          >
-                            <Button size="lg" variant="outline" className="p-3">
-                              <Linkedin size={32} />
-                            </Button>
-                          </a>
                         )}
                       </div>
                       <p className="text-base text-muted-foreground mb-0 pt-3 text-center">{member.bio}</p>
