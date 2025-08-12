@@ -42,7 +42,6 @@ import vnu from '@/assets/collaborators/VNU-USSH (1).jpg';
 import bg_3 from '@/assets/bg_3.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Reveal from '@/components/Reveal';
 
 const Index = () => {
   const features = [
@@ -143,27 +142,20 @@ const Index = () => {
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Reveal>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
-                Center for Nexus of Air Quality, Health, Ecosystem, and Climate
-              </h1>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="text-center text-xl md:text-2xl mb-8 text-white max-w-10xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
-                A leading Center in conducting and implementing application research with the aim to gain multiple 
-                benefits from reducing air pollution through improvement of health of human and ecosystem, and 
-                protection of the climate system.
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                  Explore Our Research
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-              </div>
-            </Reveal>
-
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
+              Center for Nexus of Air Quality, Health, Ecosystem, and Climate
+            </h1>
+            <p className="text-center text-xl md:text-2xl mb-8 text-white max-w-10xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
+              A leading Center in conducting and implementing application research with the aim to gain multiple 
+              benefits from reducing air pollution through improvement of health of human and ecosystem, and 
+              protection of the climate system.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+                Explore Our Research
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -172,19 +164,15 @@ const Index = () => {
       <section className="py-24 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Reveal>
-              <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Air Quality Nexus
-                <span className="block text-primary">Center</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="text-xl text-grey/90 leading-relaxed mb-6 font-medium max-w-6xl mx-auto text-center">
-                Air Quality Nexus Center has a goal to serve as a focal point to build capacity and conduct cutting-edge 
-                research in atmospheric sciences for effective improvement of air quality in Asia and beyond. The Center will be an institution-wide Center, cooperating with multidisciplinary and cutting-edge research 
-                areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity.
-              </p>
-            </Reveal>
+            <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Air Quality Nexus
+              <span className="block text-primary">Center</span>
+            </h2>
+            <p className="text-xl text-grey/90 leading-relaxed mb-6 font-medium max-w-6xl mx-auto text-center">
+              Air Quality Nexus Center has a goal to serve as a focal point to build capacity and conduct cutting-edge 
+              research in atmospheric sciences for effective improvement of air quality in Asia and beyond. The Center will be an institution-wide Center, cooperating with multidisciplinary and cutting-edge research 
+              areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity.
+            </p>
           </div>
         </div>
       </section>
@@ -226,16 +214,12 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Reveal>
-              <h2 className="text-5xl font-bold text-foreground mb-6">Recent Research & News</h2>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Stay informed about our latest findings, projects, and developments in air quality science.
-              </p>
-            </Reveal>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Recent Research & News</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Stay informed about our latest findings, projects, and developments in air quality science.
+            </p>
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentPosts.map((post, index) => (
               <Card key={index} className="group hover:shadow-lg transition-shadow duration-300 bg-background/80 backdrop-blur-sm">
@@ -296,17 +280,13 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             
-            <Reveal>
-              <h2 className="text-5xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                From cutting-edge research to community engagement, we tackle air quality challenges 
-                through multiple integrated approaches.
-              </p>
-            </Reveal>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From cutting-edge research to community engagement, we tackle air quality challenges 
+              through multiple integrated approaches.
+            </p>
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
@@ -327,16 +307,12 @@ const Index = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Reveal>
-              <h2 className="text-5xl font-bold text-foreground mb-6">Strategic Partners</h2>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Collaborating with leading organizations to advance air quality research and policy worldwide.
-              </p>
-            </Reveal>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Strategic Partners</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Collaborating with leading organizations to advance air quality research and policy worldwide.
+            </p>
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center">
               <motion.div
@@ -437,14 +413,10 @@ const Index = () => {
        <section className="py-20 bg-background">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-12">
-             <Reveal>
-               <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-4">International Partners and Collaborators</h2>
-             </Reveal>
-             <Reveal delay={0.05}>
-               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                 Key international organizations and universities we collaborate with.
-               </p>
-             </Reveal>
+             <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-4">International Partners and Collaborators</h2>
+             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+               Key international organizations and universities we collaborate with.
+             </p>
            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {collaborators.map((p, idx) => (
@@ -477,15 +449,11 @@ const Index = () => {
           <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
             <CardContent className="p-12 text-center">
               <Leaf className="mx-auto mb-6 text-primary" size={64} />
-              <Reveal>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Mission</h2>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Whether you're a researcher, community member, or organization, there are many ways 
-                  to contribute to cleaner air and healthier communities.
-                </p>
-              </Reveal>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Mission</h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Whether you're a researcher, community member, or organization, there are many ways 
+                to contribute to cleaner air and healthier communities.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="outline">
                   Partner With Us
