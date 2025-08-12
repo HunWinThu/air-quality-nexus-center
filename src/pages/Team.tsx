@@ -322,27 +322,31 @@ const Team = () => {
             <TabsContent value="core" className="mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {coreTeam.map((member) => (
-                  <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background">
+                  <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border">
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         <img
                           src={member.image || teamPlaceholder}
                           alt={`${member.name} - ${member.role}`}
                           loading="lazy"
-                          className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          className={`w-full h-72 rounded-md border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
                         />
-                        <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
-                        <p className="text-primary font-medium mb-2">{member.role}</p>
-                        {member.department && (
-                          <Badge variant="secondary" className="text-base">{member.department}</Badge>
+                        {member.viewprofile && member.viewprofile !== '' ? (
+                          <a
+                            href={member.viewprofile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+                          </a>
+                        ) : (
+                          <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
                         )}
-                      </div>
-
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="text-l font-semibold text-foreground mb-1">Expertise</h4>
-                          <p className="text-l text-muted-foreground">{member.Expertise}</p>
-                        </div>
+                        <p className="text-sm text-muted-foreground">{member.role}</p>
+                        {member.department && (
+                          <p className="text-sm text-muted-foreground">{member.department}</p>
+                        )}
                       </div>
 
                       <div className="flex justify-center space-x-4 mt-4">
@@ -382,7 +386,7 @@ const Team = () => {
                 {advisoryCommittee.map((member) => (
                   <Card
                     key={member.id}
-                    className="group hover:shadow-lg transition-shadow duration-300 bg-background"
+                    className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border"
                   >
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
@@ -390,12 +394,23 @@ const Team = () => {
                           src={member.image || teamPlaceholder}
                           alt={`${member.name} - ${member.role}`}
                           loading="lazy"
-                          className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          className={`w-full h-72 rounded-md border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
                         />
-                        <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
-                        <p className="text-primary font-medium mb-2">{member.role}</p>
+                        {member.viewprofile && member.viewprofile !== '' ? (
+                          <a
+                            href={member.viewprofile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+                          </a>
+                        ) : (
+                          <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+                        )}
+                        <p className="text-sm text-muted-foreground">{member.role}</p>
                         {member.department && (
-                          <Badge variant="secondary" className="text-base">{member.department}</Badge>
+                          <p className="text-sm text-muted-foreground">{member.department}</p>
                         )}
                       </div>
                       <div className="flex justify-center space-x-4 mt-2">
