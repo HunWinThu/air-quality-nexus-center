@@ -2,132 +2,126 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Target, Eye, Award, Users, Microscope, Globe, Lightbulb, BookOpen, BarChart3, Network } from 'lucide-react';
-import teamGroupPhoto from '@/assets/team-group-photo.jpg';
-import pm25Image from '@/assets/pm2.5.png';
-import researchImage from '@/assets/air-pollution-research.png';
-import highQualityImage from '@/assets/hig-quality.jpg';
-import multiPollutantImage from '@/assets/multi.png';
-import coBenefitsImage from '@/assets/co-benefits.png';
-import cooperationImage from '@/assets/cooperation.jpg';
-import governmentImage from '@/assets/government.jpg';
-import capacityImage from '@/assets/capacity.jpg';
+import airqcHeroImage from '@/assets/airqc-hero.jpg';
+import riceStrawBurningImage from '@/assets/rice-straw-burning-field.jpg';
 
 const About = () => {
-  const stats = [
-    { icon: Microscope, label: 'Research Projects', value: '200+' },
-    { icon: Users, label: 'International Partners', value: '50+' },
-    { icon: Globe, label: 'Countries Served', value: '15+' },
-    { icon: BookOpen, label: 'Publications', value: '300+' },
-  ];
-
-  const missions = [
-    {
-      icon: Target,
-      title: 'High-Quality Research',
-      description: 'Conduct high-quality research demonstrated by real-life applications for improving air quality in Asia and beyond.',
-      image: highQualityImage
-    },
-    {
-      icon: BarChart3,
-      title: 'Multi-Pollutant Approach',
-      description: 'Focus on the multi-pollutant and multi-effect approach to provide cost-effective solutions to complex air pollution problems.',
-      image: multiPollutantImage
-    },
-    {
-      icon: Lightbulb,
-      title: 'Co-Benefits Assessment',
-      description: 'Demonstrate and quantitatively assess the co-benefits to air quality and climate of integrated measures applicable in local context.',
-      image: coBenefitsImage
-    },
-    {
-      icon: Network,
-      title: 'International Cooperation',
-      description: 'Continue and expand international cooperation in conducting research projects, consultancies, training, etc.',
-      image: cooperationImage
-    },
-    {
-      icon: Users,
-      title: 'Government Assistance',
-      description: 'Provide assistance to governments, and other development partners in the planning, designing, scaling up, and implementation of clean air action plans with multiple benefits.',
-      image: governmentImage
-    },
-    {
-      icon: BookOpen,
-      title: 'Capacity Building',
-      description: 'Build capacity and promote multi-disciplinary approaches in atmospheric sciences within AIT and internationally.',
-      image: capacityImage
-    }
-  ];
-
-  const researchAreas = [
-    {
-      title: 'Atmospheric Sciences',
-      description: 'Advanced monitoring and modeling of atmospheric processes affecting air quality.'
-    },
-    {
-      title: 'Climate Co-Benefits',
-      description: 'Research on integrated solutions that improve both air quality and climate outcomes.'
-    },
-    {
-      title: 'Policy Development',
-      description: 'Evidence-based policy recommendations for effective air quality management.'
-    },
-    {
-      title: 'Technology Innovation',
-      description: 'Development of cutting-edge monitoring and mitigation technologies.'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-nature-green/10 via-sky-blue/5 to-primary/10"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0">
+          <img 
+            src={airqcHeroImage} 
+            alt="Air Quality Nexus Center" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div>
-              <Badge variant="secondary" className="mb-6 bg-primary/10 text-primary border-primary/20">
-                Research Excellence
-              </Badge>
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
-                Air Quality Nexus
-                <span className="block text-primary">Center</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                A focal point to build capacity and conduct cutting-edge research in atmospheric sciences 
-                for effective improvement of air quality in Asia and beyond.
+            <Badge variant="secondary" className="mb-6 bg-yellow-400/90 text-black border-yellow-400/20">
+              Leading Research Center
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              Air Quality Nexus
+              <span className="block">Center</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed bg-black/20 p-6 rounded-lg backdrop-blur-sm">
+              A leading Center in conducting and implementing application research with the aim to gain multiple benefits from reducing air pollution through improvement of health of human and ecosystem, and protection of the climate system.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Background Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Our Mission</Badge>
+              <h2 className="text-4xl font-bold text-foreground mb-8">Background</h2>
+            </div>
+            
+            <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">
+              <p className="text-xl leading-relaxed">
+                Air pollution is one of the world's greatest environmental challenges facing humanity today. The negative effects of air pollution on human health, terrestrial and aquatic ecosystems, and climate are significant. The Health Effects Institute and Institute for Health Metrics and Evaluation (HEI & IHME, 2020) reported that 6.67 million global deaths and 213 million years of healthy life lost in 2019 were attributable to air pollution. The majority of these deaths occurred in Asian developing countries, including the Southeast Asia (SEA) region, because of excessive exposure to high levels of toxic air pollutants both indoors and outdoors.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                Many air pollutants are phytotoxic, such as surface ozone and acidic gases of sulfur dioxide (SO₂) and nitrogen dioxide (NO₂), hence high levels of these pollutants cause adverse effects on forestry and agricultural crops. The deposition of atmospheric pollutants to the earth's surface causes acidification and eutrophication that causes adverse effects on terrestrial and aquatic life. Several toxic air pollutants have climate forcing effects, they are also known as short-lived climate forcers. In particular, black carbon (BC) particles of submicron size, can strongly absorb solar radiation, hence causing significant warming, i.e. with the Global Warming Potential (GWP) at about 2000 times CO₂ on a 20-year horizon. BC particles deposited on the land surface will be washed off to rivers and end up in the ocean. It is estimated that about 29-49 Gg/yr of the global annual flux of BC washed into the ocean annually and would remain there for hundreds of years to affect the marine ecosystems. BC is a strong short-lived climate pollutant (SLCP) hence reduction of BC emission brings in significant co-benefits to both air quality and the climate system.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                The long-lived greenhouse gases (GHGs), e.g. carbon dioxide (CO₂), SLCPs, and ozone precursors of NOx and hydrocarbon (HCs), have the key common sources of combustion hence the emission reduction can bring in multiple benefits to health, the environment, and climate. The assessment conducted by UNEP-WMO (2011) highlighted that the emission reduction measures for BC (e.g. clean cooking, clean vehicle fleets or elimination of crop residue field burning, etc.) and methane (waste/landfill management, modified agricultural practices, and extraction and transport of fossil fuel) could simultaneously avoid the global temperature increase by almost 0.5°C by 2050, 2.5 million premature death, and 50 million tonnes of crop yield loss in the world annually. A more recent assessment by UNEP (2019) pointed out that the implementation of the selected 25 clean air measures would help 22% of the Asian population enjoy air quality within 2005-WHO-AQG (annual level 10 µg/m³) by 2030, cut down 45% of ozone-induced crop yield losses for four main crops of maize, rice, soy, and wheat collectively, and reduce CO₂ by almost 20% in 2030.
+              </p>
+            </div>
+
+            {/* Rice Straw Burning Image */}
+            <div className="mt-16">
+              <Card className="overflow-hidden">
+                <div className="relative">
+                  <img 
+                    src={riceStrawBurningImage} 
+                    alt="Rice straw open burning at the rice field" 
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                    <p className="text-white text-sm font-medium">
+                      Figure 1: Rice straw open burning at the rice field in Pathumthani, Thailand (Photo taken on 30 August 2024)
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="prose prose-lg max-w-none text-muted-foreground space-y-8 mt-16">
+              <p className="text-lg leading-relaxed">
+                Many countries in Asia have started recognizing the serious effects of air pollution on health and economics hence actions are being taken to address the problems. The link between air pollution and climate change is also increasingly recognized and, in some countries, the policy formulation started considering co-benefit dimension but only qualitatively in most of cases. The effects of air pollution on the marine ecosystems, forestry, agricultural productivity, and man-made materials have not yet been considered to the necessary extent to be included in the policy making process. In many developing countries, there is a lack of coordinated efforts for integrated air quality management that considers multi-pollutant and multi-effect assessment approaches for controlling major emission sources.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                The co-benefit approach can simultaneously tackle both environmental pollution and climate change cost-effectively which particularly helps to gather resources to address the increasing air pollution problem in Asian developing countries. The approach relies on such strategies as improving energy efficiency, renewable energy, sustainable urban transport, and cleaner production. To develop and implement such an integrated approach, capacity building for stakeholders is strongly required. Regional and international cooperation is essential to provide additional capacity to implement the integrated air quality-climate strategies.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* Research Areas */}
-      <section className="py-24 bg-gradient-to-br from-accent/20 to-primary/5">
+      {/* Rationale Section */}
+      <section className="py-20 bg-gradient-to-br from-accent/20 to-primary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Research Focus</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-4">Key Research Areas</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Advancing knowledge across critical domains of atmospheric sciences and environmental policy
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {researchAreas.map((area, index) => (
-              <Card key={index} className="group hover-scale bg-background/80 backdrop-blur-sm border-primary/20">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-nature-green rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Microscope className="text-white" size={28} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">{area.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{area.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Our Vision</Badge>
+              <h2 className="text-4xl font-bold text-foreground mb-8">Rationale</h2>
+            </div>
+            
+            <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">
+              <p className="text-lg leading-relaxed">
+                The Center will sustain and further develop the interdisciplinary atmospheric studies at AIT, from the atmospheric emissions to pollution concentration and deposition fluxes to the earth's surface. The assessment of multiple benefits of atmospheric emission reduction will be considered based on the effects on human health, ecosystems including agricultural crops and marine, and the climate system.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                The Center's activities will make the atmospheric research at AIT to be better placed on the international agenda and further recognized. Additional projects will be secured by the funding support from donors and private sectors to strengthen the research capacity at AIT. The good reputation for interdisciplinary atmospheric studies, a hot topic presently, will increasingly attract students to enroll for study at AIT.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                The human resources made available by the Center will also strengthen the research capacity in air quality at AIT. Presently, only one directly hired air pollution faculty member at AIT, as compared, for example, to a big team of faculty members in every leading university in Thailand. The additional human resources of professional staff from the Center will help to cover more research topics in the vast and ever-growing field of air pollution research. This would ensure that AIT will maintain its leading position in air pollution research which has been built up over the last 35 years. The Center is also aiming to strengthen environmental health studies that are not yet visibly incorporated into the current AIT academic programs. The Center will involve relevant faculty members in AIT in the activities and cover the time recovery cost. AIT students are involved in research activities to get exposed to real-life case studies while getting financial incentives through the student assistantship.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                Currently, the impacts, for example, on health, acid rain, and crop damage are visible but not well quantified and investigated for Asian developing countries. Asia has experienced air pollution problems of long-range and transboundary transport nature, for example, the annually re-occurring forest fires in SEA, or acid rain precursors released from coal combustion in upwind territories would deposit in the downwind countries. For example, the atmospheric lifetime of BC ranges from a few days to one month, but after deposit to the oceans, BC may remain there for many years. The impact of BC after being deposited to the earth's surface is much less known than its direct impacts on health and climate. In Asia, there is yet a comprehensive research conducted to quantify the long-term impacts of BC to the marine ecosystems. There is a need for capacity building to understand and quantify the effects so that science-based cost-effective solutions can be recommended. This can be done through coordinated atmospheric research efforts in Asia. AIT, an international university in Asia, can play a leading role in this effort. With its strong research capacity as well as networking experience, the proposed Air Quality Nexus Center will serve to tackle these regional needs.
+              </p>
+              
+              <div className="bg-primary/10 p-8 rounded-lg border border-primary/20 mt-12">
+                <p className="text-lg leading-relaxed font-medium text-foreground">
+                  To continue and further develop the capacities and experience built over the years, it is proposed to establish the <strong>"Center for Nexus of Air Quality, Health, Ecosystem, and Climate"</strong> under AIT, or <strong>"Air Quality Nexus Center"</strong> for short. It will be an institution-wide Center, cooperating multidisciplinary and cutting-edge research areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity. The goal of the Air Quality Nexus Center is to serve as a focal point to build capacity and conduct cutting-edge research in atmospheric sciences in Asia and beyond.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
