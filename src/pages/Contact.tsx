@@ -87,7 +87,7 @@ const Contact = () => {
       {/* Contact Info */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 gap-6 mb-16">
             {contactInfo.map((info, index) => (
               <Card key={index} className="text-center bg-gradient-to-br from-background to-accent/10">
                 <CardContent className="p-6">
@@ -176,35 +176,8 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Office Locations */}
+            {/* Collaboration */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-foreground flex items-center">
-                <Building2 className="mr-3 text-primary" size={24} />
-                Our Locations
-              </h2>
-              
-              {officeLocations.map((location, index) => (
-                <Card key={index} className="bg-gradient-to-br from-background to-accent/10">
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-lg font-semibold text-foreground">{location.name}</h3>
-                      <Badge variant="secondary">{location.type}</Badge>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      <div className="flex items-start gap-2">
-                        <MapPin size={16} className="text-muted-foreground mt-1 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{location.address}</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Phone size={16} className="text-muted-foreground mt-1 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{location.phone}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-
-              {/* Collaboration CTA */}
               <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
