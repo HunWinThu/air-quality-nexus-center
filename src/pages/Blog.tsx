@@ -10,101 +10,144 @@ const Blog = () => {
   const ongoingProjects = [
     {
       id: 1,
-      title: 'Real-time Air Quality Monitoring Network for Southeast Asia',
-      excerpt: 'Developing a comprehensive monitoring network across multiple countries to track air pollution patterns in real-time.',
-      author: 'Dr. Sarah Johnson',
-      date: '2024-01-15',
-      readTime: '8 min read',
-      category: 'Monitoring',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop'
+      title: 'Air Quality Capacity Building and Emissions Inventory for Southeast Asia',
+      excerpt: 'Building regional capacity for air quality management through comprehensive training programs and emissions inventory development across ASEAN countries.',
+      author: 'Dr. Nguyen Thi Kim Chi',
+      date: '2024-08-15',
+      readTime: '12 min read',
+      category: 'Capacity Building',
+      image: '/src/assets/capacity.jpg'
     },
     {
       id: 2,
-      title: 'Community Health Impact Assessment in Urban Areas',
-      excerpt: 'Ongoing study examining the correlation between air quality and public health outcomes in major metropolitan areas.',
-      author: 'Dr. Michael Chen',
-      date: '2024-01-10',
-      readTime: '6 min read',
-      category: 'Health Research',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop'
+      title: 'Transboundary Air Pollution Research Initiative',
+      excerpt: 'Investigating cross-border air pollution impacts and developing collaborative solutions for regional air quality management in Southeast Asia.',
+      author: 'Prof. Shrestha Ram',
+      date: '2024-07-20',
+      readTime: '10 min read',
+      category: 'Research',
+      image: '/src/assets/air-pollution-research.png'
     },
     {
       id: 3,
-      title: 'Policy Framework Development for Clean Air Standards',
-      excerpt: 'Working with government agencies to develop evidence-based policies for improved air quality management.',
-      author: 'Dr. Emily Rodriguez',
-      date: '2024-01-05',
-      readTime: '10 min read',
-      category: 'Policy',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop'
+      title: 'Health Co-benefits Assessment of Air Quality Policies',
+      excerpt: 'Evaluating the health and economic benefits of air quality improvement policies through comprehensive impact assessment studies.',
+      author: 'Dr. Eri Saikawa',
+      date: '2024-06-10',
+      readTime: '8 min read',
+      category: 'Health Impact',
+      image: '/src/assets/co-benefits.png'
+    },
+    {
+      id: 4,
+      title: 'Government Collaboration for Clean Air Standards',
+      excerpt: 'Working directly with government agencies across the region to develop and implement evidence-based air quality standards and policies.',
+      author: 'Prof. Bindu N. Lohani',
+      date: '2024-05-25',
+      readTime: '9 min read',
+      category: 'Policy Development',
+      image: '/src/assets/government.jpg'
+    },
+    {
+      id: 5,
+      title: 'Multi-stakeholder Engagement Platform',
+      excerpt: 'Creating collaborative networks between academia, government, and industry stakeholders to advance air quality research and implementation.',
+      author: 'Ms. Dang Espita Casanova',
+      date: '2024-04-15',
+      readTime: '7 min read',
+      category: 'Collaboration',
+      image: '/src/assets/multi.png'
     }
   ];
 
   const completedProjects = [
     {
-      id: 4,
-      title: 'Industrial Emissions Reduction Initiative',
-      excerpt: 'Successfully reduced air pollution in industrial districts through collaborative partnerships and innovative solutions.',
-      author: 'Dr. Robert Kim',
-      date: '2023-12-28',
-      readTime: '7 min read',
+      id: 6,
+      title: 'Baseline Air Quality Assessment for ASEAN Region',
+      excerpt: 'Completed comprehensive baseline study of air quality conditions across Southeast Asian countries, providing foundational data for regional planning.',
+      author: 'Dr. Truong Thi Huyen',
+      date: '2023-12-15',
+      readTime: '15 min read',
       category: 'Case Study',
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop'
     },
     {
-      id: 5,
-      title: 'Citizen Science Air Quality Program',
-      excerpt: 'Completed community engagement project that empowered local residents to participate in air quality monitoring.',
-      author: 'Dr. Lisa Wang',
-      date: '2023-12-20',
-      readTime: '5 min read',
-      category: 'Community',
-      image: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&h=600&fit=crop'
+      id: 7,
+      title: 'Rice Straw Burning Assessment and Mitigation',
+      excerpt: 'Completed comprehensive study on rice straw burning impacts and developed community-based mitigation strategies across the region.',
+      author: 'Dr. Xavier Mari',
+      date: '2023-11-30',
+      readTime: '11 min read',
+      category: 'Case Study',
+      image: '/src/assets/rice-straw-burning.jpg'
     },
     {
-      id: 6,
-      title: 'International Climate and Air Quality Database',
-      excerpt: 'Established comprehensive database through partnerships with global research institutions.',
-      author: 'Dr. James Martinez',
-      date: '2023-12-15',
-      readTime: '9 min read',
-      category: 'Collaboration',
-      image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop'
+      id: 8,
+      title: 'High-Quality Data Standards Development',
+      excerpt: 'Established standardized protocols for air quality data collection and validation across research institutions.',
+      author: 'Prof. Philip Hopke',
+      date: '2023-10-25',
+      readTime: '8 min read',
+      category: 'Data Standards',
+      image: '/src/assets/hig-quality.jpg'
+    },
+    {
+      id: 9,
+      title: 'International Partnership Development',
+      excerpt: 'Successfully established collaborative partnerships with key international research institutions and organizations.',
+      author: 'Prof. Lisa Emberson',
+      date: '2023-09-15',
+      readTime: '6 min read',
+      category: 'Partnership',
+      image: '/src/assets/cooperation.jpg'
     }
   ];
 
   const upcomingProjects = [
     {
-      id: 7,
-      title: 'AI-Powered Air Quality Prediction System',
-      excerpt: 'Developing machine learning models to predict air quality trends and pollution events for better preparedness.',
-      author: 'Dr. Anna Park',
-      date: '2024-03-01',
-      readTime: '12 min read',
+      id: 10,
+      title: 'Advanced Emission Source Identification Technologies',
+      excerpt: 'Planning implementation of cutting-edge technologies for precise identification and quantification of air pollution sources.',
+      author: 'Dr. Maheswar Rupakheti',
+      date: '2025-01-15',
+      readTime: '10 min read',
       category: 'Technology',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop'
+      image: '/src/assets/bg_4.jpg'
     },
     {
-      id: 8,
-      title: 'Regional Climate Change Impact Assessment',
-      excerpt: 'Planning comprehensive study on how climate change affects air quality patterns across the region.',
-      author: 'Dr. David Thompson',
-      date: '2024-04-15',
-      readTime: '15 min read',
+      id: 11,
+      title: 'Regional Air Quality Network Expansion',
+      excerpt: 'Expanding monitoring network capabilities across Southeast Asia to enhance real-time air quality assessment coverage.',
+      author: 'Dr. Mark Broomfield',
+      date: '2025-03-01',
+      readTime: '12 min read',
+      category: 'Monitoring',
+      image: '/src/assets/bg_3.jpg'
+    },
+    {
+      id: 12,
+      title: 'Climate-Air Quality Nexus Research Initiative',
+      excerpt: 'Comprehensive research program investigating the interconnections between climate change and air quality in tropical regions.',
+      author: 'Prof. Sotiris Vardoulakis',
+      date: '2025-06-01',
+      readTime: '14 min read',
       category: 'Climate Research',
-      image: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=600&fit=crop'
+      image: '/src/assets/bg_2.jpg'
     }
   ];
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      Technology: 'bg-sky-blue/20 text-ocean-blue',
-      'Health Research': 'bg-nature-green/20 text-earth-green',
-      Policy: 'bg-purple-100 text-purple-800',
+      'Capacity Building': 'bg-primary/10 text-primary',
+      'Research': 'bg-ocean-blue/10 text-ocean-blue',
+      'Health Impact': 'bg-nature-green/10 text-nature-green',
+      'Policy Development': 'bg-purple-100 text-purple-800',
+      'Collaboration': 'bg-blue-100 text-blue-800',
       'Case Study': 'bg-orange-100 text-orange-800',
-      Community: 'bg-blue-100 text-blue-800',
-      Collaboration: 'bg-green-100 text-green-800',
-      Monitoring: 'bg-cyan-100 text-cyan-800',
+      'Data Standards': 'bg-cyan-100 text-cyan-800',
+      'Partnership': 'bg-green-100 text-green-800',
+      'Technology': 'bg-sky-500/10 text-sky-700',
+      'Monitoring': 'bg-emerald-100 text-emerald-800',
       'Climate Research': 'bg-teal-100 text-teal-800'
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
