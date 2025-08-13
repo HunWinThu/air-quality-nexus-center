@@ -151,10 +151,12 @@ const Index = () => {
               protection of the climate system.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                Explore Our Research
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
+              <Link to="/blog" aria-label="Go to Projects">
+                <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+                  Explore Our Research
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
