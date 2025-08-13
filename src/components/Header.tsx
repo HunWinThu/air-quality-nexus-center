@@ -26,7 +26,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="Air Quality Nexus" className="h-16 w-28 md:h-20 md:w-34 rounded-full" />
+            <img src={logo} alt="Air Quality Nexus" className="h-16 w-28 md:h-16 md:w-34 rounded-full" />
             <span className="text-lg md:text-4xl font-semibold leading-snug text-black">
               Air Quality Nexus Center
             </span>
