@@ -15,6 +15,7 @@ interface Member {
   specialties?: string[];
   image?: string;
   viewprofile?: string; // may contain email or external link
+  researchgate?: string;
 }
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -96,6 +97,9 @@ export default function TeamMember() {
                 )}
                 {email && (
                   <p className="text-sm text-muted-foreground mt-1">Email: <a className="text-primary hover:underline" href={`mailto:${email}`}>{email}</a></p>
+                )}
+                {member.researchgate && (
+                  <p className="text-sm text-muted-foreground mt-1">ResearchGate: <a className="text-primary hover:underline" href={member.researchgate} target="_blank" rel="noopener noreferrer">View profile</a></p>
                 )}
               </header>
 

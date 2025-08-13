@@ -50,6 +50,7 @@ export const coreTeam = [
     image: kim,
     viewprofile: 'kim.oanh@ait.ac.th',
     linkedin: 'https://www.linkedin.com/in/kim-oanh/',
+    researchgate: 'https://www.researchgate.net/profile/Nguyen-Thi-Oanh',
   },
   {  id: 2,
     name: 'Dr. Lai Nguyen Huy',
