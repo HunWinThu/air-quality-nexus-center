@@ -39,15 +39,22 @@ const Header = () => {
                 return (
                   <DropdownMenu key={item.name}>
                     <DropdownMenuTrigger asChild>
-                      <button
+                      <Link
+                        to="/about"
                         className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
-                          isActive('/about')
+                          isActive('/about') || isActive('/launching-event') || isActive('/what-we-do') || isActive('/team')
                             ? 'text-primary border-b-2 border-primary pb-1'
                             : 'text-black'
                         }`}
+                        onMouseEnter={(e) => {
+                          const trigger = e.currentTarget.closest('[data-radix-dropdown-menu-trigger]');
+                          if (trigger) {
+                            (trigger as HTMLElement).click();
+                          }
+                        }}
                       >
                         {item.name}
-                      </button>
+                      </Link>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       align="start"
