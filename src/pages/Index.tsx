@@ -223,6 +223,111 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Recent Research & News with Upcoming Events */}
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-foreground mb-6">Recent Research & News</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Stay informed about our latest findings, projects, and developments in air quality science.
+            </p>
+          </div>
+
+          {/* Upcoming Events Section */}
+          <div className="mb-16">
+            <div className="flex items-center gap-2 mb-6">
+              <h3 className="text-2xl font-bold">Upcoming Events</h3>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative">
+                  <img 
+                    src={capacity} 
+                    alt="International Conference on Air Quality Management"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-primary text-primary-foreground">
+                      Sep 15
+                    </Badge>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-semibold mb-2">International Conference on Air Quality Management</h4>
+                  <div className="text-sm text-muted-foreground mb-2">
+                    <div className="flex items-center gap-1 mb-1">
+                      9:00 AM - 5:00 PM
+                    </div>
+                    <div className="flex items-center gap-1">
+                      Bangkok, Thailand
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">A comprehensive conference bringing together researchers, policymakers, and industry experts to discuss latest developments in air quality management across Southeast Asia.</p>
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative">
+                  <img 
+                    src={multidisciplinaryImage} 
+                    alt="Workshop on Emission Inventory Development"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-primary text-primary-foreground">
+                      Oct 22
+                    </Badge>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-semibold mb-2">Workshop on Emission Inventory Development</h4>
+                  <div className="text-sm text-muted-foreground mb-2">
+                    <div className="flex items-center gap-1 mb-1">
+                      2:00 PM - 6:00 PM
+                    </div>
+                    <div className="flex items-center gap-1">
+                      Virtual Event
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">Hands-on workshop for building technical capacity in emission inventory development using latest methodologies and tools.</p>
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Recent Posts Section */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6">Recent Research</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {recentPosts.map((post, index) => (
+                <Card key={index} className="group hover:shadow-lg transition-shadow duration-300 bg-background/80 backdrop-blur-sm">
+                  <CardHeader>
+                    <Badge variant="outline" className="w-fit mb-2">{post.category}</Badge>
+                    <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h4>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">{new Date(post.date).toLocaleDateString()}</span>
+                      <Button variant="ghost" size="sm" className="group-hover:text-primary">
+                        Read More <ArrowRight className="ml-1" size={14} />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Team Photo Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -234,23 +339,14 @@ const Index = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
         </div>
-        {/* Overlay CTA Buttons */}
-        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-4">
+        {/* Overlay CTA Button */}
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10">
           <Link to="/launching-event" aria-label="Go to Launching Event">
             <Button
               size="lg"
               className="px-8 py-4 text-lg bg-background/80 text-foreground backdrop-blur-md border border-white/30 shadow-lg transition-all hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-2xl"
             >
               Launching Event
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
-          </Link>
-          <Link to="/news" aria-label="Go to News">
-            <Button
-              size="lg"
-              className="px-8 py-4 text-lg bg-background/80 text-foreground backdrop-blur-md border border-white/30 shadow-lg transition-all hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-2xl"
-            >
-              News & Events
               <ArrowRight className="ml-2" size={20} />
             </Button>
           </Link>
