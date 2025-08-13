@@ -60,7 +60,7 @@ const About = () => {
             </div>
 
             {/* Rice Straw Burning Image */}
-            <div className="mt-16 flex justify-center">
+            <div className="mt-16 flex flex-col items-center">
               <Card className="overflow-hidden w-1/2">
                 <div className="relative">
                   <img 
@@ -68,13 +68,11 @@ const About = () => {
                     alt="Rice straw open burning at the rice field" 
                     className="w-full h-48 object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                    <p className="text-white text-sm font-medium text-center">
-                      Figure 1: Rice straw open burning at the rice field in Pathumthani, Thailand (Photo taken on 30 August 2024)
-                    </p>
-                  </div>
                 </div>
               </Card>
+              <p className="text-muted-foreground text-sm font-medium text-center mt-4 max-w-md">
+                Figure 1: Rice straw open burning at the rice field in Pathumthani, Thailand (Photo taken on 30 August 2024)
+              </p>
             </div>
 
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-8 mt-16">
