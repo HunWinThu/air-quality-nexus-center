@@ -21,7 +21,7 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="bg-transparent backdrop-blur-md border-b border-border sticky top-0 z-20">
+    <header className="bg-transparent backdrop-blur-md border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
