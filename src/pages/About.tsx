@@ -9,20 +9,23 @@ import riceStrawBurningImage from '@/assets/rice-straw-burning-field.jpg';
 import riceStrawBurning from '@/assets/rice-straw-burning.jpg';
 import airPollutionResearch from '@/assets/air-pollution-research.png';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
-
+import sliding1 from '@/assets/sliding/1.jpg';
+import sliding2 from '@/assets/sliding/2.jpg';
+import sliding3 from '@/assets/sliding/3.png';
+import sliding4 from '@/assets/sliding/4.jpg';
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24 overflow-hidden h-[80vh] min-h-[600px]">
         <div className="absolute inset-0">
           <Carousel 
             className="w-full h-full"
             plugins={[
               Autoplay({
-                delay: 4000,
+                delay: 2000,
               }),
             ]}
             opts={{
@@ -32,28 +35,28 @@ const About = () => {
             <CarouselContent className="w-full h-full">
               <CarouselItem className="w-full h-full">
                 <img 
-                  src={airqcHeroImage} 
+                  src={sliding1} 
                   alt="Air Quality Nexus Center" 
                   className="w-full h-full object-cover"
                 />
               </CarouselItem>
               <CarouselItem className="w-full h-full">
                 <img 
-                  src={airPollutionResearch} 
+                  src={sliding2} 
                   alt="Air Pollution Research" 
                   className="w-full h-full object-cover"
                 />
               </CarouselItem>
               <CarouselItem className="w-full h-full">
                 <img 
-                  src={riceStrawBurning} 
+                  src={sliding3} 
                   alt="Rice Straw Burning Research" 
                   className="w-full h-full object-cover"
                 />
               </CarouselItem>
               <CarouselItem className="w-full h-full">
                 <img 
-                  src={teamGroupPhoto} 
+                  src={sliding4} 
                   alt="Research Team" 
                   className="w-full h-full object-cover"
                 />
@@ -66,12 +69,8 @@ const About = () => {
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-yellow-400/90 text-black border-yellow-400/20">
-              Leading Research Center
-            </Badge>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              Air Quality Nexus
-              <span className="block">Center</span>
+              Air Quality Nexus Center
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed bg-black/20 p-6 rounded-lg backdrop-blur-sm">
               A leading Center in conducting and implementing application research with the aim to gain multiple benefits from reducing air pollution through improvement of health of human and ecosystem, and protection of the climate system.
