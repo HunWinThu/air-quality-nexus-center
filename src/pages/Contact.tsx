@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Mail, Phone, MapPin, Clock, MessageSquare, Building2, Users } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -101,7 +101,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form and Map */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-12 max-w-2xl mx-auto w-full">
             {/* Contact Form */}
             <Card className="bg-gradient-to-br from-background to-accent/5">
               <CardHeader>
@@ -176,24 +176,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Collaboration */}
-            <div className="space-y-6">
-              <Card className="bg-gradient-to-r from-primary/10 to-sky-blue/10 border-primary/20">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
-                    <Users className="mr-2 text-primary" size={20} />
-                    Research Collaborations
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Interested in collaborating on air quality research? We welcome partnerships with 
-                    universities, government agencies, and organizations.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Learn About Partnerships
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+            {/* Removed collaboration section */}
           </div>
         </div>
       </section>
