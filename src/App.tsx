@@ -13,7 +13,7 @@ import TeamMember from "./pages/TeamMember";
 import Contact from "./pages/Contact";
 import LaunchingEvent from "./pages/LaunchingEvent";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import WhatWeDo from "./pages/WhatWeDo";
+import WhatWeDo from "./pages/OurThematicAreas";
  
 import NotFound from "./pages/NotFound";
 

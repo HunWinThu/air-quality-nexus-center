@@ -58,10 +58,10 @@ const Header = () => {
                         <Link to="/launching-event">Launching Event</Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
-                        <Link to="/what-we-do">What We Do</Link>
+                        <Link to="/what-we-do">Our Thematic Areas</Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
-                        <Link to="/team">Team</Link>
+                        <Link to="/team">Our Team</Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>

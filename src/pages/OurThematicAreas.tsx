@@ -11,9 +11,9 @@ import multidisciplinaryImage from '@/assets/multi.png';
 import governmentImage from '@/assets/government.jpg';
 import climateImage from '@/assets/co-benefits.png';
 
-const WhatWeDo = () => {
+const OurThematicAreas = () => {
   useEffect(() => {
-    const title = 'What We Do | Air Quality Nexus Center';
+    const title = 'Our Thematic Areas | Air Quality Nexus Center';
     document.title = title;
 
     const description = 'Discover what we do: research, partnerships, and capacity building for cleaner air.';
@@ -82,7 +82,7 @@ const sections = [
 {/* Hero */}
 <section className="relative py-16 md:py-20">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-    <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">What We Do</h1>
+    <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Thematic Areas</h1>
     <p className="text-lg md:text-xl text-muted-foreground">
       Advancing clean air through research, collaboration, and real-world implementation.
     </p>
@@ -141,4 +141,4 @@ const sections = [
   );
 };
 
-export default WhatWeDo;
+export default OurThematicAreas;

@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap } from 'lucide-react';
+import { BookOpen, Layers, Scale, Shield, GraduationCap, ArrowRight, Wind, BarChart3, Users, Globe, Leaf, Zap } from 'lucide-react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import Home from '@/assets/HOME.jpg';
 import missionsHero from '@/assets/hig-quality.jpg';
@@ -43,27 +43,38 @@ import bg_3 from '@/assets/bg_3.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+
 const Index = () => {
   const features = [
     {
-      icon: Wind,
-      title: 'Air Quality Monitoring',
-      description: 'Advanced sensor networks providing real-time air quality data across urban and rural areas.'
+      icon: BookOpen, // More appropriate for research
+      title: 'High-Quality Research',
+      description: ''
     },
     {
-      icon: BarChart3,
-      title: 'Data Analysis',
-      description: 'Comprehensive analysis of environmental data to identify trends and inform policy decisions.'
+      icon: Layers, // Represents multiple layers/pollutants
+      title: 'Multi-Pollutant Approach',
+      description: ''
     },
     {
-      icon: Users,
-      title: 'Community Engagement',
-      description: 'Working directly with communities to address local air quality concerns and health impacts.'
+      icon: Scale, // Represents balance/assessment
+      title: 'Co-Benefits Assessment',
+      description: ''
     },
     {
       icon: Globe,
-      title: 'Global Partnerships',
-      description: 'Collaborating with international organizations to tackle air pollution on a global scale.'
+      title: 'International Collaboration',
+      description: ''
+    },
+    {
+      icon: Shield, // Represents government support
+      title: 'Government Assistance',
+      description: ''
+    },
+    {
+      icon: GraduationCap, // Represents training/education
+      title: 'Capacity Building & Training',
+      description: ''
     }
   ];
 
@@ -245,9 +256,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline">
-              View All Posts
-            </Button>
+
           </div>
         </div>
       </section>
@@ -278,30 +287,33 @@ const Index = () => {
 
 
       {/* Features Section */}
-      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            
-            <h2 className="text-5xl font-bold text-foreground mb-6">Our Core Areas of Focus</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From cutting-edge research to community engagement, we tackle air quality challenges 
-              through multiple integrated approaches.
-            </p>
+        <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-foreground mb-6">Our Thematic Areas</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                From cutting-edge research to community engagement, we tackle air quality challenges 
+                through multiple integrated approaches.
+              </p>
+            </div>
+                  
+            {/* Modified grid layout - 3 columns × 2 rows */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              {features.slice(0, 6).map((feature, index) => ( // Show only 6 items (3×2)
+                <Card 
+                  key={index} 
+                  className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/50 aspect-square" // aspect-square makes it square
+                >
+                  <CardContent className="h-full p-6 flex flex-col items-center justify-center text-center">
+                    <feature.icon className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={99} />
+                    <h3 className="text-2xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10">
-                <CardContent className="p-6 text-center">
-                  <feature.icon className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={48} />
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
 
 
@@ -456,11 +468,18 @@ const Index = () => {
                 Whether you're a researcher, community member, or organization, there are many ways 
                 to contribute to cleaner air and healthier communities.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="outline">
-                  Partner With Us
-                </Button>
-              </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/contact" aria-label="Go to Partners Page">
+                    <Button 
+                      size="lg" 
+                      variant="secondary" 
+                      className="bg-green-600 text-white hover:bg-green-700"
+                    >
+                      Partner With Us
+                      <ArrowRight className="ml-2" size={20} />
+                    </Button>
+                  </Link>
+                </div>
             </CardContent>
           </Card>
         </div>
@@ -480,7 +499,6 @@ const Index = () => {
               <Facebook size={40} className="opacity-70 hover:opacity-100 cursor-pointer transition-opacity" />
               <Twitter size={40} className="opacity-70 hover:opacity-100 cursor-pointer transition-opacity" />
               <Linkedin size={40} className="opacity-70 hover:opacity-100 cursor-pointer transition-opacity" />
-              <Instagram size={40} className="opacity-70 hover:opacity-100 cursor-pointer transition-opacity" />
             </div>
           </div>
         </div>

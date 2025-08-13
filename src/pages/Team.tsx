@@ -303,7 +303,7 @@ const Team = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Our Expert Team
+              Our Team
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Meet the dedicated researchers and professionals at AIT working to improve air quality and environmental health.
