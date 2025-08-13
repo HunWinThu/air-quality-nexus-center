@@ -31,6 +31,13 @@ import cover2022_3 from '@/assets/Publication _book_cover/2022/2022_3.png';
 import cover2022_4 from '@/assets/Publication _book_cover/2022/2022_4.png';
 import cover2022_5 from '@/assets/Publication _book_cover/2022/2022_5.png';
 
+const coverImages: Record<string, (string | undefined)[]> = {
+  '2025': [cover2025_1, cover2025_2, cover2025_3],
+  '2024': [cover2024_1, cover2024_2, cover2024_3],
+  '2023': [cover2023_1, cover2023_2, cover2023_3, cover2023_4, cover2023_5],
+  '2022': [cover2022_1, undefined, cover2022_3, cover2022_4, cover2022_5],
+};
+
 type Publication = {
   title: string;
   authors: string;
@@ -270,16 +277,17 @@ const Publications = () => {
                             <div className="flex-shrink-0">
                               <div className="w-28 md:w-40">
                                 <AspectRatio ratio={3/4} className="rounded-md bg-muted/30 border border-border overflow-hidden">
-                                  {pub.image ? (
-                                    <img
-                                      src={pub.image}
-                                      alt={`${pub.title} cover`}
-                                      className="w-full h-full object-cover"
-                                      loading="lazy"
-                                    />
-                                  ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-[10px] md:text-xs text-muted-foreground">Cover</div>
-                                  )}
+                                  {(() => {
+                                    const imgSrc = pub.image || coverImages[year]?.[index] || '/placeholder.svg';
+                                    return (
+                                      <img
+                                        src={imgSrc}
+                                        alt={`${pub.title} cover`}
+                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                      />
+                                    );
+                                  })()}
                                 </AspectRatio>
                               </div>
                             </div>
