@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import airqcHeroImage from '@/assets/airqc-hero.jpg';
 import riceStrawBurningImage from '@/assets/rice-straw-burning-field.jpg';
 import riceStrawBurning from '@/assets/rice-straw-burning.jpg';
@@ -17,7 +18,17 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <Carousel className="w-full h-full">
+          <Carousel 
+            className="w-full h-full"
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            opts={{
+              loop: true,
+            }}
+          >
             <CarouselContent className="w-full h-full">
               <CarouselItem className="w-full h-full">
                 <img 
