@@ -299,10 +299,14 @@ const Index = () => {
                   
             {/* Modified grid layout - 3 columns × 2 rows */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {features.slice(0, 6).map((feature, index) => ( // Show only 6 items (3×2)
+            {features.slice(0, 6).map((feature, index) => ( // Show only 6 items (3×2)
+              <Link 
+                key={index}
+                to={`/what-we-do#${feature.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                className="block"
+              >
                 <Card 
-                  key={index} 
-                  className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/50 aspect-square" // aspect-square makes it square
+                  className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/50 aspect-square cursor-pointer hover:scale-105" // aspect-square makes it square
                 >
                   <CardContent className="h-full p-6 flex flex-col items-center justify-center text-center">
                     <feature.icon className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" size={99} />
@@ -310,7 +314,8 @@ const Index = () => {
                     <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
                 </Card>
-              ))}
+              </Link>
+            ))}
             </div>
           </div>
         </section>

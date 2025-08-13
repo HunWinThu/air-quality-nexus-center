@@ -33,6 +33,17 @@ const OurThematicAreas = () => {
       document.head.appendChild(link);
     }
     link.setAttribute('href', `${window.location.origin}/air-quality-nexus-center/what-we-do`);
+
+    // Handle hash navigation on mount
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   }, []);
 
 const sections = [
@@ -101,7 +112,11 @@ const sections = [
 <section className="py-16">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
     {sections.map((s, i) => (
-      <article key={i} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'md:[&>div:first-child]:order-2' : ''}`}>
+      <article 
+        key={i} 
+        id={s.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}
+        className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'md:[&>div:first-child]:order-2' : ''}`}
+      >
         <div>
           <img
             src={s.img}
