@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import News from "./pages/News";
 import Activities from "./pages/Activities";
 import Publications from "./pages/Publications";
 import Team from "./pages/Team";
@@ -38,6 +39,7 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/news" element={<News />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/team" element={<Team />} />
