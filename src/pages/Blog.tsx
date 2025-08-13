@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Calendar, Clock, User } from 'lucide-react';
 
 const Blog = () => {
@@ -176,48 +177,69 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Ongoing Projects */}
+      {/* Projects Tabs */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              On-going Projects
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Current research initiatives actively making impact in air quality science
-            </p>
-          </div>
-          {renderProjectCards(ongoingProjects)}
-        </div>
-      </section>
-
-      {/* Completed Projects */}
-      <section className="py-20 bg-gradient-to-br from-accent/5 to-secondary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Completed Projects
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Successfully completed research projects with measurable outcomes
-            </p>
-          </div>
-          {renderProjectCards(completedProjects)}
-        </div>
-      </section>
-
-      {/* Upcoming Projects */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Up Coming Projects
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Future initiatives planned to advance air quality research and solutions
-            </p>
-          </div>
-          {renderProjectCards(upcomingProjects)}
+          <Tabs defaultValue="ongoing" orientation="vertical" className="flex gap-8">
+            <TabsList className="flex-col h-fit w-64 bg-muted p-1">
+              <TabsTrigger 
+                value="ongoing" 
+                className="w-full justify-start text-lg py-4 data-[state=active]:bg-background data-[state=active]:text-foreground"
+              >
+                On-going Projects
+              </TabsTrigger>
+              <TabsTrigger 
+                value="completed" 
+                className="w-full justify-start text-lg py-4 data-[state=active]:bg-background data-[state=active]:text-foreground"
+              >
+                Completed Projects
+              </TabsTrigger>
+              <TabsTrigger 
+                value="upcoming" 
+                className="w-full justify-start text-lg py-4 data-[state=active]:bg-background data-[state=active]:text-foreground"
+              >
+                Up Coming Projects
+              </TabsTrigger>
+            </TabsList>
+            
+            <div className="flex-1">
+              <TabsContent value="ongoing" className="mt-0">
+                <div className="mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    On-going Projects
+                  </h2>
+                  <p className="text-xl text-muted-foreground max-w-2xl">
+                    Current research initiatives actively making impact in air quality science
+                  </p>
+                </div>
+                {renderProjectCards(ongoingProjects)}
+              </TabsContent>
+              
+              <TabsContent value="completed" className="mt-0">
+                <div className="mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Completed Projects
+                  </h2>
+                  <p className="text-xl text-muted-foreground max-w-2xl">
+                    Successfully completed research projects with measurable outcomes
+                  </p>
+                </div>
+                {renderProjectCards(completedProjects)}
+              </TabsContent>
+              
+              <TabsContent value="upcoming" className="mt-0">
+                <div className="mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Up Coming Projects
+                  </h2>
+                  <p className="text-xl text-muted-foreground max-w-2xl">
+                    Future initiatives planned to advance air quality research and solutions
+                  </p>
+                </div>
+                {renderProjectCards(upcomingProjects)}
+              </TabsContent>
+            </div>
+          </Tabs>
         </div>
       </section>
 
