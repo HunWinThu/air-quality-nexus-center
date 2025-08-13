@@ -117,7 +117,7 @@ export default function TeamMember() {
                     .split(/\n{2,}|\r?\n/)
                     .filter(Boolean)
                     .map((para, idx) => (
-                      <p key={idx} className="leading-relaxed text-muted-foreground">{para}</p>
+                      <p key={idx} className="text-justify leading-relaxed text-muted-foreground">{para}</p>
                     ))}
               </section>
 

@@ -14,7 +14,7 @@ import huy from '@/assets/dr.huy.jpg';
 import ktoo from '@/assets/Ms. Ktoo.jpg';
 import Huyen from '@/assets/Dr. Truong Thi Huyen.jpg';
 import Nguyen from '@/assets/ms-chi.jpg';
-import Dang from '@/assets/dang.png';
+import Dang from '@/assets/dang.jpeg';
 import Hun from '@/assets/Hun Win Thu.jpg';
 import May from '@/assets/May.jpg';
 import Pant from '@/assets/Ms. Keishu Pant.jpg';
