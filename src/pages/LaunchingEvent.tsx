@@ -53,7 +53,7 @@ const LaunchingEvent = () => {
         'This Center is a catalyst for interdisciplinary collaboration—driving evidence-based solutions that protect both planetary and human well-being',
       name: 'Prof. Bindu N. Lohani',
       position:
-        'Chancellor of University of Nepal<br/>Chair of Clean Air Asia Board<br/>Member of AIT Board of Trustee',
+        'Chancellor of University of Nepal<br/>Chair, Board of Clean Air Asia<br/>Member of AIT Board of Trustee',
       image: Lohani,
     },
     {
@@ -69,7 +69,7 @@ const LaunchingEvent = () => {
         'It is becoming ever more important to improve air quality across Asia - not only to protect human health but also to protect from damage to crop yields and nutrition since current air pollution concentrations, particularly of ground level ozone, are likely to be reducing crop yields by up to as much as 10% in polluted regions. Given the continued challenges around ensuring food security across Asia, cleaner air would encourage higher crop yields enhancing food supply, an important component of food security',
       name: 'Prof. Lisa Emberson',
       position:
-        'Centre Director of the York office at the Stockholm Environment Institute (SEI)<br/>Professor of Environmental Science in the Environment & Geography Dept., University of York',
+        'Centre Director of the York office at the Stockholm Environment Institute (SEI)<br/>Professor of Environmental Science in the Environment & Geography Dept., University of York, UK',
       image: Emberson,
     },
     {
@@ -88,13 +88,7 @@ const LaunchingEvent = () => {
         'Scott Presidential Chair in Energy, Environment and Health<br/>Professor, Mechanical Engineering; Joint Professor, Civil & Environmental Engineering; Affiliate; Systems Colorado University, Fort Collins, CO USA',
       image: Bond,
     },
-    {
-      quote:
-        'Thank you for reaching out and Congratulations to the Center for your achievements!',
-      name: 'Ms. Dang Espita Casanova',
-      position: 'Associate Program Director<br/>Clean Air Asia',
-      image: Casanova,
-    },
+
     {
       quote:
         'Emory Climate Hub is excited to partner with the Center for Nexus of Air Quality, Health, Ecosystem and Climate, as we are interested in finding evidence-based solutions through an interdisciplinary framework. The center emphasizes an integrated approach necessary for a complicated problem that involves climate change, air quality, and human/ecosystem health.',
