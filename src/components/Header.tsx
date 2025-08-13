@@ -58,7 +58,7 @@ const Header = () => {
                         </Link>
                         <Link 
                           to="/what-we-do" 
-                          className="block rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"
+                          className="block rounded-lg px-4 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"
                         >
                           Our Thematic Areas
                         </Link>
