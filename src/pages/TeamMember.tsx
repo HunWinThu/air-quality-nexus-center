@@ -105,18 +105,17 @@ export default function TeamMember() {
                       href={member.researchgate}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`ResearchGate profile of ${member.name}`}
-                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                      className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                     >
+                      <span>Find More Research on ResearchGate</span>
                       <img
                         src={researchgateIcon}
-                        alt={`ResearchGate profile for ${member.name}`}
-                        width={24}
-                        height={24}
+                        alt="ResearchGate logo"
+                        width={32}
+                        height={32}
                         loading="lazy"
-                        className="h-6 w-6"
+                        className="h-8 w-8"
                       />
-                      <span className="sr-only">ResearchGate</span>
                     </a>
                   </p>
                 )}
