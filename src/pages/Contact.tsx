@@ -164,8 +164,7 @@ const Contact = () => {
                     <Textarea 
                       id="message" 
                       placeholder="Tell us how we can help you..." 
-                      rows={8}
-                      className="min-h-40"
+                      rows={5}
                       required 
                     />
                   </div>
