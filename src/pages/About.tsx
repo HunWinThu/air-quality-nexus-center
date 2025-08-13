@@ -2,8 +2,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import airqcHeroImage from '@/assets/airqc-hero.jpg';
 import riceStrawBurningImage from '@/assets/rice-straw-burning-field.jpg';
+import riceStrawBurning from '@/assets/rice-straw-burning.jpg';
+import airPollutionResearch from '@/assets/air-pollution-research.png';
+import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 
 const About = () => {
   return (
@@ -13,14 +17,43 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={airqcHeroImage} 
-            alt="Air Quality Nexus Center" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <Carousel className="w-full h-full">
+            <CarouselContent className="w-full h-full">
+              <CarouselItem className="w-full h-full">
+                <img 
+                  src={airqcHeroImage} 
+                  alt="Air Quality Nexus Center" 
+                  className="w-full h-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="w-full h-full">
+                <img 
+                  src={airPollutionResearch} 
+                  alt="Air Pollution Research" 
+                  className="w-full h-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="w-full h-full">
+                <img 
+                  src={riceStrawBurning} 
+                  alt="Rice Straw Burning Research" 
+                  className="w-full h-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="w-full h-full">
+                <img 
+                  src={teamGroupPhoto} 
+                  alt="Research Team" 
+                  className="w-full h-full object-cover"
+                />
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20" />
+          </Carousel>
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-yellow-400/90 text-black border-yellow-400/20">
               Leading Research Center
