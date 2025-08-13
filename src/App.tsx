@@ -16,6 +16,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import WhatWeDo from "./pages/OurThematicAreas";
  
 import NotFound from "./pages/NotFound";
+import OurThematicAreas from "./pages/OurThematicAreas";
 
 const queryClient = new QueryClient();
 
@@ -41,7 +42,7 @@ const AnimatedRoutes = () => {
           <Route path="/publications" element={<Publications />} />
           <Route path="/team" element={<Team />} />
           <Route path="/team/:slug" element={<TeamMember />} />
-          <Route path="/what-we-do" element={<WhatWeDo />} />
+          <Route path="/what-we-do" element={<OurThematicAreas />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/launching-event" element={<LaunchingEvent />} />
