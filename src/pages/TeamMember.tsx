@@ -121,10 +121,13 @@ export default function TeamMember() {
               </section>
 
               {/* Expertise */}
-              <section className="mt-8 space-y-4">
-                <h2 className="text-xl font-semibold text-foreground">Expertise</h2>
-                <p className="leading-relaxed text-muted-foreground">Air pollution monitoring;</p>
-              </section>
+              {member.Expertise && (
+                <section className="mt-8 space-y-4">
+                  <h2 className="text-xl font-semibold text-foreground">Expertise</h2>
+                  <p className="leading-relaxed text-muted-foreground">{member.Expertise}</p>
+                </section>
+              )}
+
             </article>
           </div>
         </section>
