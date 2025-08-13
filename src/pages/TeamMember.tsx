@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import teamPlaceholder from '@/assets/team-placeholder.jpg';
+import researchgateIcon from '@/assets/icons/researchgate.svg';
 import { coreTeam, advisoryCommittee } from './Team';
 
 interface Member {
@@ -99,8 +100,24 @@ export default function TeamMember() {
                   <p className="text-sm text-muted-foreground mt-1">Email: <a className="text-primary hover:underline" href={`mailto:${email}`}>{email}</a></p>
                 )}
                 {member.researchgate && (
-                  <p className="text-sm mt-1">
-                    <a className="text-primary hover:underline break-all" href={member.researchgate} target="_blank" rel="noopener noreferrer">{member.researchgate}</a>
+                  <p className="text-sm mt-2">
+                    <a
+                      href={member.researchgate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`ResearchGate profile of ${member.name}`}
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <img
+                        src={researchgateIcon}
+                        alt={`ResearchGate profile for ${member.name}`}
+                        width={24}
+                        height={24}
+                        loading="lazy"
+                        className="h-6 w-6"
+                      />
+                      <span className="sr-only">ResearchGate</span>
+                    </a>
                   </p>
                 )}
               </header>
