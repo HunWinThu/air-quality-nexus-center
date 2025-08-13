@@ -99,7 +99,9 @@ export default function TeamMember() {
                   <p className="text-sm text-muted-foreground mt-1">Email: <a className="text-primary hover:underline" href={`mailto:${email}`}>{email}</a></p>
                 )}
                 {member.researchgate && (
-                  <p className="text-sm text-muted-foreground mt-1">ResearchGate: <a className="text-primary hover:underline" href={member.researchgate} target="_blank" rel="noopener noreferrer">View profile</a></p>
+                  <p className="text-sm mt-1">
+                    <a className="text-primary hover:underline break-all" href={member.researchgate} target="_blank" rel="noopener noreferrer">{member.researchgate}</a>
+                  </p>
                 )}
               </header>
 
