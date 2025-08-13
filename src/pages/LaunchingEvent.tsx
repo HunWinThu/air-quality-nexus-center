@@ -23,7 +23,8 @@ import Saikawa from '@/assets/Advisory/Dr. Eri Saikawa.jpg';
 import Broomfield from '@/assets/Advisory/Dr. Mark Broomfield.jpg';
 import Mari from '@/assets/Advisory/Dr. Xavier Mari.jpeg';
 import Casanova from '@/assets/Advisory/Ms. Dang Espita Casanova.jpeg';
-
+import glynda from '@/assets/Advisory/Ms. glynda-bathan-baterina.jpg';
+import kilmont from '@/assets/Advisory/Mr. klimont.jpg';
 import teamGroupPhoto from '@/assets/team-group-photo.jpg';
 import launching1 from '@/assets/Launching_Event/Launching_1.jpg';
 import launching3 from '@/assets/Launching_Event/Launching-3.jpg';
@@ -112,12 +113,12 @@ const LaunchingEvent = () => {
       quote:
         'We at Ricardo have really appreciated the informed input from the Air Quality Nexus team in support of our work developing clean air solutions for Thailand and the Greater Mekong region. Your expertise across air quality, health, ecosystems and climate resilience has never been more important. We hope to continue working with the Center team in the future',
       name: 'Dr. Mark Broomfield',
-      position: 'Technical Director<br/>Air quality specialist, Ricardo',
+      position: 'Technical Director<br/>Air quality specialist, <a href="https://www.ricardo.com/en" target="_blank" rel="noopener noreferrer" className="hover:underline">Ricardo</a>',
       image: Broomfield,
     },
 
     {
-      quote:'',
+      quote:'Quote',
       name: 'Dr. Shih-Chun Candice Lung',
       position: 'Deputy Director, Research Center for Environmental Changes (RCEC)<br/>Academia Sinica, Taiwan',
       image: Lung,
@@ -128,15 +129,28 @@ const LaunchingEvent = () => {
       position: 'Research Director Center for Sustainability Governance <br/>Institute for Global Environmental Strategies (IGES), Japan',
       image: Zusman,
     },
+
+        {
+      quote:'Quote',
+      name: 'Ms. Glynda Bathan-Baterina',
+      position: 'Deputy Executive Director<br/>Clean Air Asia',
+      image: glynda,
+    },
+    {
+      quote:'Bringing air quality and climate research agenda under one umbrella is timely and essential to address the current and emerging local and regional challenges. Creating new opportunities for collaboration within the region will surely lead to more efficient use of resources, broader understanding of solutions and last but not least might enable more effective communication with the policy community. The Center could support policy makers to co-design and recognize the benefits of regional actions.',
+      name: 'Mr. Zbigniew Klimont',
+      position: 'Research Group Leader and Principal Research Scholar<br/> Pollution Management Research Group<br/> Energy, Climate, and Environment Program<br/>International Institute for Applied Systems Analysis (IIASA)',
+      image: kilmont,
+    },
   ];
 
   const gallery = [
-    { src: launching3, alt: 'Ribbon cutting at the Launching Ceremony' },
-    { src: launching4, alt: 'Panel discussion during the event' },
-    { src: launching5, alt: 'Air Quality Nexus team group photo' },
-    { src: launching8, alt: 'Guests networking at the venue' },
-    { src: launching6, alt: 'Partners and collaborators at the event' },
-    { src: launching1, alt: 'Participants during keynote session' },
+    { src: launching3, alt: '' },
+    { src: launching4, alt: '' },
+    { src: launching5, alt: '' },
+    { src: launching8, alt: '' },
+    { src: launching6, alt: '' },
+    { src: launching1, alt: '' },
   ];
 
   return (
@@ -202,7 +216,7 @@ The launch event featured insights from prominent experts and stakeholders, high
                         <div className={isEven ? 'text-left' : 'text-left md:text-right'}>
                           <p className="text-xl md:text-2xl text-foreground mb-4 italic opacity-90 animate-fade-in">“{quote.quote}”</p>
                           <div className="mt-2">
-                            <h3 className="text-lg md:text-xl font-semibold text-foreground">{quote.name}</h3>
+                            <h3 className="text-lg== md:text-xl font-semibold text-foreground">{quote.name}</h3>
                             <p
                               className="text-sm text-muted-foreground"
                               dangerouslySetInnerHTML={{ __html: quote.position }}
