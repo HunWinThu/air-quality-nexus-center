@@ -94,23 +94,14 @@ export default function TeamMember() {
                 {member.role && (
                   <p className="mt-2 text-lg italic text-muted-foreground">{member.role}</p>
                 )}
-                {member.department && (
-                  <p className="text-sm text-muted-foreground mt-1">{member.department}</p>
+                {email && (
+                  <p className="text-sm text-muted-foreground mt-1">Email: <a className="text-primary hover:underline" href={`mailto:${email}`}>{email}</a></p>
                 )}
               </header>
 
               {/* Divider */}
               <div className="border-t border-border my-6" />
 
-              {/* Contact */}
-              {email && (
-                <section className="mb-8">
-                  <h2 className="text-xl font-semibold text-foreground">Contact</h2>
-                  <p className="text-muted-foreground mt-2">
-                    Email: <a className="text-primary hover:underline" href={`mailto:${email}`}>{email}</a>
-                  </p>
-                </section>
-              )}
 
               {/* Biography */}
               <section className="space-y-4">
