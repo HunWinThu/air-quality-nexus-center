@@ -336,15 +336,6 @@ const Index = () => {
               <ArrowRight className="ml-2" size={20} />
             </Button>
           </Link>
-          <Link to="/news" aria-label="Go to News">
-            <Button
-              size="lg"
-              className="px-8 py-4 text-lg bg-background/80 text-foreground backdrop-blur-md border border-white/30 shadow-lg transition-all hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-2xl"
-            >
-              News & Events
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
-          </Link>
         </div>
       </section>
 

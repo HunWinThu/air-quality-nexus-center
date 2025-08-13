@@ -202,7 +202,7 @@ export const advisoryCommittee = [
     name: "Prof. Lisa Emberson",
     role: "Advisory Member",
     department: "Stockholm Environment Institute (SEI), University of York",
-    bio: "Centre Director of the York office at the Stockholm Environment Institute (SEI). Professor of Environmental Science in the Environment & Geography Dept., University of York",
+    bio: "Centre Director of the York office at the Stockholm Environment Institute (SEI). Professor of Environmental Science in the Environment & Geography Dept., University of York, UK",
     alignTop: true,
     image: Emberson,
     viewprofile: "https://www.york.ac.uk/environment-geography/people/lisa-emberson/",
