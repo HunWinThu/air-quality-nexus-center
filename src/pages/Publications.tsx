@@ -55,7 +55,7 @@ const publications: Record<string, Publication[]> = {
       journal: 'Environmental Research Communications, 7(2), 025009.',
       doi: 'https://doi.org/10.1088/2515-7620/adae5e',
       cite: 'Zusman, E., Akahoshi, K., Hanaoka, T., Malley, C. S., Wangwongwatana, S., Onmek, N., Paw-armart, I., Kim Oanh, N. T., Huy, L. N., Kuylenstierna, J. C. I. (2025). The truth about co-benefits: a multidimensional feasibility assessment for Thailand and beyond. Environmental Research Communications, 7(2), 025009. doi:https://doi.org/10.1088/2515-7620/adae5e',
-      image: '/lovable-uploads/53c480b5-ad0d-4654-a84d-bdc81811941d.png',
+      image: cover2025_1,
     },
     {
       title: 'Characterization and quantification of atmospheric emissions of dioxins, dl-PCBs and polycyclic aromatic hydrocarbons from municipal solid waste open burning in Southeast Asia.',
