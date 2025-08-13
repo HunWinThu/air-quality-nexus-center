@@ -163,11 +163,6 @@ const Blog = () => {
               alt={project.title}
               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute top-4 left-4">
-              <Badge className={getCategoryColor(project.category)}>
-                {project.category}
-              </Badge>
-            </div>
           </div>
           
           <CardHeader className="pb-2">
