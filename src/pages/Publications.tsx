@@ -11,6 +11,26 @@ import { Book, BookOpen, Users, Calendar, Copy, Check, Quote } from 'lucide-reac
 import { toast } from 'sonner';
 import { useState } from 'react';
 
+// Publication cover images by year
+import cover2025_1 from '@/assets/Publication _book_cover/2025/2025_1.png';
+import cover2025_2 from '@/assets/Publication _book_cover/2025/2025_2.png';
+import cover2025_3 from '@/assets/Publication _book_cover/2025/2025_3.png';
+
+import cover2024_1 from '@/assets/Publication _book_cover/2024/2024_1.png';
+import cover2024_2 from '@/assets/Publication _book_cover/2024/2024_2.png';
+import cover2024_3 from '@/assets/Publication _book_cover/2024/2024_3.png';
+
+import cover2023_1 from '@/assets/Publication _book_cover/2023/2023_1.png';
+import cover2023_2 from '@/assets/Publication _book_cover/2023/2023_2.png';
+import cover2023_3 from '@/assets/Publication _book_cover/2023/2023_3.png';
+import cover2023_4 from '@/assets/Publication _book_cover/2023/2023_4.png';
+import cover2023_5 from '@/assets/Publication _book_cover/2023/2023_5.png';
+
+import cover2022_1 from '@/assets/Publication _book_cover/2022/2022_1.png';
+import cover2022_3 from '@/assets/Publication _book_cover/2022/2022_3.png';
+import cover2022_4 from '@/assets/Publication _book_cover/2022/2022_4.png';
+import cover2022_5 from '@/assets/Publication _book_cover/2022/2022_5.png';
+
 type Publication = {
   title: string;
   authors: string;
