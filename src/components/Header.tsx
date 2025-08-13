@@ -37,41 +37,40 @@ const Header = () => {
             {navigation.map((item) => {
               if (item.name === 'About Us') {
                 return (
-                  <DropdownMenu key={item.name}>
-                    <DropdownMenuTrigger asChild>
-                      <Link
-                        to="/about"
-                        className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
-                          isActive('/about') || isActive('/launching-event') || isActive('/what-we-do') || isActive('/team')
-                            ? 'text-primary border-b-2 border-primary pb-1'
-                            : 'text-black'
-                        }`}
-                        onMouseEnter={(e) => {
-                          const trigger = e.currentTarget.closest('[data-radix-dropdown-menu-trigger]');
-                          if (trigger) {
-                            (trigger as HTMLElement).click();
-                          }
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="start"
-                      sideOffset={8}
-                      className="z-50 min-w-[200px] rounded-xl border border-border bg-background/80 backdrop-blur-lg shadow-lg p-2 animate-in fade-in-0 zoom-in-95"
+                  <div key={item.name} className="relative group">
+                    <Link
+                      to="/about"
+                      className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
+                        isActive('/about') || isActive('/launching-event') || isActive('/what-we-do') || isActive('/team')
+                          ? 'text-primary border-b-2 border-primary pb-1'
+                          : 'text-black'
+                      }`}
                     >
-                      <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
-                        <Link to="/launching-event">Launching Event</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
-                        <Link to="/what-we-do">Our Thematic Areas</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild className="rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors cursor-pointer">
-                        <Link to="/team">Our Team</Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                      {item.name}
+                    </Link>
+                    <div className="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="min-w-[200px] rounded-xl border border-border bg-background/95 backdrop-blur-lg shadow-lg p-2">
+                        <Link 
+                          to="/launching-event" 
+                          className="block rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"
+                        >
+                          Launching Event
+                        </Link>
+                        <Link 
+                          to="/what-we-do" 
+                          className="block rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"
+                        >
+                          Our Thematic Areas
+                        </Link>
+                        <Link 
+                          to="/team" 
+                          className="block rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"
+                        >
+                          Our Team
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 );
               }
               return (
