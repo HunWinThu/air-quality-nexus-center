@@ -106,9 +106,13 @@ export default function TeamMember() {
               {/* Biography */}
               <section className="space-y-4">
                 <h2 className="text-xl font-semibold text-foreground">Biography</h2>
-                {member.bio && (
-                  <p className="leading-relaxed text-muted-foreground">{member.bio}</p>
-                )}
+                {member.bio &&
+                  String(member.bio)
+                    .split(/\n{2,}|\r?\n/)
+                    .filter(Boolean)
+                    .map((para, idx) => (
+                      <p key={idx} className="leading-relaxed text-muted-foreground">{para}</p>
+                    ))}
               </section>
 
               {/* Expertise */}
