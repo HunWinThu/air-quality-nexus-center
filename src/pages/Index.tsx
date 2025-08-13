@@ -400,6 +400,100 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Recent Research & News */}
+      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-foreground mb-6">Recent Research & News</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Stay updated with our latest research findings, publications, and news from the Air Quality Nexus Center.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Recent News */}
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-6">Latest News</h3>
+              <div className="space-y-6">
+                {recentPosts.map((post, index) => (
+                  <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/20">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <Badge variant="outline">{post.category}</Badge>
+                        <span className="text-sm text-muted-foreground">{post.date}</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {post.title}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {post.excerpt}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Recent Events Preview */}
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-6">Upcoming Events</h3>
+              <div className="space-y-6">
+                <Card className="overflow-hidden bg-gradient-to-br from-primary/5 to-accent/10 border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <Badge variant="outline" className="mb-3">Conference</Badge>
+                      <span className="text-sm text-muted-foreground">March 15, 2024</span>
+                    </div>
+                    <h4 className="text-xl font-semibold text-foreground mb-3">
+                      International Air Quality Symposium 2024
+                    </h4>
+                    <p className="text-muted-foreground mb-4">
+                      Join leading researchers and policymakers to discuss the latest developments in air quality monitoring and management across Asia.
+                    </p>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <span className="font-medium">Time:</span> 09:00 - 17:00 &nbsp;|&nbsp;
+                      <span className="font-medium">Location:</span> AIT Conference Center
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="overflow-hidden bg-gradient-to-br from-primary/5 to-accent/10 border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <Badge variant="outline" className="mb-3">Workshop</Badge>
+                      <span className="text-sm text-muted-foreground">March 22, 2024</span>
+                    </div>
+                    <h4 className="text-xl font-semibold text-foreground mb-3">
+                      Community Air Quality Monitoring Training
+                    </h4>
+                    <p className="text-muted-foreground mb-4">
+                      Hands-on training workshop for community leaders on using low-cost air quality sensors and data interpretation.
+                    </p>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <span className="font-medium">Time:</span> 09:00 - 15:00 &nbsp;|&nbsp;
+                      <span className="font-medium">Location:</span> Community Center Bangkok
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+          
+          {/* Navigation Button */}
+          <div className="text-center">
+            <Link to="/news" aria-label="Go to News & Events">
+              <Button
+                size="lg"
+                className="px-8 py-4 text-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:-translate-y-1 hover:shadow-lg"
+              >
+                View All News & Events
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
        {/* International partners and collaborators */}
        <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
