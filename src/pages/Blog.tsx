@@ -4,7 +4,15 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Calendar, Clock, User } from 'lucide-react';
+import { DollarSign, Clock } from 'lucide-react';
+
+// Import images
+import capacityImg from '@/assets/capacity.jpg';
+import airPollutionResearchImg from '@/assets/air-pollution-research.png';
+import riceStrawBurningImg from '@/assets/rice-straw-burning.jpg';
+import governmentImg from '@/assets/government.jpg';
+import higQualityImg from '@/assets/hig-quality.jpg';
+import coBenefitsImg from '@/assets/co-benefits.png';
 
 interface Project {
   id: number;
@@ -33,7 +41,7 @@ const Blog = () => {
         duration: '2023-2026',
         objectives: 'To support partner countries and cities in the region in their efforts to develop and implement policies and projects in order to improve air quality.',
         activities: 'Technical support at local and national levels to enhance knowledge of air pollution phenomena, strengthen local capacities, and support public policy formulation',
-        image: '/src/assets/capacity.jpg'
+        image: capacityImg
       },
       {
         id: 2,
@@ -43,7 +51,7 @@ const Blog = () => {
         duration: '2024-2027',
         objectives: 'To strengthen research and development capabilities towards resolution of shared challenges across the region.',
         activities: 'Assess the effectiveness of climate change adaptation interventions for strengthening community resilience to smoke haze in SEA',
-        image: '/src/assets/air-pollution-research.png'
+        image: airPollutionResearchImg
       },
       {
         id: 3,
@@ -58,7 +66,7 @@ const Blog = () => {
           'Compile emission inventory',
           'Provide recommendations'
         ],
-        image: '/src/assets/rice-straw-burning.jpg'
+        image: riceStrawBurningImg
       },
       {
         id: 4,
@@ -72,7 +80,7 @@ const Blog = () => {
           'Develop technical guidelines on alternatives to open waste burning',
           'Co-lead action plan to reduce municipal solid waste open burning'
         ],
-        image: '/src/assets/government.jpg'
+        image: governmentImg
       }
     ],
     completed: [
@@ -100,7 +108,7 @@ const Blog = () => {
           'Launched CARN with multiple successful meetings',
           'Graduated 3 Master\'s students with related research'
         ],
-        image: '/src/assets/hig-quality.jpg'
+        image: higQualityImg
       }
     ],
     upcoming: [
@@ -117,7 +125,7 @@ const Blog = () => {
           'Inform climate and health policy development'
         ],
         activities: 'Apply climate attribution modelling and storylines to assess the influence of climate change on extreme wildfires and related health impacts',
-        image: '/src/assets/co-benefits.png'
+        image: coBenefitsImg
       }
     ]
   };
@@ -135,8 +143,14 @@ const Blog = () => {
       <CardHeader>
         <h3 className="text-xl font-semibold">{project.title}</h3>
         <div className="flex flex-wrap gap-2 mt-2">
-          <Badge variant="outline">{project.sponsor}</Badge>
-          <Badge variant="outline">{project.duration}</Badge>
+          <Badge variant="outline" className="flex items-center gap-1">
+            <DollarSign size={14} />
+            Funding: {project.sponsor}
+          </Badge>
+          <Badge variant="outline" className="flex items-center gap-1">
+            <Clock size={14} />
+            Duration: {project.duration}
+          </Badge>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
