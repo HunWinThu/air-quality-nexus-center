@@ -190,13 +190,13 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-foreground">{location.name}</h3>
                       <Badge variant="secondary">{location.type}</Badge>
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start space-x-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div className="flex items-start gap-2">
                         <MapPin size={16} className="text-muted-foreground mt-1 flex-shrink-0" />
                         <span className="text-sm text-muted-foreground">{location.address}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Phone size={16} className="text-muted-foreground" />
+                      <div className="flex items-start gap-2">
+                        <Phone size={16} className="text-muted-foreground mt-1 flex-shrink-0" />
                         <span className="text-sm text-muted-foreground">{location.phone}</span>
                       </div>
                     </div>
