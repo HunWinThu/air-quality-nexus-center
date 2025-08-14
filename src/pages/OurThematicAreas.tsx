@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 import cooperationImg from '@/assets/cooperation.jpg';
 import capacityImg from '@/assets/capacity.jpg';
@@ -12,6 +13,33 @@ import governmentImage from '@/assets/government.jpg';
 import climateImage from '@/assets/co-benefits.png';
 
 const OurThematicAreas = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   useEffect(() => {
     const title = 'Our Thematic Areas | Air Quality Nexus Center';
     document.title = title;
@@ -93,10 +121,26 @@ const sections = [
 {/* Hero */}
 <section className="relative py-16 md:py-20">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-    <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Thematic Areas</h1>
-    <p className="text-lg md:text-xl text-muted-foreground">
-      Advancing clean air through research, collaboration, and real-world implementation.
-    </p>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+    >
+      <motion.h1 
+        className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+        variants={fadeUpVariants}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        Our Thematic Areas
+      </motion.h1>
+      <motion.p 
+        className="text-lg md:text-xl text-muted-foreground"
+        variants={fadeUpVariants}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+      >
+        Advancing clean air through research, collaboration, and real-world implementation.
+      </motion.p>
+    </motion.div>
   </div>
   {/* Decorative waves */}
   <div aria-hidden className="pointer-events-none absolute right-0 top-4 -z-10 opacity-30">
@@ -112,27 +156,36 @@ const sections = [
 <section className="py-16">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
     {sections.map((s, i) => (
-      <article 
+      <motion.article 
         key={i} 
         id={s.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}
         className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'md:[&>div:first-child]:order-2' : ''}`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={cardVariants}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <div>
+        <motion.div
+          variants={imageVariants}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          whileHover={{ scale: 1.05 }}
+        >
           <img
             src={s.img}
             alt={s.alt}
             loading="lazy"
             className="w-full h-72 md:h-80 object-cover rounded-2xl shadow-md"
           />
-        </div>
-        <div>
+        </motion.div>
+        <motion.div variants={fadeUpVariants}>
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">{s.title}</h2>
           <p className="text-muted-foreground mb-6">{s.text}</p>
           <a href="/air-quality-nexus-center/contact" className="inline-block">
             <Button>Learn More</Button>
           </a>
-        </div>
-      </article>
+        </motion.div>
+      </motion.article>
     ))}
   </div>
 </section>

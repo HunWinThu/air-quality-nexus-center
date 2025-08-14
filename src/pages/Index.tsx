@@ -45,6 +45,33 @@ import { Link } from 'react-router-dom';
 
 
 const Index = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   const features = [
     {
       icon: BookOpen, // More appropriate for research
@@ -152,41 +179,71 @@ const Index = () => {
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 h-full flex items-center justify-center">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center text-white"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white-700 via-white-700 to-white-900 bg-clip-text"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               Center for Nexus of Air Quality, Health, Ecosystem, and Climate
-            </h1>
-            <p className="text-center text-xl md:text-2xl mb-8 text-white max-w-10xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow">
+            </motion.h1>
+            <motion.p 
+              className="text-center text-xl md:text-2xl mb-8 text-white max-w-10xl mx-auto bg-green-700/85 rounded-full px-12 py-3 shadow"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            >
               A leading Center in conducting and implementing application research with the aim to gain multiple 
               benefits from reducing air pollution through improvement of health of human and ecosystem, and 
               protection of the climate system.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+            >
               <Link to="/blog" aria-label="Go to Projects">
                 <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
                   Explore Our Research
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* About Our Center Card */}
       <section className="py-24 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUpVariants}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <motion.h2 
+              className="text-5xl md:text-5xl font-bold text-foreground mb-6 leading-tight"
+              variants={fadeUpVariants}
+            >
               Air Quality Nexus
               <span className="block text-primary">Center</span>
-            </h2>
-            <p className="text-xl text-grey/90 leading-relaxed mb-6 font-medium max-w-6xl mx-auto text-center">
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-grey/90 leading-relaxed mb-6 font-medium max-w-6xl mx-auto text-center"
+              variants={fadeUpVariants}
+            >
               Air Quality Nexus Center has a goal to serve as a focal point to build capacity and conduct cutting-edge 
               research in atmospheric sciences for effective improvement of air quality in Asia and beyond. The Center will be an institution-wide Center, cooperating with multidisciplinary and cutting-edge research 
               areas of the schools and other AIT Centers to foster collaboration and strengthen AIT research and education capacity.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 

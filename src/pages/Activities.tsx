@@ -4,8 +4,36 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MapPin, Calendar, Users, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Activities = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   const activities = [
     {
       id: 1,
@@ -149,39 +177,69 @@ const Activities = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4">Our Work</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeUpVariants}>
+              <Badge variant="secondary" className="mb-4">Our Work</Badge>
+            </motion.div>
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold text-foreground mb-6"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               Research Projects
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-muted-foreground max-w-2xl mx-auto"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            >
               Advancing air quality science through innovative research, international collaborations, and cutting-edge technology development at the Air Quality Nexus Center.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Activities Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {activities.map((activity) => (
-              <Card key={activity.id} className="group hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background to-accent/10">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={activity.image} 
-                    alt={activity.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4 space-x-2">
-                    <Badge className={getStatusColor(activity.status)}>
-                      {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
-                    </Badge>
-                    <Badge className={getCategoryColor(activity.category)}>
-                      {activity.category}
-                    </Badge>
+              <motion.div
+                key={activity.id}
+                variants={cardVariants}
+                transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                <Card className="group hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background to-accent/10">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <motion.img 
+                      src={activity.image} 
+                      alt={activity.title}
+                      className="w-full h-48 object-cover"
+                      variants={imageVariants}
+                      transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                      whileHover={{ scale: 1.08 }}
+                    />
+                    <div className="absolute top-4 left-4 space-x-2">
+                      <Badge className={getStatusColor(activity.status)}>
+                        {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
+                      </Badge>
+                      <Badge className={getCategoryColor(activity.category)}>
+                        {activity.category}
+                      </Badge>
+                    </div>
                   </div>
-                </div>
                 
                 <CardHeader className="pb-2">
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -228,8 +286,9 @@ const Activities = () => {
                   </Button>
                 </CardContent>
               </Card>
+            </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Call to Action */}
           <div className="text-center mt-16">

@@ -181,29 +181,31 @@ const Publications = () => {
     setTimeout(() => setCopiedIndex(-1), 2000); // Reset after 2 seconds
   };
 
-  // Optimized animations for better performance
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5 }
-    }
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
   };
 
   const staggerContainer = {
-    hidden: { opacity: 1 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.3,
+        delayChildren: 0.4
       }
     }
   };
 
-  const scaleOnHover = {
-    scale: 1.02,
-    transition: { duration: 0.2 }
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 }
   };
 
   return (
@@ -216,16 +218,26 @@ const Publications = () => {
           <motion.div 
             initial="hidden"
             animate="visible"
-            variants={fadeInUp}
+            variants={staggerContainer}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge variant="secondary" className="mb-4">Research</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <motion.div variants={fadeUpVariants}>
+              <Badge variant="secondary" className="mb-4">Research</Badge>
+            </motion.div>
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold text-foreground mb-6"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               Our Publications
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-muted-foreground max-w-2xl mx-auto"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            >
               Explore our extensive library of peer-reviewed articles, showcasing our commitment to advancing air quality research and policy development.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -267,8 +279,8 @@ const Publications = () => {
                   {pubs.map((pub, index) => (
                     <motion.div
                       key={index}
-                      variants={fadeInUp}
-                      whileHover={scaleOnHover}
+                      variants={cardVariants}
+                      whileHover={{ y: -4, scale: 1.01 }}
                       className="group"
                     >
                       <Card className="hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-background to-accent/10 border-2 border-transparent hover:border-primary/20 flex flex-col">
@@ -347,7 +359,7 @@ const Publications = () => {
           <motion.div 
             initial="hidden"
             animate="visible"
-            variants={fadeInUp}
+            variants={fadeUpVariants}
             className="mt-20"
           >
             <div className="bg-gradient-to-br from-accent/30 to-background rounded-lg p-8 text-center">

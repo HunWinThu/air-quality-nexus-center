@@ -8,8 +8,31 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -71,34 +94,62 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4">Get In Touch</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeUpVariants}>
+              <Badge variant="secondary" className="mb-4">Get In Touch</Badge>
+            </motion.div>
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold text-foreground mb-6"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               Contact Us
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-muted-foreground max-w-2xl mx-auto"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            >
               Have questions about our research, want to collaborate, or need information about air quality in your area? 
               We'd love to hear from you.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Info */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 mb-16">
+          <motion.div 
+            className="grid grid-cols-1 gap-6 mb-16"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center bg-gradient-to-br from-background to-accent/10">
-                <CardContent className="p-6">
-                  <info.icon className="mx-auto mb-4 text-primary" size={32} />
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{info.title}</h3>
-                  <p className="text-primary font-medium mb-1">{info.content}</p>
-                  <p className="text-sm text-muted-foreground">{info.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                <Card className="text-center bg-gradient-to-br from-background to-accent/10">
+                  <CardContent className="p-6">
+                    <info.icon className="mx-auto mb-4 text-primary" size={32} />
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{info.title}</h3>
+                    <p className="text-primary font-medium mb-1">{info.content}</p>
+                    <p className="text-sm text-muted-foreground">{info.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Contact Form and Map */}
           <div className="grid grid-cols-1 gap-12 max-w-2xl mx-auto w-full">

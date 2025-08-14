@@ -13,7 +13,35 @@ import sliding1 from '@/assets/sliding/1.jpg';
 import sliding2 from '@/assets/sliding/2.jpg';
 import sliding3 from '@/assets/sliding/3.png';
 import sliding4 from '@/assets/sliding/4.jpg';
+import { motion } from 'framer-motion';
 const About = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -68,14 +96,27 @@ const About = () => {
           <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               Air Quality Nexus Center
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed bg-black/20 p-6 rounded-lg backdrop-blur-sm">
+            </motion.h1>
+            <motion.p 
+              className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed bg-black/20 p-6 rounded-lg backdrop-blur-sm"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            >
               A leading Center in conducting and implementing application research with the aim to gain multiple benefits from reducing air pollution through improvement of health of human and ecosystem, and protection of the climate system.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 

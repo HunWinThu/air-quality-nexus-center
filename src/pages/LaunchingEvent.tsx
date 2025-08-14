@@ -35,6 +35,33 @@ import launching6 from '@/assets/Launching_Event/Launching-6.jpg';
 import launching8 from '@/assets/Launching_Event/Launching_8.jpg';
 
 const LaunchingEvent = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   useEffect(() => {
     document.title = 'Launching Event | Air Quality Nexus';
     const description = 'Launching Event and expert quotes at Air Quality Nexus Center.';
