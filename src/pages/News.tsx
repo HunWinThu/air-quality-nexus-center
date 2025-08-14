@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Import images
 import capacityImg from '@/assets/capacity.jpg';
@@ -34,6 +35,33 @@ interface Event {
 }
 
 const News = () => {
+  // Animation variants
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.1 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   const upcomingEvents: Event[] = [
     {
       id: 1,
@@ -99,110 +127,191 @@ const News = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-air-light to-accent">
+      <section className="py-20 bg-gradient-to-br from-air-light to-accent overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold text-foreground mb-6"
+              variants={fadeUpVariants}
+            >
               News & Events
-            </h1>
-            <p className="text-xl text-muted-foreground">
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-muted-foreground"
+              variants={fadeUpVariants}
+            >
               Stay updated with our latest research, events, and developments in air quality science
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Upcoming Events Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <motion.div 
+            className="mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUpVariants}
+          >
             <div className="flex items-center gap-2 mb-6">
               <Calendar className="w-6 h-6 text-primary" />
               <h2 className="text-2xl font-bold">Upcoming Events</h2>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <motion.div 
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
               {upcomingEvents.map((event) => (
-                <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="relative">
-                    <img 
-                      src={event.image} 
-                      alt={event.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-primary text-primary-foreground">
-                        {new Date(event.date).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          day: 'numeric' 
-                        })}
-                      </Badge>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                    <div className="text-sm text-muted-foreground mb-2">
-                      <div className="flex items-center gap-1 mb-1">
-                        <Clock className="w-4 h-4" />
-                        {event.time}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {event.location}
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground mb-4">{event.description}</p>
-                    <Button variant="outline" className="w-full">
-                      Learn More
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* All News Section */}
-          <div>
-            <h2 className="text-2xl font-bold mb-6">All News</h2>
-            <div className="space-y-6">
-              {newsItems.map((news) => (
-                <Card key={news.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col md:flex-row">
-                    <div className="md:w-1/3">
-                      <img 
-                        src={news.image} 
-                        alt={news.title}
-                        className="w-full h-48 md:h-full object-cover"
+                <motion.div
+                  key={event.id}
+                  variants={cardVariants}
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
+                    <div className="relative overflow-hidden">
+                      <motion.img 
+                        src={event.image} 
+                        alt={event.title}
+                        className="w-full h-48 object-cover"
+                        variants={imageVariants}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                       />
-                    </div>
-                    <div className="md:w-2/3 p-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Badge variant="secondary" className="text-xs">
-                          {news.category}
-                        </Badge>
-                        <span className="text-sm text-muted-foreground">
-                          {new Date(news.date).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-primary text-primary-foreground">
+                          {new Date(event.date).toLocaleDateString('en-US', { 
+                            month: 'short', 
                             day: 'numeric' 
                           })}
-                        </span>
+                        </Badge>
                       </div>
-                      <h3 className="text-xl font-semibold mb-3 leading-tight">
-                        {news.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4 line-clamp-3">
-                        {news.excerpt}
-                      </p>
-                      <Button variant="ghost" className="p-0 h-auto font-medium">
-                        Read More
-                        <ExternalLink className="w-4 h-4 ml-1" />
-                      </Button>
                     </div>
-                  </div>
-                </Card>
+                    <CardContent className="p-6">
+                      <motion.h3 
+                        className="text-xl font-semibold mb-2"
+                        variants={fadeUpVariants}
+                      >
+                        {event.title}
+                      </motion.h3>
+                      <motion.div 
+                        className="text-sm text-muted-foreground mb-2"
+                        variants={fadeUpVariants}
+                      >
+                        <div className="flex items-center gap-1 mb-1">
+                          <Clock className="w-4 h-4" />
+                          {event.time}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          {event.location}
+                        </div>
+                      </motion.div>
+                      <motion.p 
+                        className="text-muted-foreground mb-4"
+                        variants={fadeUpVariants}
+                      >
+                        {event.description}
+                      </motion.p>
+                      <motion.div variants={fadeUpVariants}>
+                        <Button variant="outline" className="w-full">
+                          Learn More
+                        </Button>
+                      </motion.div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
+
+          {/* All News Section */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUpVariants}
+          >
+            <h2 className="text-2xl font-bold mb-6">All News</h2>
+            <motion.div 
+              className="space-y-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              {newsItems.map((news) => (
+                <motion.div
+                  key={news.id}
+                  variants={cardVariants}
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="md:w-1/3 overflow-hidden">
+                        <motion.img 
+                          src={news.image} 
+                          alt={news.title}
+                          className="w-full h-48 md:h-full object-cover"
+                          variants={imageVariants}
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      </div>
+                      <div className="md:w-2/3 p-6">
+                        <motion.div 
+                          className="flex items-center gap-2 mb-2"
+                          variants={fadeUpVariants}
+                        >
+                          <Badge variant="secondary" className="text-xs">
+                            {news.category}
+                          </Badge>
+                          <span className="text-sm text-muted-foreground">
+                            {new Date(news.date).toLocaleDateString('en-US', { 
+                              year: 'numeric', 
+                              month: 'long', 
+                              day: 'numeric' 
+                            })}
+                          </span>
+                        </motion.div>
+                        <motion.h3 
+                          className="text-xl font-semibold mb-3 leading-tight"
+                          variants={fadeUpVariants}
+                        >
+                          {news.title}
+                        </motion.h3>
+                        <motion.p 
+                          className="text-muted-foreground mb-4 line-clamp-3"
+                          variants={fadeUpVariants}
+                        >
+                          {news.excerpt}
+                        </motion.p>
+                        <motion.div variants={fadeUpVariants}>
+                          <Button variant="ghost" className="p-0 h-auto font-medium">
+                            Read More
+                            <ExternalLink className="w-4 h-4 ml-1" />
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
