@@ -37,7 +37,7 @@ interface Event {
 const News = () => {
   // Animation variants
   const fadeUpVariants = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 80 },
     visible: { opacity: 1, y: 0 }
   };
 
@@ -46,19 +46,19 @@ const News = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2
+        staggerChildren: 0.3,
+        delayChildren: 0.4
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
     visible: { opacity: 1, y: 0, scale: 1 }
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, scale: 1.1 },
+    hidden: { opacity: 0, scale: 1.2 },
     visible: { opacity: 1, scale: 1 }
   };
 
@@ -138,12 +138,14 @@ const News = () => {
             <motion.h1 
               className="text-4xl md:text-6xl font-bold text-foreground mb-6"
               variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               News & Events
             </motion.h1>
             <motion.p 
               className="text-xl text-muted-foreground"
               variants={fadeUpVariants}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             >
               Stay updated with our latest research, events, and developments in air quality science
             </motion.p>
@@ -160,6 +162,7 @@ const News = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariants}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <div className="flex items-center gap-2 mb-6">
               <Calendar className="w-6 h-6 text-primary" />
@@ -177,8 +180,8 @@ const News = () => {
                   <motion.div
                     key={event.id}
                     variants={cardVariants}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                    whileHover={{ y: -8, scale: 1.02 }}
                   >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
                     <div className="relative overflow-hidden">
@@ -187,8 +190,8 @@ const News = () => {
                         alt={event.title}
                         className="w-full h-48 object-cover"
                         variants={imageVariants}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                        whileHover={{ scale: 1.08 }}
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-primary text-primary-foreground">
@@ -243,6 +246,7 @@ const News = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariants}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <h2 className="text-2xl font-bold mb-6">All News</h2>
             <motion.div 
@@ -256,8 +260,8 @@ const News = () => {
                   <motion.div
                     key={news.id}
                     variants={cardVariants}
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                    whileHover={{ y: -4, scale: 1.01 }}
                   >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="flex flex-col md:flex-row">
@@ -267,9 +271,9 @@ const News = () => {
                           alt={news.title}
                           className="w-full h-48 md:h-full object-cover"
                            variants={imageVariants}
-                           whileHover={{ scale: 1.05 }}
-                           transition={{ duration: 0.6 }}
-                        />
+                           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                           whileHover={{ scale: 1.08 }}
+                         />
                       </div>
                       <div className="md:w-2/3 p-6">
                         <motion.div 
