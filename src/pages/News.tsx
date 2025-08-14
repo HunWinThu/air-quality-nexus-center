@@ -46,8 +46,8 @@ const News = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1
+        staggerChildren: 0.2,
+        delayChildren: 0.2
       }
     }
   };
@@ -174,12 +174,12 @@ const News = () => {
               viewport={{ once: true, margin: "-50px" }}
             >
               {upcomingEvents.map((event) => (
-                <motion.div
-                  key={event.id}
-                  variants={cardVariants}
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.2 }}
-                >
+                  <motion.div
+                    key={event.id}
+                    variants={cardVariants}
+                    whileHover={{ y: -5 }}
+                    transition={{ duration: 0.4 }}
+                  >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
                     <div className="relative overflow-hidden">
                       <motion.img 
@@ -188,7 +188,7 @@ const News = () => {
                         className="w-full h-48 object-cover"
                         variants={imageVariants}
                         whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.6 }}
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-primary text-primary-foreground">
@@ -253,12 +253,12 @@ const News = () => {
               viewport={{ once: true, margin: "-50px" }}
             >
               {newsItems.map((news) => (
-                <motion.div
-                  key={news.id}
-                  variants={cardVariants}
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
-                >
+                  <motion.div
+                    key={news.id}
+                    variants={cardVariants}
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.4 }}
+                  >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="flex flex-col md:flex-row">
                       <div className="md:w-1/3 overflow-hidden">
@@ -266,9 +266,9 @@ const News = () => {
                           src={news.image} 
                           alt={news.title}
                           className="w-full h-48 md:h-full object-cover"
-                          variants={imageVariants}
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
+                           variants={imageVariants}
+                           whileHover={{ scale: 1.05 }}
+                           transition={{ duration: 0.6 }}
                         />
                       </div>
                       <div className="md:w-2/3 p-6">
