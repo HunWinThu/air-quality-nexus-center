@@ -44,87 +44,62 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      
+            <Header />
+
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden h-[80vh] min-h-[600px]">
-        <div className="absolute inset-0">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
           <Carousel 
-            className="w-full h-full"
+            className="w-full max-h-screen"
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 2500,
               }),
             ]}
             opts={{
               loop: true,
+              align: "center" // Ensures images are centered
             }}
           >
             <CarouselContent className="w-full h-full">
-              <CarouselItem className="w-full h-full">
-                <img 
-                  src={sliding1} 
-                  alt="Air Quality Nexus Center" 
-                  className="w-full h-full object-cover"
-                />
-              </CarouselItem>
-              <CarouselItem className="w-full h-full">
-                <img 
-                  src={sliding2} 
-                  alt="Air Pollution Research" 
-                  className="w-full h-full object-cover"
-                />
-              </CarouselItem>
-              <CarouselItem className="w-full h-full">
-                <img 
-                  src={sliding3} 
-                  alt="Rice Straw Burning Research" 
-                  className="w-full h-full object-cover"
-                />
-              </CarouselItem>
-              <CarouselItem className="w-full h-full">
-                <img 
-                  src={sliding4} 
-                  alt="Research Team" 
-                  className="w-full h-full object-cover"
-                />
-              </CarouselItem>
+              {[sliding1, sliding2, sliding3, sliding4].map((img, index) => (
+                <CarouselItem key={index} className="flex justify-center items-center">
+                  <div className="relative w-auto h-auto max-w-full max-h-[80vh]">
+                    <img 
+                      src={img} 
+                      alt={`Slide ${index + 1}`}
+                      className="object-contain max-w-full max-h-[80vh]"
+                      style={{
+                        width: "auto",
+                        height: "auto"
+                      }}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
             </CarouselContent>
             <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20" />
             <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20" />
           </Carousel>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <motion.div 
-            className="max-w-4xl mx-auto text-center"
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
-              variants={fadeUpVariants}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 h-full flex items-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
               Air Quality Nexus Center
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed bg-black/20 p-6 rounded-lg backdrop-blur-sm"
-              variants={fadeUpVariants}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-            >
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed bg-black/20 p-6 rounded-lg backdrop-blur-sm">
               A leading Center in conducting and implementing application research with the aim to gain multiple benefits from reducing air pollution through improvement of health of human and ecosystem, and protection of the climate system.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Background Section */}
-      <section className="py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-3">
               <Badge 
                 variant="outline" 
                 className="mb-4 border-primary/90 text-primary text-4xl py-6 px-10 rounded-full"
@@ -173,10 +148,10 @@ const About = () => {
       </section>
 
       {/* Rationale Section */}
-      <section className="py-20 bg-gradient-to-br from-accent/20 to-primary/5">
+      <section className="py-10 bg-gradient-to-br from-accent/20 to-primary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-3">
               <Badge 
                 variant="outline" 
                 className="mb-4 border-primary/90 text-primary text-4xl py-6 px-10 rounded-full"

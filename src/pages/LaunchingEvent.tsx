@@ -139,7 +139,7 @@ const LaunchingEvent = () => {
     },
 
     {
-      quote:'Quote',
+      quote:'Breathing clean air is a fundamental human right. We hold high expectations that this center will contribute to scientific breakthroughs and promote timely, effective actions to improve air quality across Asia',
       name: 'Dr. Shih-Chun Candice Lung',
       position: 'Deputy Director, Research Center for Environmental Changes (RCEC)<br/>Academia Sinica, Taiwan',
       image: Lung,
