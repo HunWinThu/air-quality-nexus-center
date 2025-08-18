@@ -161,12 +161,15 @@ const LaunchingEvent = () => {
   ];
 
   const gallery = [
-    { src: launching3, alt: '' },
-    { src: launching4, alt: '' },
-    { src: launching5, alt: '' },
-    { src: launching8, alt: '' },
-    { src: launching6, alt: '' },
-    { src: launching1, alt: '' },
+    { src: launching3, alt: 'Air Quality Nexus Center launching event presentation' },
+    { src: launching4, alt: 'Audience attending the Air Quality Nexus Center launch' },
+    { src: launching5, alt: 'Expert speakers at the launching ceremony' },
+    { src: launching8, alt: 'Interactive session during the launch event' },
+    { src: launching6, alt: 'Networking and discussions at the event' },
+    { src: launching1, alt: 'Opening ceremony of Air Quality Nexus Center' },
+    { src: '/lovable-uploads/645d2189-be38-4709-8d96-5f3d17042b7c.png', alt: 'Presentation on Air Quality Nexus Center overview' },
+    { src: '/lovable-uploads/d3bb95b7-05c3-4fe3-a8ca-53d5f64e8c83.png', alt: 'Virtual presentation and audience engagement' },
+    { src: '/lovable-uploads/0f605366-b160-4a41-bf5b-cd38d2a79fec.png', alt: 'Center for Nexus of Air Quality, Health, Ecosystem and Climate presentation' },
   ];
 
   return (
