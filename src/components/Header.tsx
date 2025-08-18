@@ -49,7 +49,7 @@ const Header = () => {
                       {item.name}
                     </Link>
                     <div className="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out transform translate-y-[-10px] group-hover:translate-y-0 z-50">
-                      <div className="min-w-[200px] rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-lg p-2 animate-fade-in z-50">
+                      <div className="min-w-[250px] rounded-xl border border-border bg-white/50 bg-opacity-50 backdrop-blur-3xl shadow-lg p-2">
                         <Link 
                           to="/launching-event" 
                           className="block rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"

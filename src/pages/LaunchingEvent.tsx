@@ -104,7 +104,7 @@ const LaunchingEvent = () => {
     },
     {
       quote:
-        'The Air Quality Nexus Center at the Asian Institute of Technology is a timely and much needed initiative aiming to address the pressing challenges climate change and air pollution are posing on human health and ecosystems in the Asia-Pacific region and globally. Australian environmental health research, policy and practice will benefit from this international collaboration.',
+        'The Air Quality Nexus Center at AIT is a timely and much needed initiative aiming to address the pressing challenges climate change and air pollution are posing on human health and ecosystems in the Asia-Pacific region and globally. Australian environmental health research, policy and practice will benefit from this international collaboration.',
       name: 'Prof. Sotiris Vardoulakis',
       position:
         'Director, NHMRC Healthy Environments and Lives (HEAL) National Research Network<br/>Professor of Environmental Public Health, University of Canberra, Australia',
@@ -112,7 +112,7 @@ const LaunchingEvent = () => {
     },
     {
       quote:
-        'What Wonderful RecognitionCongratulations! Air Quality Nexus Center will be fantastic to have such a resource in Southeast Asia, under Prof. Kim Oanh’s Leadership!',
+        'What Wonderful Recognition, Congratulations! Air Quality Nexus Center will be fantastic to have such a resource in Southeast Asia, under Prof. Kim Oanh’s Leadership!',
       name: 'Prof. Tami C. Bond',
       position:
         'Scott Presidential Chair in Energy, Environment and Health<br/>Professor, Mechanical Engineering; Joint Professor, Civil & Environmental Engineering; Affiliate; Systems Colorado University, Fort Collins, CO USA',
@@ -123,7 +123,7 @@ const LaunchingEvent = () => {
       quote:
         'Emory Climate Hub is excited to partner with the Center for Nexus of Air Quality, Health, Ecosystem and Climate, as we are interested in finding evidence-based solutions through an interdisciplinary framework. The center emphasizes an integrated approach necessary for a complicated problem that involves climate change, air quality, and human/ecosystem health.',
       name: 'Dr. Eri Saikawa',
-      position: 'Professor<br/>Emory University, USA',
+      position: 'PWinship Distinguished Research Professor, SAIKAWA LAB<br/>Professor, Emory University, USA',
       image: Saikawa,
     },
     {
@@ -137,7 +137,7 @@ const LaunchingEvent = () => {
       quote:
         'We at Ricardo have really appreciated the informed input from the Air Quality Nexus team in support of our work developing clean air solutions for Thailand and the Greater Mekong region. Your expertise across air quality, health, ecosystems and climate resilience has never been more important. We hope to continue working with the Center team in the future',
       name: 'Dr. Mark Broomfield',
-      position: 'Technical Director<br/>Air quality specialist, <a href="https://www.ricardo.com/en" target="_blank" rel="noopener noreferrer" className="hover:underline">Ricardo</a>',
+      position: 'Technical Director<br/>Air quality specialist, <a href="https://www.ricardo.com/en" target="_blank" rel="noopener noreferrer" className="hover:underline">Ricardo</a>Leading environmental and engineering consultancy, UK',
       image: Broomfield,
     },
 
