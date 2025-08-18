@@ -123,7 +123,7 @@ const LaunchingEvent = () => {
       quote:
         'Emory Climate Hub is excited to partner with the Center for Nexus of Air Quality, Health, Ecosystem and Climate, as we are interested in finding evidence-based solutions through an interdisciplinary framework. The center emphasizes an integrated approach necessary for a complicated problem that involves climate change, air quality, and human/ecosystem health.',
       name: 'Dr. Eri Saikawa',
-      position: 'PWinship Distinguished Research Professor, SAIKAWA LAB<br/>Professor, Emory University, USA',
+      position: 'Winship Distinguished Research Professor, SAIKAWA LAB<br/>Professor, Emory University, USA',
       image: Saikawa,
     },
     {
@@ -137,7 +137,7 @@ const LaunchingEvent = () => {
       quote:
         'We at Ricardo have really appreciated the informed input from the Air Quality Nexus team in support of our work developing clean air solutions for Thailand and the Greater Mekong region. Your expertise across air quality, health, ecosystems and climate resilience has never been more important. We hope to continue working with the Center team in the future',
       name: 'Dr. Mark Broomfield',
-      position: 'Technical Director<br/>Air quality specialist, <a href="https://www.ricardo.com/en" target="_blank" rel="noopener noreferrer" className="hover:underline">Ricardo</a>Leading environmental and engineering consultancy, UK',
+      position: 'Technical Director<br/>Air quality specialist, <a href="https://www.ricardo.com/en" target="_blank" rel="noopener noreferrer" className="hover:underline">Ricardo</a><br/>Leading environmental and engineering consultancy<br/>Ricardo was recently reappointed as the lead organisation on the collection and analysis for the UK government’s world leading emissions inventory, helping to improve air quality across the country.',
       image: Broomfield,
     },
 
