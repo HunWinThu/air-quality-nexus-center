@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import ProjectDetails from "./pages/ProjectDetails";
 import News from "./pages/News";
+import NewsDetails from "./pages/NewsDetails";
 import Activities from "./pages/Activities";
 import Publications from "./pages/Publications";
 import Team from "./pages/Team";
@@ -42,6 +43,7 @@ const AnimatedRoutes = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<NewsDetails />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/team" element={<Team />} />

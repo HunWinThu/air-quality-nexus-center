@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 // Import images
 import capacityImg from '@/assets/capacity.jpg';
@@ -35,6 +36,7 @@ interface Event {
 }
 
 const News = () => {
+  const navigate = useNavigate();
   // Animation variants
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 80 },
@@ -64,7 +66,7 @@ const News = () => {
 
   const upcomingEvents: Event[] = [
     {
-      id: 1,
+      id: 5, // Using IDs 5+ to avoid conflicts with news items 1-4
       title: "International Conference on Air Quality Management",
       date: "2025-09-15",
       time: "9:00 AM - 5:00 PM",
@@ -73,7 +75,7 @@ const News = () => {
       image: capacityImg
     },
     {
-      id: 2,
+      id: 6,
       title: "Workshop on Emission Inventory Development",
       date: "2025-10-22",
       time: "2:00 PM - 6:00 PM",
@@ -229,7 +231,11 @@ const News = () => {
                         {event.description}
                       </motion.p>
                       <motion.div variants={fadeUpVariants}>
-                        <Button variant="outline" className="w-full">
+                        <Button 
+                          variant="outline" 
+                          className="w-full"
+                          onClick={() => navigate(`/news/${event.id}`)}
+                        >
                           Learn More
                         </Button>
                       </motion.div>
@@ -304,7 +310,11 @@ const News = () => {
                           {news.excerpt}
                         </motion.p>
                         <motion.div variants={fadeUpVariants}>
-                          <Button variant="ghost" className="p-0 h-auto font-medium">
+                          <Button 
+                            variant="ghost" 
+                            className="p-0 h-auto font-medium"
+                            onClick={() => navigate(`/news/${news.id}`)}
+                          >
                             Read More
                             <ExternalLink className="w-4 h-4 ml-1" />
                           </Button>
