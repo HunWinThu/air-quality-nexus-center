@@ -81,10 +81,41 @@ const Contact = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted');
+    
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: `${formData.get('firstName')} ${formData.get('lastName')}`.trim(),
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string || 'Not provided',
+      organization: formData.get('organization') as string || 'Not specified',
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch(`https://alfnngetdsxwsvldvzpd.supabase.co/functions/v1/send-contact-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsZm5uZ2V0ZHN4d3N2bGR2enBkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MzE5MjcsImV4cCI6MjA2OTAwNzkyN30.61ioddBFpoZ2j2K_Z8KKajKOe8nnY0JzjhF6Yy4MmJE`,
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // Show success message and reset form
+        const form = e.target as HTMLFormElement;
+        form.reset();
+        alert('Thank you for your message! We will get back to you soon.');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    }
   };
 
   return (
@@ -168,32 +199,32 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="Your first name" required />
+                      <Input id="firstName" name="firstName" placeholder="Your first name" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Your last name" required />
+                      <Input id="lastName" name="lastName" placeholder="Your last name" required />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your.email@example.com" required />
+                    <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone (Optional)</Label>
-                    <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" />
+                    <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="organization">Organization (Optional)</Label>
-                    <Input id="organization" placeholder="Your organization or company" />
+                    <Input id="organization" name="organization" placeholder="Your organization or company" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Select>
+                    <Select name="subject" required>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a subject" />
                       </SelectTrigger>
@@ -213,6 +244,7 @@ const Contact = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea 
                       id="message" 
+                      name="message"
                       placeholder="Tell us how we can help you..." 
                       rows={5}
                       required 
