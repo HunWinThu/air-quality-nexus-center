@@ -9,8 +9,13 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useToast } from '@/hooks/use-toast';
+import { useState } from 'react';
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Animation variants
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 80 },
@@ -83,6 +88,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     const formData = new FormData(e.target as HTMLFormElement);
     const data = {
@@ -108,13 +114,22 @@ const Contact = () => {
         // Show success message and reset form
         const form = e.target as HTMLFormElement;
         form.reset();
-        alert('Thank you for your message! We will get back to you soon.');
+        toast({
+          title: "Message Sent Successfully! ✅",
+          description: "Thank you for reaching out! We'll get back to you as soon as possible.",
+        });
       } else {
         throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Sorry, there was an error sending your message. Please try again.');
+      toast({
+        title: "Message Failed to Send ❌",
+        description: "Sorry, there was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -251,8 +266,8 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" size="lg" className="w-full">
-                    Send Message
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
