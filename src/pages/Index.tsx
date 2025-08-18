@@ -175,7 +175,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${Home})` }}
         >
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-sky-blue/20"></div> */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-sky-blue/20"></div>
         </div>
         
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 h-full flex items-center justify-center">
