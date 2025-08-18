@@ -151,12 +151,7 @@ const LaunchingEvent = () => {
       image: Zusman,
     },
 
-        {
-      quote:'Quote',
-      name: 'Ms. Glynda Bathan-Baterina',
-      position: 'Deputy Executive Director<br/>Clean Air Asia',
-      image: glynda,
-    },
+
     {
       quote:'Bringing air quality and climate research agenda under one umbrella is timely and essential to address the current and emerging local and regional challenges. Creating new opportunities for collaboration within the region will surely lead to more efficient use of resources, broader understanding of solutions and last but not least might enable more effective communication with the policy community. The Center could support policy makers to co-design and recognize the benefits of regional actions.',
       name: 'Mr. Zbigniew Klimont',
