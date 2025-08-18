@@ -31,8 +31,11 @@ import launching3 from '@/assets/Launching_Event/Launching-3.jpg';
 import launching4 from '@/assets/Launching_Event/Launching-4.jpg';
 import launching5 from '@/assets/Launching_Event/Launching-5.jpg';
 import launching6 from '@/assets/Launching_Event/Launching-6.jpg';
-
 import launching8 from '@/assets/Launching_Event/Launching_8.jpg';
+import launching10 from '@/assets/Launching_Event/Launching-10.jpg';
+import launching11 from '@/assets/Launching_Event/Launching-11.jpg';
+import launching12 from '@/assets/Launching_Event/Launching-12.jpg';
+
 
 const LaunchingEvent = () => {
   // Animation variants
@@ -160,17 +163,17 @@ const LaunchingEvent = () => {
     },
   ];
 
-  const gallery = [
-    { src: launching3, alt: 'Air Quality Nexus Center launching event presentation' },
-    { src: launching4, alt: 'Audience attending the Air Quality Nexus Center launch' },
-    { src: launching5, alt: 'Expert speakers at the launching ceremony' },
-    { src: launching8, alt: 'Interactive session during the launch event' },
-    { src: launching6, alt: 'Networking and discussions at the event' },
-    { src: launching1, alt: 'Opening ceremony of Air Quality Nexus Center' },
-    { src: '/lovable-uploads/645d2189-be38-4709-8d96-5f3d17042b7c.png', alt: 'Presentation on Air Quality Nexus Center overview' },
-    { src: '/lovable-uploads/d3bb95b7-05c3-4fe3-a8ca-53d5f64e8c83.png', alt: 'Virtual presentation and audience engagement' },
-    { src: '/lovable-uploads/0f605366-b160-4a41-bf5b-cd38d2a79fec.png', alt: 'Center for Nexus of Air Quality, Health, Ecosystem and Climate presentation' },
-  ];
+const gallery = [
+  { src: launching3 },
+  { src: launching4 },
+  { src: launching5 },
+  { src: launching8 },
+  { src: launching6 },
+  { src: launching1 },
+  { src: launching10 },
+  { src: launching11 },
+  { src: launching12 },
+]
 
   return (
     <div className="min-h-screen bg-background">
@@ -257,8 +260,8 @@ The launch event featured insights from prominent experts and stakeholders, high
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
               {gallery.map((item, idx) => (
                 <figure key={idx} className="group rounded-xl overflow-hidden shadow bg-background/80 backdrop-blur-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover-scale animate-enter">
-                  <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-56 md:h-64 object-cover transform transition-transform duration-300 group-hover:scale-[1.03]" />
-                  <figcaption className="p-3 text-sm text-muted-foreground">{item.alt}</figcaption>
+                  <img src={item.src} loading="lazy" className="w-full h-56 md:h-64 object-cover transform transition-transform duration-300 group-hover:scale-[1.03]" />
+                  {/* <figcaption className="p-3 text-sm text-muted-foreground">{item.alt}</figcaption> */}
                 </figure>
               ))}
             </div>
