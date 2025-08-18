@@ -77,11 +77,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-xl font-semibold tracking-wide ${
-                    item.name === 'News' 
-                      ? 'hover:text-primary'
-                      : 'transition-colors hover:text-primary'
-                  } ${
+                  className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
                     isActive(item.href)
                       ? 'text-primary border-b-2 border-primary pb-1'
                       : 'text-black'
@@ -147,16 +143,10 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-3 py-2 text-lg font-medium rounded-md ${
-                      item.name === 'News'
-                        ? isActive(item.href)
-                          ? 'text-primary bg-accent'
-                          : 'text-black hover:text-primary hover:bg-accent'
-                        : `transition-colors ${
-                          isActive(item.href)
-                            ? 'text-primary bg-accent'
-                            : 'text-black hover:text-primary hover:bg-accent'
-                        }`
+                    className={`block px-3 py-2 text-lg font-medium rounded-md transition-colors ${
+                      isActive(item.href)
+                        ? 'text-primary bg-accent'
+                        : 'text-black hover:text-primary hover:bg-accent'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
