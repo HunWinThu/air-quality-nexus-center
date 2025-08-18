@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { DollarSign, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import ProjectDetailsModal from '@/components/ProjectDetailsModal';
 
 // Import images
 import capacityImg from '@/assets/capacity.jpg';
@@ -28,6 +30,10 @@ interface Project {
 }
 
 const Blog = () => {
+  // State for modal
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Animation variants
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 80 },
@@ -224,7 +230,14 @@ const Blog = () => {
           </div>
         )}
         
-        <Button variant="outline" className="w-full mt-4">
+        <Button 
+          variant="outline" 
+          className="w-full mt-4"
+          onClick={() => {
+            setSelectedProject(project);
+            setIsModalOpen(true);
+          }}
+        >
           View Project Details
         </Button>
       </CardContent>
@@ -291,6 +304,16 @@ const Blog = () => {
           </Tabs>
         </div>
       </section>
+
+      {/* Project Details Modal */}
+      <ProjectDetailsModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedProject(null);
+        }}
+      />
 
       <Footer />
     </div>
