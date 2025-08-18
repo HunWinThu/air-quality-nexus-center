@@ -137,7 +137,6 @@ const Contact = () => {
                 key={index}
                 variants={cardVariants}
                 transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -8, scale: 1.02 }}
               >
                 <Card className="text-center bg-gradient-to-br from-background to-accent/10">
                   <CardContent className="p-6">
