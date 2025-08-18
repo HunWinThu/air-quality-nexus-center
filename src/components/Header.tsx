@@ -78,7 +78,7 @@ const Header = () => {
                   key={item.name}
                   to={item.href}
                   className={`text-xl font-semibold tracking-wide ${
-                    item.name === 'News' || item.name === 'Contact Us' 
+                    item.name === 'News' 
                       ? 'hover:text-primary'
                       : 'transition-colors hover:text-primary'
                   } ${
@@ -148,7 +148,7 @@ const Header = () => {
                     key={item.name}
                     to={item.href}
                     className={`block px-3 py-2 text-lg font-medium rounded-md ${
-                      item.name === 'News' || item.name === 'Contact Us'
+                      item.name === 'News'
                         ? isActive(item.href)
                           ? 'text-primary bg-accent'
                           : 'text-black hover:text-primary hover:bg-accent'
