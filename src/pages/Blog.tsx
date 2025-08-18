@@ -6,8 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { DollarSign, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import ProjectDetailsModal from '@/components/ProjectDetailsModal';
+import { useNavigate } from 'react-router-dom';
 
 // Import images
 import capacityImg from '@/assets/capacity.jpg';
@@ -30,9 +29,7 @@ interface Project {
 }
 
 const Blog = () => {
-  // State for modal
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Animation variants
   const fadeUpVariants = {
@@ -233,10 +230,7 @@ const Blog = () => {
         <Button 
           variant="outline" 
           className="w-full mt-4"
-          onClick={() => {
-            setSelectedProject(project);
-            setIsModalOpen(true);
-          }}
+          onClick={() => navigate(`/air-quality-nexus-center/project/${project.id}`)}
         >
           View Project Details
         </Button>
@@ -304,16 +298,6 @@ const Blog = () => {
           </Tabs>
         </div>
       </section>
-
-      {/* Project Details Modal */}
-      <ProjectDetailsModal
-        project={selectedProject}
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(false);
-          setSelectedProject(null);
-        }}
-      />
 
       <Footer />
     </div>
