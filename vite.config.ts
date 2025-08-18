@@ -21,5 +21,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/air-quality-nexus-center",
+  base: "/air-quality-nexus-center/",
 }));
