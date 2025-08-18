@@ -72,7 +72,7 @@ const Blog = () => {
         duration: '2023-2026',
         objectives: 'To support partner countries and cities in the region in their efforts to develop and implement policies and projects in order to improve air quality.',
         activities: 'Technical support at local and national levels to enhance knowledge of air pollution phenomena, strengthen local capacities, and support public policy formulation',
-        image: capacityImg
+        image: governmentImg
       },
       {
         id: 2,
@@ -154,7 +154,7 @@ const Blog = () => {
           'Launched CARN with multiple successful meetings',
           'Graduated 3 Master\'s students with related research'
         ],
-        image: higQualityImg
+        image: capacityImg
       }
     ],
     upcoming: [
