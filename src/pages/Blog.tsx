@@ -112,6 +112,21 @@ const Blog = () => {
           'Co-lead action plan to reduce municipal solid waste open burning'
         ],
         image: governmentImg
+      },
+      {
+        id: 7,
+        title: 'Climate Attribution of Wildfire Smoke Impacts on Priority Population Health in Southeast Asia and Australia (CANBREATHE)',
+        sponsor: 'Wellcome Trust',
+        partners: 'Australia, Thailand, Indonesia, Cambodia, and Laos',
+        duration: '2025-2028',
+        objectives: [
+          'Estimate burden of wildfire smoke on population health',
+          'Understand public perceptions of wildfire health impacts',
+          'Build skills and resilience',
+          'Inform climate and health policy development'
+        ],
+        activities: 'Apply climate attribution modelling and storylines to assess the influence of climate change on extreme wildfires and related health impacts',
+        image: coBenefitsImg
       }
     ],
     completed: [
