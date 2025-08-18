@@ -145,7 +145,7 @@ const ProjectDetails = () => {
         <Header />
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate('/air-quality-nexus-center/blog')}>
+          <Button onClick={() => navigate('/blog')}>
             Back to Projects
           </Button>
         </div>
@@ -197,7 +197,7 @@ const ProjectDetails = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <Button
             variant="ghost"
-            onClick={() => navigate('/air-quality-nexus-center/blog')}
+            onClick={() => navigate('/blog')}
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft size={20} />

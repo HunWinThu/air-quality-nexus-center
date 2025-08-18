@@ -230,7 +230,7 @@ const Blog = () => {
         <Button 
           variant="outline" 
           className="w-full mt-4"
-          onClick={() => navigate(`/air-quality-nexus-center/project/${project.id}`)}
+          onClick={() => navigate(`/project/${project.id}`)}
         >
           View Project Details
         </Button>
