@@ -79,9 +79,12 @@ const Header = () => {
                   to={item.href}
                   className={`text-xl font-semibold tracking-wide border-b-2 pb-1 ${
                     item.name === 'News' 
-                      ? isActive(item.href)
+                      ? `relative overflow-hidden group ${isActive(item.href)
                         ? 'text-primary border-primary'
-                        : 'text-black border-transparent'
+                        : 'text-black border-transparent'} 
+                        before:absolute before:top-0 before:left-[-100%] before:w-full before:h-full 
+                        before:bg-gradient-to-r before:from-transparent before:via-primary/20 before:to-transparent 
+                        hover:before:left-[100%] before:transition-all before:duration-700 before:ease-in-out`
                       : `transition-colors hover:text-primary ${
                         isActive(item.href)
                           ? 'text-primary border-primary'
