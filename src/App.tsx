@@ -11,6 +11,7 @@ import News from "./pages/News";
 import NewsDetails from "./pages/NewsDetails";
 import Activities from "./pages/Activities";
 import Publications from "./pages/Publications";
+import Resources from "./pages/Resources";
 import Team from "./pages/Team";
 import TeamMember from "./pages/TeamMember";
 import Contact from "./pages/Contact";
@@ -46,6 +47,7 @@ const AnimatedRoutes = () => {
           <Route path="/news/:id" element={<NewsDetails />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/team" element={<Team />} />
           <Route path="/team/:slug" element={<TeamMember />} />
           <Route path="/what-we-do" element={<OurThematicAreas />} />
