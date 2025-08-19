@@ -21,6 +21,7 @@ import WhatWeDo from "./pages/OurThematicAreas";
  
 import NotFound from "./pages/NotFound";
 import OurThematicAreas from "./pages/OurThematicAreas";
+import Committee from "./pages/AdvisoryCommittee";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const AnimatedRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/launching-event" element={<LaunchingEvent />} />
+          <Route path="/committee" element={<Committee />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
