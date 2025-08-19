@@ -325,8 +325,9 @@ const Team = () => {
             </div>
 
             <TabsContent value="core" className="mt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {coreTeam.map((member) => (
+              {/* First Row - Top 2 Members */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+                {coreTeam.slice(0, 2).map((member) => (
                   <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border">
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
@@ -344,7 +345,31 @@ const Team = () => {
                           <p className="text-sm text-muted-foreground">{member.department}</p>
                         )}
                       </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
 
+              {/* Remaining Members - 3 columns, 2 rows */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {coreTeam.slice(2).map((member) => (
+                  <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border">
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <img
+                          src={member.image || teamPlaceholder}
+                          alt={`${member.name} - ${member.role}`}
+                          loading="lazy"
+                          className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                        />
+                        <Link to={`/team/${slugify(member.name)}`} state={{ member }} className="hover:underline">
+                          <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+                        </Link>
+                        <p className="text-lg font-bold text-muted-foreground">{member.role}</p>
+                        {member.department && (
+                          <p className="text-sm text-muted-foreground">{member.department}</p>
+                        )}
+                      </div>
                     </CardContent>
                   </Card>
                 ))}
