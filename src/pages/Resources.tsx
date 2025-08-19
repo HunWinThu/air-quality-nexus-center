@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -153,8 +152,7 @@ const Resources = () => {
   );
 
   return (
-    <MainLayout>
-      
+    <>
       {/* Hero Section */}
       <motion.section 
         className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5"
@@ -263,7 +261,7 @@ const Resources = () => {
         </motion.section>
       </div>
 
-    </MainLayout>
+    </>
   );
 };
 

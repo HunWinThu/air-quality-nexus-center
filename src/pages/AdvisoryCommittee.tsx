@@ -129,8 +129,7 @@ const Committee = () => {
   }, []);
 
   return (
-    <MainLayout>
-      
+    <>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,7 +186,7 @@ const Committee = () => {
         </div>
       </section>
 
-    </MainLayout>
+    </>
   );
 };
 

@@ -175,8 +175,8 @@ const gallery = [
 ]
 
   return (
-    <MainLayout>
-      {/* Team Photo Hero */}
+    <>
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -266,7 +266,7 @@ The launch event featured insights from prominent experts and stakeholders, high
         </div>
       </section>
 
-    </MainLayout>
+    </>
   );
 };
 

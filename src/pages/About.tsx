@@ -42,7 +42,7 @@ const About = () => {
   };
 
   return (
-    <MainLayout>
+    <>
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
@@ -184,7 +184,7 @@ const About = () => {
         </div>
       </section>
 
-    </MainLayout>
+    </>
   );
 };
 
