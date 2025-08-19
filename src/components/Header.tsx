@@ -34,14 +34,14 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
+          <nav className="hidden md:flex items-center space-x-7">
             {navigation.map((item) => {
               if (item.name === 'About Us') {
                 return (
                   <div key={item.name} className="relative group">
                     <Link
                       to="/about"
-                      className={`text-xl font-semibold tracking-wide transition-colors hover:text-primary ${
+                      className={`text-lg font-semibold tracking-wide transition-colors hover:text-primary ${
                         isActive('/about') || isActive('/launching-event') || isActive('/what-we-do') || isActive('/team')
                           ? 'text-primary border-b-2 border-primary pb-1'
                           : 'text-black'
@@ -78,8 +78,8 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-xl font-semibold tracking-wide border-b-2 pb-1 ${
-                    item.name === 'News' 
+                  className={`text-lg font-semibold tracking-wide border-b-2 pb-1 ${
+                    ['Home', 'About Us', 'Projects', 'News', 'Publications', 'Resources', 'Contact Us'].includes(item.name)
                       ? `relative overflow-hidden group ${isActive(item.href)
                         ? 'text-primary border-primary'
                         : 'text-black border-transparent'} 
@@ -154,15 +154,9 @@ const Header = () => {
                     key={item.name}
                     to={item.href}
                     className={`block px-3 py-2 text-lg font-medium rounded-md ${
-                      item.name === 'News'
-                        ? isActive(item.href)
-                          ? 'text-primary bg-accent'
-                          : 'text-black'
-                        : `transition-colors ${
-                          isActive(item.href)
-                            ? 'text-primary bg-accent'
-                            : 'text-black hover:text-primary hover:bg-accent'
-                        }`
+                      isActive(item.href)
+                        ? 'text-primary bg-accent'
+                        : 'text-black hover:text-primary hover:bg-accent'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
