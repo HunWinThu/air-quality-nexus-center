@@ -183,7 +183,6 @@ const News = () => {
                     key={event.id}
                     variants={cardVariants}
                     transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-                    whileHover={{ y: -8, scale: 1.02 }}
                   >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
                     <div className="relative overflow-hidden">
@@ -193,7 +192,6 @@ const News = () => {
                         className="w-full h-48 object-cover"
                         variants={imageVariants}
                         transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-                        whileHover={{ scale: 1.08 }}
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-primary text-primary-foreground">
@@ -267,7 +265,6 @@ const News = () => {
                     key={news.id}
                     variants={cardVariants}
                     transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-                    whileHover={{ y: -4, scale: 1.01 }}
                   >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="flex flex-col md:flex-row">
@@ -278,7 +275,6 @@ const News = () => {
                           className="w-full h-48 md:h-full object-cover"
                            variants={imageVariants}
                            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-                           whileHover={{ scale: 1.08 }}
                          />
                       </div>
                       <div className="md:w-2/3 p-6">
