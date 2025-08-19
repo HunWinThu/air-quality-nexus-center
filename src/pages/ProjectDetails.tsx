@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, DollarSign, Clock, Users, Target, Activity, Trophy } from 'lucide-react';
@@ -156,16 +155,14 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-background">
-        <Header />
+      <MainLayout>
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
           <Button onClick={() => navigate('/blog')}>
             Back to Projects
           </Button>
         </div>
-        <Footer />
-      </div>
+      </MainLayout>
     );
   }
 
@@ -199,9 +196,7 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <MainLayout>
       <motion.main
         initial="hidden"
         animate="visible"
@@ -337,8 +332,7 @@ const ProjectDetails = () => {
         </section>
       </motion.main>
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

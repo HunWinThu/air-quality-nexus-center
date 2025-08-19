@@ -1,5 +1,3 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import teamPlaceholder from '@/assets/team-placeholder.jpg';
@@ -59,23 +57,19 @@ export default function TeamMember() {
 
   if (!member) {
     return (
-      <div className="min-h-screen bg-background">
-        <Header />
+      <>
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="text-3xl font-bold text-primary">Member not found</h1>
           <p className="mt-2 text-muted-foreground">The profile you are looking for does not exist.</p>
         </main>
-        <Footer />
-      </div>
+      </>
     );
   }
 
   const email = member.viewprofile && member.viewprofile.includes('@') ? member.viewprofile : undefined;
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-
+    <>
       <main className="py-12 md:py-16">
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 md:gap-12 md:grid-cols-5">
@@ -149,8 +143,6 @@ export default function TeamMember() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </>
   );
 }

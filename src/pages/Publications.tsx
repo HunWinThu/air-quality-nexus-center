@@ -1,5 +1,4 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -209,8 +208,7 @@ const Publications = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <MainLayout>
       
       {/* Hero Section - matching website style */}
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
@@ -391,8 +389,7 @@ const Publications = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

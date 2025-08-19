@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Outlet } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LoadingProvider } from "@/components/common/LoadingProvider";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -34,8 +34,10 @@ const App = () => (
       <ThemeProvider defaultTheme="light" storageKey="air-quality-theme">
         <LoadingProvider>
           <TooltipProvider>
-            <MainLayout>
-              <Routes>
+            <Routes>
+              <Route element={<MainLayout>
+                <Outlet />
+              </MainLayout>}>
                 <Route path={ROUTES.HOME} element={<Index />} />
                 <Route path={ROUTES.ABOUT} element={<About />} />
                 <Route path={ROUTES.BLOG} element={<Blog />} />
@@ -52,8 +54,8 @@ const App = () => (
                 <Route path={ROUTES.LAUNCHING_EVENT} element={<LaunchingEvent />} />
                 <Route path={ROUTES.COMMITTEE} element={<Committee />} />
                 <Route path="*" element={<NotFound />} />
-              </Routes>
-            </MainLayout>
+              </Route>
+            </Routes>
             <Toaster />
             <Sonner />
           </TooltipProvider>

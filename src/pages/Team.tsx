@@ -1,5 +1,4 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -292,8 +291,7 @@ const Team = () => {
     link.setAttribute('href', window.location.href);
   }, []);
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <MainLayout>
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-air-light to-accent">
@@ -415,8 +413,7 @@ const Team = () => {
       </section>
 
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -114,9 +113,7 @@ const sections = [
 ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-
+    <MainLayout>
       <main>
 {/* Hero */}
 <section className="relative py-16 md:py-20">
@@ -204,8 +201,7 @@ const sections = [
         </section>
       </main>
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

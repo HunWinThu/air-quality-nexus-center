@@ -1,13 +1,11 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { ContactHero } from '@/components/contact/ContactHero';
 import { ContactInfo } from '@/components/contact/ContactInfo';
 import { ContactForm } from '@/components/contact/ContactForm';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <>
       <ContactHero />
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +15,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,3 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -125,9 +123,7 @@ const News = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-air-light to-accent overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -325,8 +321,7 @@ const News = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </>
   );
 };
 

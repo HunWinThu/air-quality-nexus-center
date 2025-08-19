@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 //import homeImg from '@/assets/Laung.jpg';
@@ -176,9 +175,7 @@ const gallery = [
 ]
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-
+    <MainLayout>
       {/* Team Photo Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -269,8 +266,7 @@ The launch event featured insights from prominent experts and stakeholders, high
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

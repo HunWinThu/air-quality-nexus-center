@@ -1,5 +1,4 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -43,9 +42,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-            <Header />
-
+    <MainLayout>
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
@@ -187,8 +184,7 @@ const About = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

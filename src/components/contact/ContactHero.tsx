@@ -28,7 +28,6 @@ export function ContactHero() {
           variants={staggerContainer}
         >
           <motion.div variants={fadeUpVariants}>
-            <Badge variant="secondary" className="mb-4">Get In Touch</Badge>
           </motion.div>
           <motion.h1 
             className="text-4xl md:text-6xl font-bold text-foreground mb-6"

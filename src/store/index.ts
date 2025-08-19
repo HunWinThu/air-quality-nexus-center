@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { type ThemeProviderProps } from '@/components/theme-provider';
+import { type Theme } from '../components/theme-provider';
 
 interface ThemeState {
-  theme: ThemeProviderProps['theme'];
-  setTheme: (theme: ThemeProviderProps['theme']) => void;
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
 }
 
 interface LayoutState {

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -154,8 +153,7 @@ const Resources = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <MainLayout>
       
       {/* Hero Section */}
       <motion.section 
@@ -265,8 +263,7 @@ const Resources = () => {
         </motion.section>
       </div>
 
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

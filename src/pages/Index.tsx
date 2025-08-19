@@ -1,5 +1,3 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -166,9 +164,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent">
-      <Header />
-      
+    <>
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div 
@@ -602,7 +598,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
+            <section className="py-20 bg-[linear-gradient(to_right,white,#e0f2fe)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 text-center">
             <div className="flex justify-center items-center space-x-2">
@@ -621,8 +617,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </>
   );
 };
 
