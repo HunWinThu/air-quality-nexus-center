@@ -65,22 +65,6 @@ export const coreTeam = [
 
   },
 
-
-  {
-    id: 4,
-    name: 'Ms. Nguyen Nhat Ha Chi',
-    role: 'Research Specialist',
-    department: 'Doctor of Philosophy in Environmental Technology and Management, AIT',
-    bio: 'Dr. Ha Chi Nguyen Nhat, an Air Quality Specialist, brings advanced expertise in air quality modeling and environmental impact assessment. Her scholarly contributions include modeling PM₂.₅ for health impact assessment, and she has co-authored studies on emission inventories and atmospheric pollutants over urban regions in Southeast Asia. Dr. Ha Chi combines rigorous scientific research with practical application, supporting AIT’s efforts to integrate science-based solutions into air quality policy and protection of human and ecological health. Her contributions continue to strengthen the Center’s analytical capacity and regional leadership in atmospheric science.\n\nDr. Ha Chi earned her Doctor of Philosophy in Environmental Technology and Management from the Asian Institute of Technology, Thailand in 2024. She holds a Master of Engineering in Environmental Technology and Management from the Asian Institute of Technology, Thailand (2018) and a Bachelor of Science in Environmental Science from the University of Natural Science, National University, Ho Chi Minh City, Vietnam (2012).',
-    Expertise: 'Air quality and meteorology modeling; Emission inventory',
-    specialties: ['Emission Inventory', 'Air Quality Management'],
-    image: Nguyen,
-    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
-    researchgate: 'https://www.researchgate.net/profile/Ha-Chi-Nguyen-Nhat'
-
-
-  },
-
     {
     id: 3,
     name: 'Ms. Khing Thwe Oo',
@@ -93,6 +77,7 @@ export const coreTeam = [
     viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
 
   },
+
 
     {
     id: 5,
@@ -121,34 +106,45 @@ export const coreTeam = [
     viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
 
   },
-
-    {
-    id: 7,
-    name: 'Ms. May Hnin Aye',
-    role: 'Research Assistant & RS-GIS',
-    department: 'Master of Science in Remote Sensing & GIS',
-    bio: 'Ms. May Hnin Aye, a Geographic Information Systems (GIS) Analyst at the Asian Institute of Technology (AIT), specializes in remote sensing and geospatial analysis for environmental monitoring and land management. At the Center, she provides technical support in developing methodological frameworks to assess primary forest loss due to fires in Laos. Her responsibilities include sourcing, processing, and analyzing satellite data to monitor land-use and land-cover changes, with a particular focus on detecting and quantifying forest and agricultural land cover loss caused by fire events. With a strong foundation in both geography and technology, Ms. May Hnin Aye applies her expertise to produce high-quality geospatial intelligence products that inform research, policy, and conservation strategies. She is proficient in drone mapping, photogrammetry, and geospatial data analysis, and integrates advanced GIS and remote sensing tools to support decision-making processes in environmental and resource management. Her work combines technical precision with a commitment to addressing real-world environmental challenges through innovative spatial analysis approaches. Before joining the Center, she worked as a Program Assistant at the Unified Program of AIT, gaining valuable experience in academic coordination and technical support.\n\nMs. May earned her Master of Science in Remote Sensing and Geographic Information System from the Asian Institute of Technology, Thailand in 2024, a Master of Arts in Physical Geography from the University of Yangon, Myanmar in 2020, and a Bachelor of Arts in Geography from the University of Yangon, Myanmar. Her passion for the intersection of geography, technology, and environmental sustainability continues to drive her professional growth and contributions to the field.',
-    Expertise: 'Remote Sensing and GIS Analyst',
+  {
+    id: 4,
+    name: 'Dr. Nguyen Nhat Ha Chi',
+    role: 'Associate Member',
+    department: 'Doctor of Philosophy in Environmental Technology and Management, AIT',
+    bio: 'Dr. Ha Chi Nguyen Nhat, an Air Quality Specialist, brings advanced expertise in air quality modeling and environmental impact assessment. Her scholarly contributions include modeling PM₂.₅ for health impact assessment, and she has co-authored studies on emission inventories and atmospheric pollutants over urban regions in Southeast Asia. Dr. Ha Chi combines rigorous scientific research with practical application, supporting AIT’s efforts to integrate science-based solutions into air quality policy and protection of human and ecological health. Her contributions continue to strengthen the Center’s analytical capacity and regional leadership in atmospheric science.\n\nDr. Ha Chi earned her Doctor of Philosophy in Environmental Technology and Management from the Asian Institute of Technology, Thailand in 2024. She holds a Master of Engineering in Environmental Technology and Management from the Asian Institute of Technology, Thailand (2018) and a Bachelor of Science in Environmental Science from the University of Natural Science, National University, Ho Chi Minh City, Vietnam (2012).',
+    Expertise: 'Air quality and meteorology modeling; Emission inventory',
     specialties: ['Emission Inventory', 'Air Quality Management'],
-    image: May,
+    image: Nguyen,
     viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+    researchgate: 'https://www.researchgate.net/profile/Ha-Chi-Nguyen-Nhat'
+
 
   },
 
-    {
-    id: 8,
-    name: 'Ms. Keishu Pant',
-    role: 'PhD Candidate',
-    department: 'Student',
-    bio: 'Specializes in emission inventory and air quality management.',
-    Expertise: 'Research Assistant_Air pollution monitoring',
-    specialties: ['Emission Inventory', 'Air Quality Management'],
-    alignTop: true,
-    image: Pant,
-    viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
-
-  },
-  // Add more core team members as needed
+  {
+  id: 7,
+  name: 'Ms. May Hnin Aye',
+  role: 'Associate Member',
+  department: 'Master of Science in Remote Sensing & GIS',
+  bio: 'Ms. May Hnin Aye, a Geographic Information Systems (GIS) Analyst at the Asian Institute of Technology (AIT), specializes in remote sensing and geospatial analysis for environmental monitoring and land management. At the Center, she provides technical support in developing methodological frameworks to assess primary forest loss due to fires in Laos. Her responsibilities include sourcing, processing, and analyzing satellite data to monitor land-use and land-cover changes, with a particular focus on detecting and quantifying forest and agricultural land cover loss caused by fire events. With a strong foundation in both geography and technology, Ms. May Hnin Aye applies her expertise to produce high-quality geospatial intelligence products that inform research, policy, and conservation strategies. She is proficient in drone mapping, photogrammetry, and geospatial data analysis, and integrates advanced GIS and remote sensing tools to support decision-making processes in environmental and resource management. Her work combines technical precision with a commitment to addressing real-world environmental challenges through innovative spatial analysis approaches. Before joining the Center, she worked as a Program Assistant at the Unified Program of AIT, gaining valuable experience in academic coordination and technical support.\n\nMs. May earned her Master of Science in Remote Sensing and Geographic Information System from the Asian Institute of Technology, Thailand in 2024, a Master of Arts in Physical Geography from the University of Yangon, Myanmar in 2020, and a Bachelor of Arts in Geography from the University of Yangon, Myanmar. Her passion for the intersection of geography, technology, and environmental sustainability continues to drive her professional growth and contributions to the field.',
+  Expertise: 'Remote Sensing and GIS Analyst',
+  specialties: ['Emission Inventory', 'Air Quality Management'],
+  image: May,
+  viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+},
+  {
+  id: 8,
+  name: 'Ms. Keishu Pant',
+  role: 'PhD Candidate',
+  department: 'Student',
+  bio: 'Specializes in emission inventory and air quality management.',
+  Expertise: 'Research Assistant_Air pollution monitoring',
+  specialties: ['Emission Inventory', 'Air Quality Management'],
+  alignTop: true,
+  image: Pant,
+  viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
+},
+// Add more core team members as needed
 ];
 
 

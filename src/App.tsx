@@ -3,6 +3,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { ThemeProvider } from "@/components/theme-provider";
+import { LoadingProvider } from "@/components/common/LoadingProvider";
+import { MainLayout } from "@/components/layout/MainLayout";
+import { ROUTES } from "@/constants";
+
+// Page imports
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -16,63 +22,44 @@ import Team from "./pages/Team";
 import TeamMember from "./pages/TeamMember";
 import Contact from "./pages/Contact";
 import LaunchingEvent from "./pages/LaunchingEvent";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import WhatWeDo from "./pages/OurThematicAreas";
- 
-import NotFound from "./pages/NotFound";
 import OurThematicAreas from "./pages/OurThematicAreas";
 import Committee from "./pages/AdvisoryCommittee";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const AnimatedRoutes = () => {
-  const location = useLocation();
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={location.pathname}
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className="min-h-screen"
-      >
-        <Routes location={location}>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/project/:id" element={<ProjectDetails />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:id" element={<NewsDetails />} />
-          <Route path="/activities" element={<Activities />} />
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/team/:slug" element={<TeamMember />} />
-          <Route path="/what-we-do" element={<OurThematicAreas />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/launching-event" element={<LaunchingEvent />} />
-          <Route path="/committee" element={<Committee />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </motion.div>
-    </AnimatePresence>
-  );
-};
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename="/air-quality-nexus-center">
-        <AnimatedRoutes />
-      </BrowserRouter>
-    </TooltipProvider>
+    <BrowserRouter basename="/air-quality-nexus-center">
+      <ThemeProvider defaultTheme="light" storageKey="air-quality-theme">
+        <LoadingProvider>
+          <TooltipProvider>
+            <MainLayout>
+              <Routes>
+                <Route path={ROUTES.HOME} element={<Index />} />
+                <Route path={ROUTES.ABOUT} element={<About />} />
+                <Route path={ROUTES.BLOG} element={<Blog />} />
+                <Route path="/project/:id" element={<ProjectDetails />} />
+                <Route path={ROUTES.NEWS} element={<News />} />
+                <Route path="/news/:id" element={<NewsDetails />} />
+                <Route path={ROUTES.ACTIVITIES} element={<Activities />} />
+                <Route path={ROUTES.PUBLICATIONS} element={<Publications />} />
+                <Route path={ROUTES.RESOURCES} element={<Resources />} />
+                <Route path={ROUTES.TEAM} element={<Team />} />
+                <Route path="/team/:slug" element={<TeamMember />} />
+                <Route path={ROUTES.WHAT_WE_DO} element={<OurThematicAreas />} />
+                <Route path={ROUTES.CONTACT} element={<Contact />} />
+                <Route path={ROUTES.LAUNCHING_EVENT} element={<LaunchingEvent />} />
+                <Route path={ROUTES.COMMITTEE} element={<Committee />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </MainLayout>
+            <Toaster />
+            <Sonner />
+          </TooltipProvider>
+        </LoadingProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 
