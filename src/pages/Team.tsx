@@ -318,10 +318,10 @@ const Team = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="core" className="w-full">
             <div className="text-center mb-8">
-              <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
+              {/* <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
                 <TabsTrigger value="core" className="text-lg">Core Team</TabsTrigger>
                 <TabsTrigger value="advisory" className="text-lg">Advisory Committee</TabsTrigger>
-              </TabsList>
+              </TabsList> */}
             </div>
 
             <TabsContent value="core" className="mt-4">

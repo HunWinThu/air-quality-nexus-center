@@ -69,6 +69,12 @@ const Header = () => {
                         >
                           Our Team
                         </Link>
+                        <Link 
+                          to="/committee" 
+                          className="block rounded-lg px-3 py-2 text-lg font-medium hover:bg-accent hover:text-primary transition-colors"
+                        >
+                          Advisory Committee
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -147,6 +153,13 @@ const Header = () => {
                       >
                         Team
                       </Link>
+                      <Link
+                        to="/committee"
+                        className="block px-3 py-2 text-base rounded-md text-black hover:text-primary hover:bg-accent"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Team
+                      </Link>                      
                     </div>
                   </div>
                 ) : (
