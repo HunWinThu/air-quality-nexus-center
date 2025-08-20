@@ -2,12 +2,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
-// Replace these imports with actual images if available
+// Team member images
 import kim from '@/assets/prof.Kim.jpeg';
 import huy from '@/assets/dr.huy.jpg';
 import ktoo from '@/assets/Ms. Ktoo.jpg';
@@ -17,21 +17,6 @@ import Dang from '@/assets/dang.jpeg';
 import Hun from '@/assets/Hun Win Thu.jpg';
 import May from '@/assets/May.jpg';
 import Pant from '@/assets/Ms. Keishu Pant.jpg';
-                                         
-import Ingyin from '@/assets/Ms. Ingyin Myint Swe.jpeg';
-import Lohani from '@/assets/Advisory/Prof. Bindu N. Lohani.jpeg';
-import Shrestha from '@/assets/Advisory/Prof. Ram Shrestha.jpeg';
-import Hopke from '@/assets/Advisory/Prof. Philip Hopke.jpeg';
-import Rupakheti from '@/assets/Advisory/Dr. Maheswar Rupakheti.jpg';
-import Emberson from '@/assets/Advisory/Prof. Lisa Emberson.jpg';
-import Vardoulakis from '@/assets/Advisory/Prof. Sotiris Vardoulakis.jpeg';
-import Bond from '@/assets/Advisory/Prof. Tami C. Bond.jpg';
-import Lung from '@/assets/Advisory/Dr. Shih-Chun Candice Lung.jpg';
-import Zusman from '@/assets/Advisory/Dr. Eric Zusman.jpg';
-import Saikawa from '@/assets/Advisory/Dr. Eri Saikawa.jpg';
-import Broomfield from '@/assets/Advisory/Dr. Mark Broomfield.jpg';
-import Mari from '@/assets/Advisory/Dr. Xavier Mari.jpeg';
-import Casanova from '@/assets/Advisory/Ms. Dang Espita Casanova.jpeg';
 
 import teamPlaceholder from '@/assets/team-placeholder.jpg';
 
@@ -142,133 +127,62 @@ export const coreTeam = [
   image: Pant,
   viewprofile: 'https://www.linkedin.com/in/kim-oanh/',
 },
-// Add more core team members as needed
-];
-
-
-
-export const advisoryCommittee = [
-  //{
-  //  id: 1,
-  //  name: "Prof. Bindu N. Lohani",
-  //  role: "Advisory Member",
-  //  department: "University of Nepal, Clean Air Asia, AIT",
-  //  bio: "Chancellor of University of Nepal, Chair of Clean Air Asia Board, Member of AIT Board of Trustee",
-  //  alignTop: true,
-  //  image: Lohani,
-  //  viewprofile: "https://ait.ac.th/people/bindu-n-lohani/",
-  //  linkedin: "https://www.linkedin.com/in/bindu-lohani-4a526a2/"
-  //},
-  {
-    id: 2,
-    name: "Prof. Ram Shrestha",
-    role: "Advisory Member",
-    department: "Asian Institute of Technology (AIT)",
-    bio: "Emeritus Professor, Sustainable Energy Transition Program, Department of Energy and Climate Change, AIT. Editor of Energy-The International Journal and Energy Economics, and is a member of the Editorial Advisory Board of International Energy Journal",
-    alignTop: true,
-    image: Shrestha,
-    viewprofile: "https://ait.ac.th/people/prof-ram-shrestha/",
-    linkedin: "https://www.linkedin.com/in/ram-m-shrestha-3a6a8a40/?originalSubdomain=np"
-  },
-  {
-    id: 3,
-    name: "Prof. Philip Hopke",
-    role: "Advisory Member",
-    department: "Clarkson University, University of Rochester",
-    bio: "Co-Editor-in-Chief, Science of the Total Environment, Bayard D. Clarkson Distinguished Professor Emeritus, Clarkson University. Adjunct Professor, Departments of Public Health Sciences and Environmental Medicine, University of Rochester School of Medicine and Dentistry, NY, USA",
-    alignTop: false,
-    image: Hopke,
-    viewprofile: "https://www.clarkson.edu/people/philip-hopke",
-    linkedin: "https://www.linkedin.com/in/philip-hopke-5b01409/"
-  },
-  {
-    id: 4,
-    name: "Dr. Maheswar Rupakheti",
-    role: "Advisory Member",
-    department: "Research Institute for Sustainability Helmholtz Centre Potsdam (RIFS), IPCC",
-    bio: "Research Group Leader, Research Institute for Sustainability Helmholtz Centre Potsdam (RIFS), Germany. Vice Chair, WG-I, Intergovernmental Panel on Climate Change (IPCC)",
-    alignTop: true,
-    image: Rupakheti,
-    viewprofile: "https://www.rifs-potsdam.de/en/people/maheswar-rupakheti",
-    linkedin: "https://www.linkedin.com/in/maheswar-rupakheti/"
-  },
-  {
-    id: 5,
-    name: "Prof. Lisa Emberson",
-    role: "Advisory Member",
-    department: "Stockholm Environment Institute (SEI), University of York",
-    bio: "Centre Director of the York office at the Stockholm Environment Institute (SEI). Professor of Environmental Science in the Environment & Geography Dept., University of York, UK",
-    alignTop: true,
-    image: Emberson,
-    viewprofile: "https://www.york.ac.uk/environment-geography/people/lisa-emberson/",
-    linkedin: "https://www.linkedin.com/in/lisa-emberson-7632871b/"
-  },
-  {
-    id: 6,
-    name: "Prof. Sotiris Vardoulakis",
-    role: "Advisory Member",
-    department: "University of Canberra, NHMRC HEAL Network",
-    bio: "Director, NHMRC Healthy Environments and Lives (HEAL) National Research Network. Professor of Environmental Public Health, University of Canberra, Australia",
-    alignTop: true,
-    image: Vardoulakis,
-    viewprofile: "https://researchprofiles.canberra.edu.au/en/persons/sotiris-vardoulakis",
-    linkedin: "https://www.linkedin.com/in/sotiris-vardoulakis-b5759790/"
-  },
-  //{
-  //  id: 7,
-  //  name: "Prof. Tami C. Bond",
-  //  role: "Advisory Member",
-  //  department: "Colorado State University, USA",
-  //  bio: "Scott Presidential Chair in Energy, Environment and Health. Professor, Mechanical Engineering; Joint Professor, Civil & Environmental Engineering; Affiliate, Systems Colorado University, Fort Collins, CO, USA",
-  //  alignTop: true,
-  //  image: Bond,
-  //  viewprofile: "https://www.engr.colostate.edu/me/faculty/dr-tami-bond/",
-  //  linkedin: "https://www.linkedin.com/in/tami-bond-195a07251/"
-  //},
-  {
-    id: 8,
-    name: "Dr. Shih-Chun Candice Lung",
-    role: "Advisory Member",
-    department: "Academia Sinica, Taiwan",
-    bio: "Deputy Director, Research Center for Environmental Changes (RCEC), Academia Sinica, Taiwan",
-    alignTop: true,
-    image: Lung,
-    viewprofile: "https://rcec.sinica.edu.tw/index_en.php?action=member&id=16",
-    linkedin: "https://www.linkedin.com/in/shih-chun-candice-lung-1024b9205/"
-  },
-  {
-    id: 9,
-    name: "Dr. Eric Zusman",
-    role: "Advisory Member",
-    department: "Institute for Global Environmental Strategies (IGES), Japan",
-    bio: "Research Director, Center for Sustainability Governance, Institute for Global Environmental Strategies (IGES), Japan",
-    alignTop: true,
-    image: Zusman,
-    viewprofile: "https://www.iges.or.jp/en/about/staff/zusman-eric",
-    linkedin: "https://www.linkedin.com/in/eric-zusman-0b52001/"
-  }
-];
-
-
-const departments = [
-  {
-    name: 'Environmental Engineering and Management',
-    description: 'Research and Expertise in air quality, emission inventory, and environmental health.',
-    members: 10
-  },
-  {
-    name: 'Air Quality Modeling',
-    description: 'Focus on modeling, monitoring, and management of air pollution.',
-    members: 5
-  },
-  {
-    name: 'Sensor Technology',
-    description: 'Development and deployment of air quality sensors and monitoring systems.',
-    members: 3
-  }
 ];
 
 const Team = () => {
+  // Animation variants
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      y: -5,
+      scale: 1.02,
+      rotateY: 2,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const staggeredContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const imageVariants: Variants = {
+    hidden: { scale: 1.2, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut",
+        delay: 0.2
+      }
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   useEffect(() => {
     const title = 'AQC Team | Air Quality Nexus Center (AIT)';
     document.title = title;
@@ -308,108 +222,103 @@ const Team = () => {
       {/* Team Directory (Tabs) */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Tabs defaultValue="core" className="w-full">
-            <div className="text-center mb-8">
-              {/* <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
-                <TabsTrigger value="core" className="text-lg">Core Team</TabsTrigger>
-                <TabsTrigger value="advisory" className="text-lg">Advisory Committee</TabsTrigger>
-              </TabsList> */}
-            </div>
-
-            <TabsContent value="core" className="mt-4">
-              {/* First Row - Top 2 Members */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-                {coreTeam.slice(0, 2).map((member) => (
-                  <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border">
-                    <CardContent className="p-6">
-                      <div className="text-center mb-4">
-                        <img
+          {/* First Row - Top 2 Members */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto"
+            variants={staggeredContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {coreTeam.slice(0, 2).map((member) => (
+              <motion.div key={member.id} variants={cardVariants} whileHover="hover" style={{ transformStyle: "preserve-3d" }}>
+                <Card className="group hover:shadow-2xl transition-all duration-500 bg-background border border-border relative overflow-hidden">
+                  <CardContent className="p-6 relative z-10">
+                    <div className="text-center mb-4">
+                      <motion.div
+                        className="relative overflow-hidden mb-4 mx-auto"
+                        style={{ width: 224, height: 288 }}
+                        variants={imageVariants}
+                        whileHover="hover"
+                      >
+                        <motion.img
                           src={member.image || teamPlaceholder}
                           alt={`${member.name} - ${member.role}`}
                           loading="lazy"
-                          className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          className={`w-full h-full border border-border bg-background object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.3 }}
                         />
-                        <Link to={`/team/${slugify(member.name)}`} state={{ member }} className="hover:underline">
-                          <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
-                        </Link>
-                        <p className="text-lg font-bold text-muted-foreground">{member.role}</p>
-                        {member.department && (
-                          <p className="text-sm text-muted-foreground">{member.department}</p>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                      </motion.div>
+                      <Link to={`/team/${slugify(member.name)}`} state={{ member }} className="hover:underline">
+                        <motion.h3 
+                          className="text-xl font-semibold text-primary mb-1"
+                          whileHover={{ scale: 1.01 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {member.name}
+                        </motion.h3>
+                      </Link>
+                      <p className="text-lg font-bold text-muted-foreground">{member.role}</p>
+                      {member.department && (
+                        <p className="text-sm text-muted-foreground">{member.department}</p>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
 
-              {/* Remaining Members - 3 columns, 2 rows */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {coreTeam.slice(2).map((member) => (
-                  <Card key={member.id} className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border">
-                    <CardContent className="p-6">
-                      <div className="text-center mb-4">
-                        <img
+          {/* Remaining Members - 3 columns */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggeredContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {coreTeam.slice(2).map((member) => (
+              <motion.div key={member.id} variants={cardVariants} whileHover="hover" style={{ transformStyle: "preserve-3d" }}>
+                <Card className="group hover:shadow-2xl transition-all duration-500 bg-background border border-border relative overflow-hidden">
+                  <CardContent className="p-6 relative z-10">
+                    <div className="text-center mb-4">
+                      <motion.div
+                        className="relative overflow-hidden mb-4 mx-auto"
+                        style={{ width: 224, height: 288 }}
+                        variants={imageVariants}
+                        whileHover="hover"
+                      >
+                        <motion.img
                           src={member.image || teamPlaceholder}
                           alt={`${member.name} - ${member.role}`}
                           loading="lazy"
-                          className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          className={`w-full h-full border border-border bg-background object-cover ${member.alignTop ? 'object-top' : ''}`}
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.3 }}
                         />
-                        <Link to={`/team/${slugify(member.name)}`} state={{ member }} className="hover:underline">
-                          <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
-                        </Link>
-                        <p className="text-lg font-bold text-muted-foreground">{member.role}</p>
-                        {member.department && (
-                          <p className="text-sm text-muted-foreground">{member.department}</p>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="advisory" className="mt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {advisoryCommittee.map((member) => (
-                  <Card
-                    key={member.id}
-                    className="group hover:shadow-lg transition-shadow duration-300 bg-background border border-border"
-                  >
-                    <CardContent className="p-6">
-                      <div className="text-center mb-4">
-                         <img
-                            src={member.image || teamPlaceholder}
-                            alt={`${member.name} - ${member.role}`}
-                            loading="lazy"
-                            className={`w-56 h-72 border border-border bg-background mx-auto mb-4 object-cover ${member.alignTop ? 'object-top' : ''}`}
-                          />
-                        {member.viewprofile && member.viewprofile !== '' ? (
-                          <a
-                            href={member.viewprofile}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline"
-                          >
-                            <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
-                          </a>
-                        ) : (
-                          <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
-                        )}
-                        <p className="text-sm text-muted-foreground">{member.role}</p>
-                        {member.department && (
-                          <p className="text-sm text-muted-foreground">{member.department}</p>
-                        )}
-                      </div>
-                      <p className="text-base text-muted-foreground mb-0 pt-3 text-center">{member.bio}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
+                      </motion.div>
+                      <Link to={`/team/${slugify(member.name)}`} state={{ member }} className="hover:underline">
+                        <motion.h3 
+                          className="text-xl font-semibold text-primary mb-1"
+                          whileHover={{ scale: 1.01 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {member.name}
+                        </motion.h3>
+                      </Link>
+                      <p className="text-lg font-bold text-muted-foreground">{member.role}</p>
+                      {member.department && (
+                        <p className="text-sm text-muted-foreground">{member.department}</p>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
-
     </>
   );
 };

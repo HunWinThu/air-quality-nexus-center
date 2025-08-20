@@ -219,7 +219,6 @@ const Publications = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <motion.div variants={fadeUpVariants}>
-              <Badge variant="secondary" className="mb-4">Research</Badge>
             </motion.div>
             <motion.h1 
               className="text-4xl md:text-6xl font-bold text-foreground mb-6"

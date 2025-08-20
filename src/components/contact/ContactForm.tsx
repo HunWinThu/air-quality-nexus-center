@@ -11,6 +11,9 @@ import { MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 
+// Initialize EmailJS
+emailjs.init('q7CmlzB_B9pKJdbJM');
+
 const contactFormSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
@@ -32,15 +35,18 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setValue,
+    watch
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
   const onSubmit = async (data: ContactFormData) => {
     try {
+      console.log('Sending email with data:', data);
       await emailjs.send(
         'service_fdnw9o3', // Your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // We'll update this once you create the template
+        'template_acjp1ue', // Your EmailJS template ID
         {
           to_email: 'mr.hunwinthu@gmail.com',
           from_name: `${data.firstName} ${data.lastName}`,
@@ -144,8 +150,13 @@ export function ContactForm() {
           
           <div className="space-y-2">
             <Label htmlFor="subject">Subject</Label>
-            <Select onValueChange={(value) => register('subject').onChange({ target: { value } })}>
-              <SelectTrigger>
+            <Select 
+              onValueChange={(value) => {
+                setValue('subject', value);
+              }}
+              value={watch('subject')}
+            >
+              <SelectTrigger id="subject">
                 <SelectValue placeholder="Select a subject" />
               </SelectTrigger>
               <SelectContent>

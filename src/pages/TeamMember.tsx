@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import teamPlaceholder from '@/assets/team-placeholder.jpg';
 import researchgateIcon from '@/assets/icons/researchgate.svg';
-import { coreTeam, advisoryCommittee } from './Team';
+import { coreTeam } from './Team';
 
 interface Member {
   id: number;
@@ -34,7 +34,7 @@ export default function TeamMember() {
   const location = useLocation();
   const stateMember = (location.state as any)?.member as Member | undefined;
 
-  const allMembers: Member[] = [...coreTeam, ...advisoryCommittee] as Member[];
+  const allMembers: Member[] = [...coreTeam] as Member[];
   const found = slug ? allMembers.find((m) => slugify(m.name) === slug) : undefined;
   const member: Member | undefined = stateMember ?? found;
 
