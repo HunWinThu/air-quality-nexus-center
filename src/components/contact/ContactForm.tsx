@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -37,8 +38,20 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // TODO: Implement actual form submission logic here
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      await emailjs.send(
+        'service_fdnw9o3', // Your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // We'll update this once you create the template
+        {
+          to_email: 'mr.hunwinthu@gmail.com',
+          from_name: `${data.firstName} ${data.lastName}`,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          phone: data.phone || 'Not provided',
+          organization: data.organization || 'Not provided'
+        },
+        'q7CmlzB_B9pKJdbJM' // Your EmailJS public key
+      );
       
       toast({
         title: "Message sent successfully!",
@@ -47,6 +60,7 @@ export function ContactForm() {
       
       reset();
     } catch (error) {
+      console.error('Error sending email:', error);
       toast({
         title: "Error sending message",
         description: "Please try again later.",

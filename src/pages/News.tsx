@@ -180,7 +180,7 @@ const News = () => {
                     variants={cardVariants}
                     transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                   >
-                  <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
+                  <Card className="overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out h-full">
                     <div className="relative overflow-hidden">
                       <motion.img 
                         src={event.image} 
@@ -262,7 +262,7 @@ const News = () => {
                     variants={cardVariants}
                     transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                   >
-                  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <Card className="overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out">
                     <div className="flex flex-col md:flex-row">
                       <div className="md:w-1/3 overflow-hidden">
                         <motion.img 

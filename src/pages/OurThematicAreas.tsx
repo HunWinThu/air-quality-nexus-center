@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { MainLayout } from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { HexagonGrid } from '@/components/thematic/HexagonGrid';
 
 import cooperationImg from '@/assets/cooperation.jpg';
 import capacityImg from '@/assets/capacity.jpg';
@@ -113,7 +113,6 @@ const sections = [
 ];
 
   return (
-    <MainLayout>
       <main>
 {/* Hero */}
 <section className="relative py-16 md:py-20">
@@ -146,6 +145,23 @@ const sections = [
         <path key={i} d={`M0 ${20 + i*18} C 120 ${0 + i*18}, 260 ${40 + i*18}, 520 ${12 + i*18}`} className="stroke-primary" strokeWidth="2" fill="none" />
       ))}
     </svg>
+  </div>
+</section>
+
+{/* Core Activities Hexagon Grid */}
+<section className="py-12 bg-accent/10">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+    >
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Core Activities</h2>
+        <p className="text-lg text-muted-foreground">Our key focus areas for improving air quality</p>
+      </div>
+      <HexagonGrid />
+    </motion.div>
   </div>
 </section>
 
@@ -200,8 +216,6 @@ const sections = [
           </div>
         </section>
       </main>
-
-    </MainLayout>
   );
 };
 

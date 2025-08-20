@@ -1,0 +1,98 @@
+.hexagon-container {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+}
+
+.hexagon-container.center-hex {
+  width: 220px;
+  height: 220px;
+}
+
+.hexagon {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  border: 2px solid #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+}
+
+.hexagon-content {
+  transform: rotate(-90deg);
+  padding: 20px;
+  text-align: center;
+  max-width: 150px;
+}
+
+.hexagon:hover {
+  transform: scale(1.05);
+}
+
+.hexagon-content {
+  padding: 20px;
+  text-align: center;
+  max-width: 150px;
+}
+
+.center-hex .hexagon-content {
+  max-width: 180px;
+}
+
+/* Positioning for each hexagon */
+.center-hex {
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-hex .hexagon {
+  transform: rotate(90deg) scale(1.2);
+}
+
+.center-hex .hexagon-content {
+  max-width: 180px;
+}
+
+.top {
+  left: 50%;
+  top: -5%;
+  transform: translate(-50%, 0%);
+}
+
+.topRight {
+  right: 5%;
+  top: 20%;
+}
+
+.bottomRight {
+  right: 5%;
+  bottom: 20%;
+}
+
+.bottom {
+  left: 50%;
+  bottom: -5%;
+  transform: translate(-50%, 0%);
+}
+
+.bottomLeft {
+  left: 5%;
+  bottom: 20%;
+}
+
+.topLeft {
+  left: 5%;
+  top: 20%;
+}
+
+.honeycomb-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
